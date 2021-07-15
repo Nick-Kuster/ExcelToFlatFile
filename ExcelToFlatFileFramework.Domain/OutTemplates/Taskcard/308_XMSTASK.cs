@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ExcelToFlatFileFramework.Domain.OutTemplates.Taskcard
+{
+    public class _308_XMSTASK
+    {
+        public string MS_NAME { get; set; } //[25][m]
+        public string TASKNUMBER { get; set; } //[38][m]
+        public string OP_TASK { get; set; } //[1]
+        public string ATA_CHAPTER { get; set; } //[12][m]
+    }
+}

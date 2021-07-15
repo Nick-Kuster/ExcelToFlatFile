@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62F51E8E-C79B-447C-A215-93F0C4C19E5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExcelToFlatFileFramework.Domain</RootNamespace>
+    <AssemblyName>ExcelToFlatFileFramework.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InTemplates\ChecksTemplate.cs" />
+    <Compile Include="InTemplates\DocumentTemplate.cs" />
+    <Compile Include="InTemplates\PartTemplate.cs" />
+    <Compile Include="InTemplates\TaskcardTemplate.cs" />
+    <Compile Include="OutTemplates\Checks\119_XEFFSER.cs" />
+    <Compile Include="OutTemplates\Checks\281_XCHECKTY.cs" />
+    <Compile Include="OutTemplates\Checks\282_XCHECKEFFLINK.cs" />
+    <Compile Include="OutTemplates\Checks\284_XCHECKEFFTREQ.cs" />
+    <Compile Include="OutTemplates\Checks\285_XCHECKEFFWT.cs" />
+    <Compile Include="OutTemplates\Checks\287_XCHECKEFFWS.cs" />
+    <Compile Include="OutTemplates\Checks\294_XCHECKHI.cs" />
+    <Compile Include="OutTemplates\Checks\295_XCHECKPE.cs" />
+    <Compile Include="OutTemplates\Checks\118_XEFF.cs" />
+    <Compile Include="OutTemplates\Documents\119_XEFFSER.cs" />
+    <Compile Include="OutTemplates\Documents\240_XDHE.cs" />
+    <Compile Include="OutTemplates\Documents\241_XDCOMPACTYPE.cs" />
+    <Compile Include="OutTemplates\Documents\243_XDHETX.cs" />
+    <Compile Include="OutTemplates\Documents\245_XDWS.cs" />
+    <Compile Include="OutTemplates\Documents\247_XDHECT.cs" />
+    <Compile Include="OutTemplates\Documents\255_XDEFFLINK.cs" />
+    <Compile Include="OutTemplates\Documents\259_XDEFFTREQ.cs" />
+    <Compile Include="OutTemplates\Documents\260_XDEFFWT.cs" />
+    <Compile Include="OutTemplates\Documents\262_XDEFFWS.cs" />
+    <Compile Include="OutTemplates\Documents\268_XDHIST.cs" />
+    <Compile Include="OutTemplates\Documents\269_XDPEND.cs" />
+    <Compile Include="OutTemplates\Documents\XDSOFF.cs" />
+    <Compile Include="OutTemplates\Documents\118_XEFF.cs" />
+    <Compile Include="OutTemplates\PartDefinition\072_XPARTFAENTITY.cs" />
+    <Compile Include="OutTemplates\PartDefinition\075_XPARTACT.cs" />
+    <Compile Include="OutTemplates\PartDefinition\076_XPARTPOS.cs" />
+    <Compile Include="OutTemplates\PartDefinition\082_XPARTWT.cs" />
+    <Compile Include="OutTemplates\PartDefinition\084_XPARTWS.cs" />
+    <Compile Include="OutTemplates\PartDefinition\122_XROTABLE.cs" />
+    <Compile Include="OutTemplates\PartDefinition\407_XHISTORY.cs" />
+    <Compile Include="OutTemplates\PartDefinition\06_XPART.cs" />
+    <Compile Include="OutTemplates\PartReq\119_XEFFSER.cs" />
+    <Compile Include="OutTemplates\PartReq\134_XPARTREQ.cs" />
+    <Compile Include="OutTemplates\PartReq\135_XPARTREQEFFLINK.cs" />
+    <Compile Include="OutTemplates\PartReq\136_XPARTREQTREQ.cs" />
+    <Compile Include="OutTemplates\PartReq\137_XPARTREQWT.cs" />
+    <Compile Include="OutTemplates\PartReq\139_XPARTREQWS.cs" />
+    <Compile Include="OutTemplates\PartReq\147_XPARTREQTC.cs" />
+    <Compile Include="OutTemplates\PartReq\148_XPARTREQHI.cs" />
+    <Compile Include="OutTemplates\PartReq\118_XEFF.cs" />
+    <Compile Include="OutTemplates\Taskcard\119_XEFFSER.cs" />
+    <Compile Include="OutTemplates\Taskcard\308_XMSTASK.cs" />
+    <Compile Include="OutTemplates\Taskcard\309_XMSTASKRV.cs" />
+    <Compile Include="OutTemplates\Taskcard\318_XMSTASKMPD.cs" />
+    <Compile Include="OutTemplates\Taskcard\321_XMSTASKIV.cs" />
+    <Compile Include="OutTemplates\Taskcard\325_XMSTASKWT.cs" />
+    <Compile Include="OutTemplates\Taskcard\330_XMSTSAKITWS.cs" />
+    <Compile Include="OutTemplates\Taskcard\339_XMSTASKITEF.cs" />
+    <Compile Include="OutTemplates\Taskcard\350_XMSTASKHIST.cs" />
+    <Compile Include="OutTemplates\Taskcard\351_XMSTASKPEND.cs" />
+    <Compile Include="OutTemplates\Taskcard\352_XMSTASKPENDINT.cs" />
+    <Compile Include="OutTemplates\Taskcard\354_XMSTASKPRESET.cs" />
+    <Compile Include="OutTemplates\Taskcard\118_XEFF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
