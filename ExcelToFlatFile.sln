@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToFlatFileFramework", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToFlatFileFramework.Domain", "ExcelToFlatFileFramework.Domain\ExcelToFlatFileFramework.Domain.csproj", "{62F51E8E-C79B-447C-A215-93F0C4C19E5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToFlatFile.Application", "ExcelToFlatFile.Application\ExcelToFlatFile.Application.csproj", "{5B07A014-FF74-43F1-8511-08E191A9AA70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,14 @@ Global
 		{62F51E8E-C79B-447C-A215-93F0C4C19E5A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62F51E8E-C79B-447C-A215-93F0C4C19E5A}.Release|x64.ActiveCfg = Release|Any CPU
 		{62F51E8E-C79B-447C-A215-93F0C4C19E5A}.Release|x64.Build.0 = Release|Any CPU
+		{5B07A014-FF74-43F1-8511-08E191A9AA70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B07A014-FF74-43F1-8511-08E191A9AA70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B07A014-FF74-43F1-8511-08E191A9AA70}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5B07A014-FF74-43F1-8511-08E191A9AA70}.Debug|x64.Build.0 = Debug|Any CPU
+		{5B07A014-FF74-43F1-8511-08E191A9AA70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B07A014-FF74-43F1-8511-08E191A9AA70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B07A014-FF74-43F1-8511-08E191A9AA70}.Release|x64.ActiveCfg = Release|Any CPU
+		{5B07A014-FF74-43F1-8511-08E191A9AA70}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

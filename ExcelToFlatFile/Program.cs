@@ -38,7 +38,6 @@ namespace ExcelToFlatFile
                         {
                             sb.Append(" ");
                         }
-                        //sb.Append(newValue);
                     }
                     sb.Append("\n");
                 }

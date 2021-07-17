@@ -1,11 +1,6 @@
-﻿using ExcelToFlatFileFramework.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ExcelToFlatFileFramework.Domain.Enums;
 
-namespace ExcelToFlatFileFramework.Attributes
+namespace ExcelToFlatFileFramework.Domain.Attributes
 {
     [System.AttributeUsage(System.AttributeTargets.Property |
                        System.AttributeTargets.Field, AllowMultiple =true)

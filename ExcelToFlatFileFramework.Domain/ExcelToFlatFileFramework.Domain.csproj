@@ -31,7 +31,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npoi.Mapper, Version=3.5.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Npoi.Mapper.3.5.1\lib\net45\Npoi.Mapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,6 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\AmosAtLeastOneRequired.cs" />
+    <Compile Include="Attributes\AmosOutputLength.cs" />
+    <Compile Include="Attributes\AmosRequired.cs" />
+    <Compile Include="Attributes\AmosRules.cs" />
+    <Compile Include="Enums\AmosRuleType.cs" />
     <Compile Include="InTemplates\ChecksTemplate.cs" />
     <Compile Include="InTemplates\DocumentTemplate.cs" />
     <Compile Include="InTemplates\PartTemplate.cs" />
@@ -68,6 +102,7 @@
     <Compile Include="OutTemplates\Documents\269_XDPEND.cs" />
     <Compile Include="OutTemplates\Documents\XDSOFF.cs" />
     <Compile Include="OutTemplates\Documents\118_XEFF.cs" />
+    <Compile Include="OutTemplates\OutTemplateBase.cs" />
     <Compile Include="OutTemplates\PartDefinition\072_XPARTFAENTITY.cs" />
     <Compile Include="OutTemplates\PartDefinition\075_XPARTACT.cs" />
     <Compile Include="OutTemplates\PartDefinition\076_XPARTPOS.cs" />
@@ -76,6 +111,7 @@
     <Compile Include="OutTemplates\PartDefinition\122_XROTABLE.cs" />
     <Compile Include="OutTemplates\PartDefinition\407_XHISTORY.cs" />
     <Compile Include="OutTemplates\PartDefinition\06_XPART.cs" />
+    <Compile Include="OutTemplates\PartDefinition\PartDefinitionOutTemplate.cs" />
     <Compile Include="OutTemplates\PartReq\119_XEFFSER.cs" />
     <Compile Include="OutTemplates\PartReq\134_XPARTREQ.cs" />
     <Compile Include="OutTemplates\PartReq\135_XPARTREQEFFLINK.cs" />
@@ -85,6 +121,8 @@
     <Compile Include="OutTemplates\PartReq\147_XPARTREQTC.cs" />
     <Compile Include="OutTemplates\PartReq\148_XPARTREQHI.cs" />
     <Compile Include="OutTemplates\PartReq\118_XEFF.cs" />
+    <Compile Include="OutTemplates\PartReq\149_XPARTREQPE.cs" />
+    <Compile Include="OutTemplates\PartReq\PartReqOutTemplate.cs" />
     <Compile Include="OutTemplates\Taskcard\119_XEFFSER.cs" />
     <Compile Include="OutTemplates\Taskcard\308_XMSTASK.cs" />
     <Compile Include="OutTemplates\Taskcard\309_XMSTASKRV.cs" />
@@ -99,7 +137,10 @@
     <Compile Include="OutTemplates\Taskcard\354_XMSTASKPRESET.cs" />
     <Compile Include="OutTemplates\Taskcard\118_XEFF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationBase.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
