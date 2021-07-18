@@ -9,9 +9,9 @@ using Npoi.Mapper.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.InTemplates
 {
-    // [AmosAtLeastOneRequired("LAST_REQ_TSN", "LAST_REQ_CYCLES", "LAST_REQ_DATE")]
-    // [AmosAtLeastOneRequired("NEXT_DUE_FH", "NEXT_DUE_FC", "NEXT_DUE_DATE")]
-    // [AmosAtLeastOneRequired("DELIVERY_DATE", "INSTALLATION_DATE")]
+    [AmosAtLeastOneRequired("LAST_REQ_TSN", "LAST_REQ_CYCLES", "LAST_REQ_DATE")]
+    [AmosAtLeastOneRequired("NEXT_DUE_FH", "NEXT_DUE_FC", "NEXT_DUE_DATE")]
+    [AmosAtLeastOneRequired("DELIVERY_DATE", "INSTALLATION_DATE")]
     public class PartTemplate : ValidationBase
     {
         [AmosRequired]
@@ -113,5 +113,73 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
         public string CSN_CURRENT { get; set; }
         [Column("OLD-LABELNO")]
         public string OLD_LABELNO { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is PartTemplate))
+                return false;
+            PartTemplate other = (PartTemplate)obj;
+            bool equal =
+                other.Aircraft == Aircraft &&
+                other.ATA == ATA &&
+                other.PART_NUMBER == PART_NUMBER &&
+                other.SERIAL_NUMBER == SERIAL_NUMBER &&
+                other.DESCRIPTION == DESCRIPTION &&
+                other.Position == Position &&
+                other.TaskcardReference == TaskcardReference &&
+                other.Part_Req_Title == Part_Req_Title &&
+                other.Eff_Title == Eff_Title &&
+                other.Part_Req_Description == Part_Req_Description &&
+                other.REQUIREMENT == REQUIREMENT &&
+                other.Removal_Req == Removal_Req &&
+                other.RANGE_TYPE == RANGE_TYPE &&
+                other.SERIALNO_FROM == SERIALNO_FROM &&
+                other.SERIALNO_TO == SERIALNO_TO &&
+                other.INCL_EXCL == INCL_EXCL &&
+                other.MATERIAL_CLASS == MATERIAL_CLASS &&
+                other.FA_AC_TYPE == FA_AC_TYPE &&
+                other.MEASURE_UNIT == MEASURE_UNIT &&
+                other.REPAIRABLE == REPAIRABLE &&
+                other.MAT_TYPE == MAT_TYPE &&
+                other.DIM_TYPE == DIM_TYPE &&
+                other.IntervalDimension == IntervalDimension &&
+                other.IntervalAmount == IntervalAmount &&
+                other.UNLIMITED == UNLIMITED &&
+                other.TERMINATING == TERMINATING &&
+                other.LAST_REQ_TSN == LAST_REQ_TSN &&
+                other.LAST_REQ_CYCLES == LAST_REQ_CYCLES &&
+                other.LAST_REQ_DATE == LAST_REQ_DATE &&
+                other.NEXT_DUE_FH == NEXT_DUE_FH &&
+                other.NEXT_DUE_FC == NEXT_DUE_FC &&
+                other.NEXT_DUE_DATE == NEXT_DUE_DATE &&
+                other.CONDITION == CONDITION &&
+                other.DELIVERY_DATE == DELIVERY_DATE &&
+                other.MFG_DATE == MFG_DATE &&
+                other.INSTALLATION_DATE == INSTALLATION_DATE &&
+                other.TAH_INST == TAH_INST &&
+                other.TAC_INST == TAC_INST &&
+                other.TSN == TSN &&
+                other.CSN == CSN &&
+                other.TAH_CURRENT == TAH_CURRENT &&
+                other.TAC_CURRENT == TAC_CURRENT &&
+                other.TSN_CURRENT == TSN_CURRENT &&
+                other.CSN_CURRENT == CSN_CURRENT &&
+                other.OLD_LABELNO == OLD_LABELNO;
+            return equal;
+        }
+        
+        public override int GetHashCode()
+        {
+            List<object> props = new List<object>()
+            {
+                Aircraft, ATA, PART_NUMBER, SERIAL_NUMBER, DESCRIPTION, Position, TaskcardReference, Part_Req_Title,
+                Eff_Title, Part_Req_Description, REQUIREMENT, Removal_Req, RANGE_TYPE, SERIALNO_FROM, SERIALNO_TO,
+                INCL_EXCL, MATERIAL_CLASS, FA_AC_TYPE, MEASURE_UNIT, REPAIRABLE, MAT_TYPE, DIM_TYPE, IntervalDimension,
+                IntervalAmount, UNLIMITED, TERMINATING, LAST_REQ_TSN, LAST_REQ_CYCLES, LAST_REQ_DATE, NEXT_DUE_FH,
+                NEXT_DUE_FC, NEXT_DUE_DATE, CONDITION, DELIVERY_DATE, MFG_DATE, INSTALLATION_DATE, TAH_INST, TAC_INST,
+                TSN, CSN, TAH_CURRENT, TAC_CURRENT, TSN_CURRENT, CSN_CURRENT, OLD_LABELNO
+            };
+            return String.Join("|", props).GetHashCode();
+        }
     }
 }

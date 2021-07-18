@@ -32,27 +32,13 @@ namespace ExcelToFlatFileFramework
             {
                 workbook = WorkbookFactory.Create(file);
             }
-
+            
             var importer = new Mapper(workbook);
             var items = importer.Take<PartTemplate>();
-            Dictionary<PartTemplate, string> errors = new Dictionary<PartTemplate, string>();  
-            List<PartTemplate> tests = new List<PartTemplate>();
-            tests = items.Select(x => x.Value).ToList();
+            List<PartTemplate> tests = items.Select(x => x.Value).Distinct().ToList();
+            InputValidator validator = new InputValidator();
+            validator.ValidateInput(tests, @"C:\Documentation\AMOS\XFileConversion\Output\Errors\PartTemplateErrors.csv");
             
-            for (int i = 0; i < tests.Count; i++)
-            {
-                var requiredPropsMissing = tests[i].Validate();
-                if (requiredPropsMissing.Any())
-                {
-                    errors.Add(tests[i], $"Row {i + 1} is missing required value(s): {string.Join(",",requiredPropsMissing)}");
-                }
-            }
-
-            foreach (var error in errors)
-            {
-                tests.Remove(error.Key);
-            }
-
             PartDefinitionMapper partDefinitionMapper = new PartDefinitionMapper();
             PartDefinitionOutTemplate partDefinitionOut = partDefinitionMapper.Map(tests);
             PartReqMapper partReqMapper = new PartReqMapper();

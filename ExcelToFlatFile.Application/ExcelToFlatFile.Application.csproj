@@ -43,6 +43,8 @@
         <Compile Include="AmosMappers\PartReqMapper.cs" />
         <Compile Include="Extensions\StringExtensions.cs" />
         <Compile Include="Helpers\ConvertOutTemplateToStringHelper.cs" />
+        <Compile Include="Helpers\CSVHelper.cs" />
+        <Compile Include="Helpers\InputValidator.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
