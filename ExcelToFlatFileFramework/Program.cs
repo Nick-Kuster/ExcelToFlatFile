@@ -23,7 +23,7 @@ namespace ExcelToFlatFileFramework
 {
     public class Program
     {
-        static void Main(string[] a5rgs)
+        static void Main(string[] args)
         {
             var fileName = @"C:\Documentation\AMOS\XFileConversion\Part Template - For Import.xlsx";
 
