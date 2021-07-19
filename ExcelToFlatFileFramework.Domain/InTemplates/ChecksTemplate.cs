@@ -8,7 +8,7 @@ using ExcelToFlatFileFramework.Domain.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.InTemplates
 {
-    public class ChecksTemplate
+    public class ChecksTemplate : ValidationBase
     {
         [Column("CHECK-TYPE")]
         [AmosRequired]
@@ -16,14 +16,17 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
         [Column("EFF-TITLE")]
         [AmosRequired]
         public string EFF_TITLE { get; set; }
+        [Column("AIRCRAFT")]
+        [AmosRequired]
+        public string Aircraft { get; set; }
         [Column("AIRCRAFT TAIL NUMBER")]
         public string AIRCRAFT_TAIL_NUMBER { get; set; }
         [Column("PERF-TAH")]
         [AmosRequired]
         public string PERF_TAH { get; set; }
-        [Column("PERC-TAC")]
+        [Column("PERF-TAC")]
         [AmosRequired]
-        public string PERC_TAC { get; set; }
+        public string PERF_TAC { get; set; }
         [Column("PERF-DATE")]
         [AmosRequired]
         public string PERF_DATE { get; set; }
@@ -41,7 +44,7 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
                          EFF_TITLE == other.EFF_TITLE &&
                          AIRCRAFT_TAIL_NUMBER == other.AIRCRAFT_TAIL_NUMBER &&
                          PERF_TAH == other.PERF_TAH &&
-                         PERC_TAC == other.PERC_TAC &&
+                         PERF_TAC == other.PERF_TAC &&
                          PERF_DATE == other.PERF_DATE &&
                          NEVER_PERFORMED == other.NEVER_PERFORMED;
             return equals;
@@ -51,7 +54,7 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
         {
             List<object> props = new List<object>()
             {
-                CHECK_TYPE, EFF_TITLE, AIRCRAFT_TAIL_NUMBER, PERF_TAH, PERC_TAC, PERF_DATE, NEVER_PERFORMED
+                CHECK_TYPE, EFF_TITLE, AIRCRAFT_TAIL_NUMBER, PERF_TAH, PERF_TAC, PERF_DATE, NEVER_PERFORMED
             };
             return String.Join("|", props).GetHashCode();
         }

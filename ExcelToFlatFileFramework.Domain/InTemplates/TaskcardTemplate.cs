@@ -8,7 +8,7 @@ using ExcelToFlatFileFramework.Domain.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.InTemplates
 {
-    public class TaskcardTemplate
+    public class TaskcardTemplate : ValidationBase
     {
         [Column("TASKNUMBER")]
         [AmosRequired]

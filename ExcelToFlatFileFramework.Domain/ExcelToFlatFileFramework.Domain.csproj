@@ -88,6 +88,7 @@
     <Compile Include="OutTemplates\Checks\294_XCHECKHI.cs" />
     <Compile Include="OutTemplates\Checks\295_XCHECKPE.cs" />
     <Compile Include="OutTemplates\Checks\118_XEFF.cs" />
+    <Compile Include="OutTemplates\Checks\ChecksOutTemplate.cs" />
     <Compile Include="OutTemplates\Documents\119_XEFFSER.cs" />
     <Compile Include="OutTemplates\Documents\240_XDHE.cs" />
     <Compile Include="OutTemplates\Documents\241_XDCOMPACTYPE.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="OutTemplates\Documents\262_XDEFFWS.cs" />
     <Compile Include="OutTemplates\Documents\268_XDHIST.cs" />
     <Compile Include="OutTemplates\Documents\269_XDPEND.cs" />
+    <Compile Include="OutTemplates\Documents\DocumentOutTemplate.cs" />
     <Compile Include="OutTemplates\Documents\XDSOFF.cs" />
     <Compile Include="OutTemplates\Documents\118_XEFF.cs" />
     <Compile Include="OutTemplates\OutTemplateBase.cs" />
@@ -136,6 +138,7 @@
     <Compile Include="OutTemplates\Taskcard\352_XMSTASKPENDINT.cs" />
     <Compile Include="OutTemplates\Taskcard\354_XMSTASKPRESET.cs" />
     <Compile Include="OutTemplates\Taskcard\118_XEFF.cs" />
+    <Compile Include="OutTemplates\Taskcard\TaskcardOutTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationBase.cs" />
   </ItemGroup>

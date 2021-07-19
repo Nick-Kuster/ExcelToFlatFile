@@ -8,7 +8,8 @@ using Npoi.Mapper.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.InTemplates
 {
-    public class DocumentTemplate
+    [AmosAtLeastOneRequired("DUE_HOURS", "DUE_CYCLES", "DUE_DATE")]
+    public class DocumentTemplate : ValidationBase
     {   
         [Column("DOCNO")]
         [AmosRequired]
