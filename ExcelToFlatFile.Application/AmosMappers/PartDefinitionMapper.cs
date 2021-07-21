@@ -9,22 +9,157 @@ namespace ExcelToFlatFile.Application.AmosMappers
     {
         public override PartDefinitionOutTemplate Map(List<PartTemplate> input)
         {
+            // List<_068_XPART> _068_XPART = new List<_068_XPART>();
+            // List<_072_XPARTFAENTITY> _072_XPARTFAENTITY = new List<_072_XPARTFAENTITY>();
+            // List<_075_XPARTACT> _075_XPARTACT = new List<_075_XPARTACT>();
+            // List<_076_XPARTPOS> _076_XPARTPOS = new List<_076_XPARTPOS>();
+            // List<_082_XPARTWT> _082_XPARTWT = new List<_082_XPARTWT>();
+            // List<_084_XPARTWS> _084_XPARTWS = new List<_084_XPARTWS>();
             List<_122_XROTABLE> xROTables = new List<_122_XROTABLE>();
             List<_407_XHISTORY> xHistories = new List<_407_XHISTORY>();
             
             foreach (var row in input)
             {
+                // _068_XPART.Add(GetXPART(row));
+                // _072_XPARTFAENTITY.Add(GetXPARTFAENTITY(row));
+                // _075_XPARTACT.Add(GetXPARTACT(row));
+                // _076_XPARTPOS.Add(GetXPARTPOS(row));
+                // _082_XPARTWT.Add(GetXPARTWT(row));
+                // _084_XPARTWS.Add(GetXPARTWS(row));
                 xROTables.Add(GetXROTable(row));
                 xHistories.Add(GetXHistory(row));
             }
             
             PartDefinitionOutTemplate outTemplate = new PartDefinitionOutTemplate()
             {
+                // _068_XPART = _068_XPART,
+                // _072_XPARTFAENTITY = _072_XPARTFAENTITY,
+                // _075_XPARTACT = _075_XPARTACT,
+                // _076_XPARTPOS = _076_XPARTPOS,
+                // _082_XPARTWT = _082_XPARTWT,
+                // _084_XPARTWS = _084_XPARTWS,
                 _122_XROTABLE = xROTables,
                 _407_XHISTORY = xHistories
             };
 
             return outTemplate;
+        }
+        private _068_XPART GetXPART(PartTemplate row)
+        {
+            var output = new _068_XPART
+            {
+                PARTNO = row.PART_NUMBER,
+                Description = row.DESCRIPTION,
+                ATA_CHAPTER = row.ATA,
+                MATERIAL_CLASS = row.MATERIAL_CLASS,
+                FA_AC_TYPE = "737",
+                ADDRESS = "",
+                STORETIME = "",
+                WEIGHT = "",
+                ALERT_QTY = "",
+                REORDER_LEVEL = "",
+                MAX_PURCH_QTY = "",
+                MEASURE_UNIT = row.MEASURE_UNIT,
+                TOOL = "",
+                REPAIRABLE = row.REPAIRABLE,
+                SIZE = "",
+                DOCUMENT_REF = "",
+                REMARKS = "",
+                DEFAULT_SUPPLIER = "",
+                DEFAULT_REPAIR = "",
+                MANUFACTURER = "",
+                REORDER_MODEL = "",
+                STATUS = "",
+                ATA200_CONVERT = "",
+                MAT_TYPE = row.MAT_TYPE,
+                FIXED_ASSET = "",
+                ORIGIN = "",
+                MAX_SHOP_VISIT = "",
+                SW_RESET_COND = "",
+                SPECIFICATIONS = "",
+                EXT_STATE = "",
+                SAFETY_STOCK = "",
+                PMA = "",
+                SPECIAL_MEASURE_UN = "",
+                RESOURCE_TYPE = ""
+            };
+            return output;
+        }
+        private _072_XPARTFAENTITY GetXPARTFAENTITY(PartTemplate row)
+        {
+            var output = new _072_XPARTFAENTITY
+            {
+                PARTNO = row.PART_NUMBER,
+                ENTITY = "VXP"
+            };
+            return output;
+        }
+        private _075_XPARTACT GetXPARTACT(PartTemplate row)
+        {
+            var output = new _075_XPARTACT
+            {
+                PARTNO = row.PART_NUMBER,
+                IPC_REFERENCE = "",
+                AC_TYPE = "737"
+            };
+            return output;
+        }
+        private _076_XPARTPOS GetXPARTPOS(PartTemplate row)
+        {
+            // Don't understand the "Note" on this one.
+            var output = new _076_XPARTPOS
+            {
+                PARTNO = row.PART_NUMBER,
+                AC_TYPE = "737",
+                POSITION = row.Position,
+                ATA_CHAPTER = row.ATA
+            }; 
+            return output;
+        }
+        private _082_XPARTWT GetXPARTWT(PartTemplate row)
+        {
+            var output = new _082_XPARTWT
+            {
+                PARTNO = row.PART_NUMBER,
+                REVISION = "",
+                ATA_CHAPTER = row.ATA
+            };
+            return output;
+        }
+        private _084_XPARTWS GetXPARTWS(PartTemplate row)
+        {
+            var output = new _084_XPARTWS
+            {
+                PARTNO = row.PART_NUMBER,
+                SEQ_NO = "1",
+                WS_TYPE = "",
+                HEADER = "",
+                SIGN = "",
+                CRITICAL = "",
+                DEFUEL = "",
+                DOUBLE_INSP = "",
+                EL_POWER = "",
+                EVENT_OPEN = "",
+                EWIS = "",
+                EXT_HYDR = "",
+                HYRD_OFF = "",
+                IDLE_RUN = "",
+                INSURANCE = "",
+                NDT = "",
+                POWER_RUN = "",
+                TANK_ENTRY = "",
+                TEST_FLIGHT = "",
+                TROUBLESHOOTING = "",
+                WARRANTY = "",
+                ETOPS = "",
+                AD = "",
+                PHASE = "",
+                REVISION = "",
+                REV_STATUS = "1",
+                TEXT = row.DESCRIPTION,
+                COMMENT = ""
+            }; 
+            return output;
         }
 
         private _407_XHISTORY GetXHistory(PartTemplate input)

@@ -112,7 +112,7 @@
     <Compile Include="OutTemplates\PartDefinition\084_XPARTWS.cs" />
     <Compile Include="OutTemplates\PartDefinition\122_XROTABLE.cs" />
     <Compile Include="OutTemplates\PartDefinition\407_XHISTORY.cs" />
-    <Compile Include="OutTemplates\PartDefinition\06_XPART.cs" />
+    <Compile Include="OutTemplates\PartDefinition\068_XPART.cs" />
     <Compile Include="OutTemplates\PartDefinition\PartDefinitionOutTemplate.cs" />
     <Compile Include="OutTemplates\PartReq\119_XEFFSER.cs" />
     <Compile Include="OutTemplates\PartReq\134_XPARTREQ.cs" />

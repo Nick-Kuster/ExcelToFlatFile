@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartDefinition
 {
-    public class _06_XPART
+    public class _068_XPART
     {
         public string PARTNO { get; set; } //[32][m]
         public string Description { get; set; } //[36][m]

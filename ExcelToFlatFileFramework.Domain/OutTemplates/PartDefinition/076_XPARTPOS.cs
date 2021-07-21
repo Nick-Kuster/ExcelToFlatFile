@@ -8,7 +8,6 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartDefinition
 {
     public class _076_XPARTPOS
     {
-        public string NOTE { get; set; }
         public string PARTNO { get; set; } //[32][m]
         public string AC_TYPE { get; set; } //[6][m]
         public string POSITION { get; set; } //[14][m]
