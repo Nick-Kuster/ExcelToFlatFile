@@ -79,6 +79,7 @@
         <Compile Include="Helpers\CSVHelper.cs" />
         <Compile Include="Helpers\InputValidator.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="XFileConverters\BaseTemplateConverter.cs" />
         <Compile Include="XFileConverters\CheckTemplateConverter.cs" />
         <Compile Include="XFileConverters\DocumentTemplateConverter.cs" />
         <Compile Include="XFileConverters\PartTemplateConverter.cs" />

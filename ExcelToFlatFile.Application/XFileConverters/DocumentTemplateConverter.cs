@@ -11,11 +11,11 @@ using NPOI.SS.UserModel;
 
 namespace ExcelToFlatFile.Application.XFileConverters
 {
-    public class DocumentTemplateConverter
+    public class DocumentTemplateConverter : BaseTemplateConverter
     {
         public void Convert()
         {
-            var fileName = @"C:\Documentation\AMOS\XFileConversion\Part Template - For Import.xlsx";
+            var fileName = TemplateLocation;
 
             IWorkbook workbook;
             using (FileStream file = new FileStream(fileName, FileMode.Open, FileAccess.Read))
@@ -27,15 +27,16 @@ namespace ExcelToFlatFile.Application.XFileConverters
             var importer = new Mapper(workbook);
             var items = importer.Take<DocumentTemplate>();
             List<DocumentTemplate> templateRows = items.Select(x => x.Value).Distinct().ToList();
-            validator.ValidateInput(templateRows, @"C:\Documentation\AMOS\XFileConversion\Output\Errors\DocumentTemplateErrors.csv");
+            validator.ValidateInput(templateRows, $@"{ErrorOutputDirectory}\DocumentTemplateErrors.csv");
             
             ConvertOutTemplateToStringHelper outputTemplateStringHelper = new ConvertOutTemplateToStringHelper();
 
             DocumentMapper documentMapper = new DocumentMapper();
             _DOCUMENT_OUT_TEMPLATE documentOut = documentMapper.Map(templateRows);
             
-            File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Documents\268_XDHISTS.txt",  outputTemplateStringHelper.ConvertToString(documentOut._268_XDHISTS));
-            File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Documents\269_XDPENDS.txt",  outputTemplateStringHelper.ConvertToString(documentOut._269_XDPENDS));
+            Directory.CreateDirectory($@"{XFileOutputDirectory}\Documents");
+            File.WriteAllText($@"{XFileOutputDirectory}\Documents\268_XDHISTS.txt",  outputTemplateStringHelper.ConvertToString(documentOut._268_XDHISTS));
+            File.WriteAllText($@"{XFileOutputDirectory}\Documents\269_XDPENDS.txt",  outputTemplateStringHelper.ConvertToString(documentOut._269_XDPENDS));
         }
     }
 }

@@ -11,11 +11,11 @@ using NPOI.SS.UserModel;
 
 namespace ExcelToFlatFile.Application.XFileConverters
 {
-    public class PartTemplateConverter 
+    public class PartTemplateConverter : BaseTemplateConverter
     {
         public void Convert()
         {
-            var fileName = @"C:\Documentation\AMOS\XFileConversion\Part Template - For Import.xlsx";
+            var fileName = TemplateLocation;
 
             IWorkbook workbook;
             using (FileStream file = new FileStream(fileName, FileMode.Open, FileAccess.Read))
@@ -27,19 +27,21 @@ namespace ExcelToFlatFile.Application.XFileConverters
             var importer = new Mapper(workbook);
             var items = importer.Take<PartTemplate>();
             List<PartTemplate> templateRows = items.Select(x => x.Value).Distinct().ToList();
-            validator.ValidateInput(templateRows, @"C:\Documentation\AMOS\XFileConversion\Output\Errors\PartTemplateErrors.csv");
+            validator.ValidateInput(templateRows, $@"{ErrorOutputDirectory}\PartTemplateErrors.csv");
             
             ConvertOutTemplateToStringHelper outputTemplateStringHelper = new ConvertOutTemplateToStringHelper();
 
             PartDefinitionMapper partDefinitionMapper = new PartDefinitionMapper();
             _PART_DEFINITION_OUT_TEMPLATE partDefinitionOut = partDefinitionMapper.Map(templateRows);
-            File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Part Definition\122_XROTABLE.txt",  outputTemplateStringHelper.ConvertToString(partDefinitionOut._122_XROTABLE));
-            File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Part Definition\407_XHISTORY.txt", outputTemplateStringHelper.ConvertToString(partDefinitionOut._407_XHISTORY));
+            Directory.CreateDirectory($@"{XFileOutputDirectory}\Part Definition");
+            File.WriteAllText($@"{XFileOutputDirectory}\Part Definition\122_XROTABLE.txt",  outputTemplateStringHelper.ConvertToString(partDefinitionOut._122_XROTABLE));
+            File.WriteAllText($@"{XFileOutputDirectory}\Part Definition\407_XHISTORY.txt", outputTemplateStringHelper.ConvertToString(partDefinitionOut._407_XHISTORY));
             
             PartReqMapper partReqMapper = new PartReqMapper();
             _PART_REQ_OUT_TEMPLATE partReqOut = partReqMapper.Map(templateRows);
-            File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Part Req\_148_XPARTREQHI.txt", outputTemplateStringHelper.ConvertToString(partReqOut._148_XPARTREQHI));
-            File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Part Req\_149_XPARTREQPE.txt", outputTemplateStringHelper.ConvertToString(partReqOut._149_XPARTREQPE));
+            Directory.CreateDirectory($@"{XFileOutputDirectory}\Part Req");
+            File.WriteAllText($@"{XFileOutputDirectory}\Part Req\_148_XPARTREQHI.txt", outputTemplateStringHelper.ConvertToString(partReqOut._148_XPARTREQHI));
+            File.WriteAllText($@"{XFileOutputDirectory}\Part Req\_149_XPARTREQPE.txt", outputTemplateStringHelper.ConvertToString(partReqOut._149_XPARTREQPE));
         }
     }
 }

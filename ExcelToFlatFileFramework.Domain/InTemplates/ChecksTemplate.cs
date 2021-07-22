@@ -1,37 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Npoi.Mapper.Attributes;
 using ExcelToFlatFileFramework.Domain.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.InTemplates
 {
     public class ChecksTemplate : ValidationBase
     {
+        [AmosRequired]
         [Column("CHECK-TYPE")]
-        [AmosRequired]
         public string CHECK_TYPE { get; set; }
+        [AmosRequired]
         [Column("EFF-TITLE")]
-        [AmosRequired]
         public string EFF_TITLE { get; set; }
-        [Column("AIRCRAFT")]
         [AmosRequired]
+        [Column("AIRCRAFT")]
         public string Aircraft { get; set; }
         [Column("AIRCRAFT TAIL NUMBER")]
         public string AIRCRAFT_TAIL_NUMBER { get; set; }
+        [AmosRequired]
         [Column("PERF-TAH")]
-        [AmosRequired]
         public string PERF_TAH { get; set; }
+        [AmosRequired]
         [Column("PERF-TAC")]
-        [AmosRequired]
         public string PERF_TAC { get; set; }
+        [AmosRequired]
         [Column("PERF-DATE")]
-        [AmosRequired]
         public string PERF_DATE { get; set; }
-        [Column("NEVER-PERFORMED")]
         [AmosRequired]
+        [Column("NEVER-PERFORMED")]
         public string NEVER_PERFORMED { get; set; }
     
         public override bool Equals(object obj)

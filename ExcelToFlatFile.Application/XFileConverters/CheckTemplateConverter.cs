@@ -11,11 +11,11 @@ using NPOI.SS.UserModel;
 
 namespace ExcelToFlatFile.Application.XFileConverters
 {
-    public class CheckTemplateConverter
+    public class CheckTemplateConverter : BaseTemplateConverter
     {
         public void Convert()
         {
-            var fileName = @"C:\Documentation\AMOS\XFileConversion\Part Template - For Import.xlsx";
+            var fileName = TemplateLocation;
 
             IWorkbook workbook;
             using (FileStream file = new FileStream(fileName, FileMode.Open, FileAccess.Read))
@@ -27,14 +27,14 @@ namespace ExcelToFlatFile.Application.XFileConverters
             var importer = new Mapper(workbook);
             var items = importer.Take<ChecksTemplate>();
             List<ChecksTemplate> templateRows = items.Select(x => x.Value).Distinct().ToList();
-            validator.ValidateInput(templateRows, @"C:\Documentation\AMOS\XFileConversion\Output\Errors\ChecksTemplateErrors.csv");
+            validator.ValidateInput(templateRows, $@"{ErrorOutputDirectory}\\ChecksTemplateErrors.csv");
             
             ConvertOutTemplateToStringHelper outputTemplateStringHelper = new ConvertOutTemplateToStringHelper();
 
             CheckMapper checkMapper = new CheckMapper();
             _CHECKS_OUT_TEMPLATE checkOut = checkMapper.Map(templateRows);
-            
-            File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Checks\294_XCHECKHI.txt",  outputTemplateStringHelper.ConvertToString(checkOut._294_XCHECKHI));
+            Directory.CreateDirectory($@"{XFileOutputDirectory}\Checks");
+            File.WriteAllText($@"{XFileOutputDirectory}\Checks\294_XCHECKHI.txt",  outputTemplateStringHelper.ConvertToString(checkOut._294_XCHECKHI));
         }
     }
 }
