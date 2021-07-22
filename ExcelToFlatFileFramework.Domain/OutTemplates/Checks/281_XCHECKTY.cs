@@ -10,21 +10,21 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Checks
     public class _281_XCHECKTY
     {
         [AmosOutputLength(20)]
-        public string CHECK_TYPE { get; set; }
+        public string CheckType { get; set; }
         [AmosOutputLength(36)]
-        public string DESCRIPTION { get; set; }
+        public string Description { get; set; }
         [AmosOutputLength(4)]
-        public string DEFAULT_STATION { get; set; }
+        public string DefaultStation { get; set; }
         [AmosOutputLength(2)]
-        public string NBR_OF_INTERNAL_CHECKS { get; set; }
+        public string NbrOfInternalChecks { get; set; }
         [AmosOutputLength(1)]
-        public string HAS_LIMIT { get; set; }
+        public string HasLimit { get; set; }
         [AmosOutputLength(1)]
-        public string LETTERCHECK { get; set; }
+        public string LetterCheck { get; set; }
         [AmosOutputLength(4)]
-        public string COMPLIANCE { get; set; }
+        public string Compliance { get; set; }
         [AmosOutputLength(1)]
-        public string CATEGORY { get; set; }
+        public string Category { get; set; }
 
     }
 }

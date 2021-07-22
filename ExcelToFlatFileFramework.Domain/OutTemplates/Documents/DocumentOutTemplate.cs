@@ -2,7 +2,7 @@
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
 {
-    public class DocumentOutTemplate
+    public class _DOCUMENT_OUT_TEMPLATE
     {
         public List<_118_XEFF> _118_XEFF { get; set; }
         public List<_119_XEFFSER> _119_XEFFSER { get; set; }
@@ -17,6 +17,6 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
         public List<_262_XDEFFWS> _262_XDEFFWS { get; set; }
         public List<_268_XDHIST> _268_XDHISTS { get; set; }
         public List<_269_XDPEND> _269_XDPENDS { get; set; }
-        public List<XDSOFF> XDSOFF { get; set; }
+        public List<_XDSOFF> Xdsoff { get; set; }
     }
 }

@@ -10,22 +10,22 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Checks
     public class _285_XCHECKEFFWT
     {
         [AmosOutputLength(20)]
-        public string CHECK_TYPE { get; set; }
+        public string CheckType { get; set; }
         [AmosOutputLength(22)]
-        public string INTERNAL_CHECK { get; set; }
+        public string InternalCheck { get; set; }
         [AmosOutputLength(70)]
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(4)]
-        public string REVISION { get; set; }
+        public string Revision { get; set; }
         [AmosOutputLength(12)]
-        public string ATA_CHAPTER { get; set; }
+        public string AtaChapter { get; set; }
         [AmosOutputLength(1)]
-        public string EVENT_CLASS { get; set; }
+        public string EventClass { get; set; }
         [AmosOutputLength(1)]
-        public string DEFECT_CLASS { get; set; }
+        public string DefectClass { get; set; }
         [AmosOutputLength(4)]
-        public string PRIO { get; set; }
+        public string Prio { get; set; }
         [AmosOutputLength(14)]
-        public string PROJECTNO { get; set; }
+        public string ProjectNo { get; set; }
     }
 }

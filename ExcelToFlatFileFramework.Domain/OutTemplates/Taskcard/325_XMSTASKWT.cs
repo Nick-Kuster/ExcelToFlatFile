@@ -5,28 +5,28 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Taskcard
     public class _325_XMSTASKWT
     {
         [AmosOutputLength(25)]        
-        public string MS_NAME { get; set; }
+        public string MsName { get; set; }
         [AmosOutputLength(8)]        
-        public string MS_ISSUE { get; set; }
+        public string MsIssue { get; set; }
         [AmosOutputLength(8)]        
-        public string MS_REVISION { get; set; }
+        public string MsRevision { get; set; }
         [AmosOutputLength(38)]        
-        public string TASKNUMBER { get; set; }
+        public string TaskNumber { get; set; }
         [AmosOutputLength(1)]        
-        public string OP_TASK { get; set; }
+        public string OpTask { get; set; }
         [AmosOutputLength(8)]        
-        public string TASK_REVISION { get; set; }
+        public string TaskRevision { get; set; }
         [AmosOutputLength(4)]        
-        public string REVISION { get; set; }
+        public string Revision { get; set; }
         [AmosOutputLength(12)]        
-        public string ATA_CHAPTER { get; set; }
+        public string AtaChapter { get; set; }
         [AmosOutputLength(1)]        
-        public string EVENT_CLASS { get; set; }
+        public string EventClass { get; set; }
         [AmosOutputLength(1)]        
-        public string DEFECT_CLASS { get; set; }
+        public string DefectClass { get; set; }
         [AmosOutputLength(4)]        
-        public string PRIO { get; set; }
+        public string Prio { get; set; }
         [AmosOutputLength(14)]        
-        public string PROJECTNO { get; set; }
+        public string ProjectNo { get; set; }
     }
 }

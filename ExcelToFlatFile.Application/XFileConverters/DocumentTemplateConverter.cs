@@ -32,7 +32,7 @@ namespace ExcelToFlatFile.Application.XFileConverters
             ConvertOutTemplateToStringHelper outputTemplateStringHelper = new ConvertOutTemplateToStringHelper();
 
             DocumentMapper documentMapper = new DocumentMapper();
-            DocumentOutTemplate documentOut = documentMapper.Map(templateRows);
+            _DOCUMENT_OUT_TEMPLATE documentOut = documentMapper.Map(templateRows);
             
             File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Documents\268_XDHISTS.txt",  outputTemplateStringHelper.ConvertToString(documentOut._268_XDHISTS));
             File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Documents\269_XDPENDS.txt",  outputTemplateStringHelper.ConvertToString(documentOut._269_XDPENDS));

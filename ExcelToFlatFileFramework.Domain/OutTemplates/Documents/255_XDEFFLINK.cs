@@ -10,20 +10,20 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
     public class _255_XDEFFLINK
     {
         [AmosOutputLength(25)]        
-        public string DOCNO { get; set; }
+        public string DocNo { get; set; }
         [AmosOutputLength(6)]        
-        public string DOC_TYPE { get; set; }
+        public string DocType { get; set; }
         [AmosOutputLength(4)]        
-        public string REVISION { get; set; }
+        public string Revision { get; set; }
         [AmosOutputLength(12)]        
-        public string ISSUED_BY { get; set; }
+        public string IssuedBy { get; set; }
         [AmosOutputLength(70)]        
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(1)]        
-        public string AUTO_STATUS { get; set; }
+        public string AutoStatus { get; set; }
         [AmosOutputLength(1)]        
-        public string NEXT_SHOPVIS { get; set; }
+        public string NextShopVis { get; set; }
         [AmosOutputLength(1)]        
-        public string PRINT_REL0CERT { get; set; }
+        public string PrintRel0Cert { get; set; }
     }
 }

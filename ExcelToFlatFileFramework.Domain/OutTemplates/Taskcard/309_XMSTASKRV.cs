@@ -5,60 +5,60 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Taskcard
     public class _309_XMSTASKRV
     {
         [AmosOutputLength(25)]        
-        public string MS_NAME { get; set; }
+        public string MsName { get; set; }
         [AmosOutputLength(8)]        
-        public string MS_ISSUE { get; set; }
+        public string MsIssue { get; set; }
         [AmosOutputLength(8)]        
-        public string MS_REVISION { get; set; }
+        public string MsRevision { get; set; }
         [AmosOutputLength(38)]        
-        public string TASKNUMBER { get; set; }
+        public string TaskNumber { get; set; }
         [AmosOutputLength(1)]        
-        public string OP_TASK { get; set; }
+        public string OpTask { get; set; }
         [AmosOutputLength(250)]        
-        public string TITLE { get; set; }
+        public string Title { get; set; }
         [AmosOutputLength(8)]        
-        public string TASK_REVISION { get; set; }
+        public string TaskRevision { get; set; }
         [AmosOutputLength(10)]        
-        public string TASK_REVISION_DATE { get; set; }
+        public string TaskRevisionDate { get; set; }
         [AmosOutputLength(255)]        
-        public string TASK_REVISION_REASON { get; set; }
+        public string TaskRevisionReason { get; set; }
         [AmosOutputLength(10)]        
-        public string RELEASE_DATE { get; set; }
+        public string ReleaseDate { get; set; }
         [AmosOutputLength(4)]        
-        public string COMPLIANCE { get; set; }
+        public string Compliance { get; set; }
         [AmosOutputLength(1)]        
-        public string STATUS { get; set; }
+        public string Status { get; set; }
         [AmosOutputLength(1)]        
-        public string TASK_TYPE { get; set; }
+        public string TaskType { get; set; }
         [AmosOutputLength(1)]        
-        public string INTERVAL_TYPE { get; set; }
+        public string IntervalType { get; set; }
         [AmosOutputLength(6)]        
-        public string MAXRECURRENCE { get; set; }
+        public string MaxRecurrence { get; set; }
         [AmosOutputLength(1)]        
-        public string NOT { get; set; } //APPLICABLE
+        public string NotApplicable { get; set; } 
         [AmosOutputLength(8)]        
-        public string MRB_REVISION { get; set; }
+        public string MrbRevision { get; set; }
         [AmosOutputLength(10)]        
-        public string MRB_REVISION_DATE { get; set; }
+        public string MrbRevisionDate { get; set; }
         [AmosOutputLength(255)]        
-        public string MRB_REVISION_REASON { get; set; }
+        public string MrbRevisionReason { get; set; }
         [AmosOutputLength(6)]        
-        public string EST_MH_MRB { get; set; }
+        public string EstMhMrb { get; set; }
         [AmosOutputLength(1)]        
-        public string REQ_MAND_REP { get; set; }
+        public string ReqMandRep { get; set; }
         [AmosOutputLength(2)]        
-        public string CRX_REV_FLAG { get; set; }
+        public string CrxRevFlag { get; set; }
         [AmosOutputLength(10)]        
-        public string CP_SEQ { get; set; }
+        public string CpSeq { get; set; }
         [AmosOutputLength(1)]        
-        public string STATE { get; set; }
+        public string State { get; set; }
         [AmosOutputLength(500)]        
-        public string EFF_NOTES { get; set; }
+        public string EffNotes { get; set; }
         [AmosOutputLength(1000)]        
-        public string NOTES { get; set; }
+        public string Notes { get; set; }
         [AmosOutputLength(1500)]        
-        public string MRB_TEXT { get; set; }
+        public string MrbText { get; set; }
         [AmosOutputLength(3000)]        
-        public string REMARKS { get; set; }
+        public string Remarks { get; set; }
     }
 }

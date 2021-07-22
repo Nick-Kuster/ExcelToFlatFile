@@ -5,12 +5,12 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartDefinition
     public class _076_XPARTPOS
     {
         [AmosOutputLength(32)]        
-        public string PARTNO { get; set; }
+        public string PartNo { get; set; }
         [AmosOutputLength(6)]        
-        public string AC_TYPE { get; set; }
+        public string AcType { get; set; }
         [AmosOutputLength(14)]        
-        public string POSITION { get; set; }
+        public string Position { get; set; }
         [AmosOutputLength(12)]        
-        public string ATA_CHAPTER { get; set; }
+        public string AtaChapter { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.Checks
 {
-    public class ChecksOutTemplate
+    public class _CHECKS_OUT_TEMPLATE
     {
         public List<_294_XCHECKHI> _294_XCHECKHI { get; set; }
         public List<_118_XEFF> _118_XEFF { get; set; }

@@ -10,40 +10,40 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Checks
     public class _294_XCHECKHI
     {
         [AmosOutputLength(20)]
-        public string CHECK_TYPE { get; set; }
+        public string CheckType { get; set; }
         [AmosOutputLength(22)]
-        public string INTERNAL_CHECK { get; set; }
+        public string InternalCheck { get; set; }
         [AmosOutputLength(70)]
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(6)]
-        public string AIRCRAFT { get; set; }
+        public string Aircraft { get; set; }
         [AmosOutputLength(10)]
-        public string PERF_TAH { get; set; }
+        public string PerfTah { get; set; }
         [AmosOutputLength(6)]
-        public string PERF_TAC { get; set; }
+        public string PerfTac { get; set; }
         [AmosOutputLength(10)]
-        public string PERF_DATE { get; set; }
+        public string PerfDate { get; set; }
         [AmosOutputLength(2)]
-        public string CONTROL_DIM_1 { get; set; }
+        public string ControlDim1 { get; set; }
         [AmosOutputLength(10)]
-        public string DUE_AMOUNT_1 { get; set; }
+        public string DueAmount1 { get; set; }
         [AmosOutputLength(10)]
-        public string PERF_AMOUNT_1 { get; set; }
+        public string PerfAmount1 { get; set; }
         [AmosOutputLength(2)]
-        public string CONTROL_DIM_2 { get; set; }
+        public string ControlDim2 { get; set; }
         [AmosOutputLength(10)]
-        public string DUE_AMOUNT_2 { get; set; }
+        public string DueAmount2 { get; set; }
         [AmosOutputLength(10)]
-        public string PERF_AMOUNT_2 { get; set; }
+        public string PerfAmount2 { get; set; }
         [AmosOutputLength(2)]
-        public string CONTROL_DIM_3 { get; set; }
+        public string ControlDim3 { get; set; }
         [AmosOutputLength(10)]
-        public string DUE_AMOUNT_3 { get; set; }
+        public string DueAmount3 { get; set; }
         [AmosOutputLength(10)]
-        public string PERF_AMOUNT_3 { get; set; }
+        public string PerfAmount3 { get; set; }
         [AmosOutputLength(20)]
-        public string PERF_CUSTOMER_WO { get; set; }
+        public string PerfCustomerWo { get; set; }
         [AmosOutputLength(36)]
-        public string EVENT_IDENTIFIER { get; set; }
+        public string EventIdentifier { get; set; }
     }
 }

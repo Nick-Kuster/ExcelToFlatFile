@@ -10,16 +10,16 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
     public class _119_XEFFSER
     {
         [AmosOutputLength(70)]        
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(1)]        
-        public string RANGE_TYPE { get; set; }
+        public string RangeType { get; set; }
         [AmosOutputLength(20)]        
-        public string SERIALNO_FROM { get; set; }
+        public string SerialNoFrom { get; set; }
         [AmosOutputLength(20)]        
-        public string SERIALNO_TO { get; set; }
+        public string SerialNoTo { get; set; }
         [AmosOutputLength(1)]        
-        public string INCL_EXCL { get; set; }
+        public string InclExcl { get; set; }
         [AmosOutputLength(1)]        
-        public string SER_SHIFT { get; set; }
+        public string SerShift { get; set; }
     }
 }

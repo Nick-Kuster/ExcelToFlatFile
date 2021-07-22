@@ -5,60 +5,60 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
     public class _268_XDHIST
     {
         [AmosOutputLength(25)]        
-        public string DOCNO { get; set; }
+        public string DocNo { get; set; }
         [AmosOutputLength(6)]        
-        public string DOC_TYPE { get; set; }
+        public string DocType { get; set; }
         [AmosOutputLength(4)]        
-        public string REVISION { get; set; }
+        public string Revision { get; set; }
         [AmosOutputLength(12)]        
-        public string ISSUED_BY { get; set; }
+        public string IssuedBy { get; set; }
         [AmosOutputLength(70)]        
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(6)]        
-        public string AC_REGISTR { get; set; }
+        public string AcRegistr { get; set; }
         [AmosOutputLength(32)]        
-        public string PARTNO { get; set; }
+        public string PartNo { get; set; }
         [AmosOutputLength(20)]        
-        public string SERIALNUMBER { get; set; }
+        public string SerialNumber { get; set; }
         [AmosOutputLength(10)]        
-        public string PERF_HOURS { get; set; }
+        public string PerfHours { get; set; }
         [AmosOutputLength(6)]        
-        public string PERF_CYCLES { get; set; }
+        public string PerfCycles { get; set; }
         [AmosOutputLength(10)]        
-        public string PERF_DATE { get; set; }
+        public string PerfDate { get; set; }
         [AmosOutputLength(2)]        
-        public string DIM_1 { get; set; }
+        public string Dim1 { get; set; }
         [AmosOutputLength(10)]        
-        public string DUE_AMOUNT_1 { get; set; }
+        public string DueAmount1 { get; set; }
         [AmosOutputLength(10)]        
-        public string PERF_AMOUNT_1 { get; set; }
+        public string PerfAmount1 { get; set; }
         [AmosOutputLength(2)]        
-        public string DIM_2 { get; set; }
+        public string Dim2 { get; set; }
         [AmosOutputLength(10)]        
-        public string DUE_AMOUNT_2 { get; set; }
+        public string DueAmount2 { get; set; }
         [AmosOutputLength(10)]        
-        public string PERF_AMOUNT_2 { get; set; }
+        public string PerfAmount2 { get; set; }
         [AmosOutputLength(2)]        
-        public string DIM_3 { get; set; }
+        public string Dim3 { get; set; }
         [AmosOutputLength(10)]        
-        public string DUE_AMOUNT_3 { get; set; }
+        public string DueAmount3 { get; set; }
         [AmosOutputLength(10)]        
-        public string PERF_AMOUNT_3 { get; set; }
+        public string PerfAmount3 { get; set; }
         [AmosOutputLength(1)]        
-        public string PERF_STATUS { get; set; }
+        public string PerfStatus { get; set; }
         [AmosOutputLength(1)]        
-        public string PARTLY_PERF { get; set; }
+        public string PartlyPerf { get; set; }
         [AmosOutputLength(25)]        
-        public string PERF_REFDOC { get; set; }
+        public string PerfRefDoc { get; set; }
         [AmosOutputLength(20)]        
-        public string PERF_CUSTOMER_WO { get; set; }
+        public string PerfCustomerWo { get; set; }
         [AmosOutputLength(15)]        
-        public string UNIQUE_ROT_ID { get; set; }
+        public string UniqueRotId { get; set; }
         [AmosOutputLength(1)]        
-        public string IS_LAST_HISTORY { get; set; }
+        public string IsLastHistory { get; set; }
         [AmosOutputLength(36)]        
-        public string EVENT_IDENTIFIER { get; set; }
+        public string EventIdentifier { get; set; }
         [AmosOutputLength(2500)]        
-        public string PERF_TEXT { get; set; }
+        public string PerfText { get; set; }
     }
 }

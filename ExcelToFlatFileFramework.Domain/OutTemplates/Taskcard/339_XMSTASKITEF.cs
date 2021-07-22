@@ -5,18 +5,18 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Taskcard
     public class _339_XMSTASKITEF
     {
         [AmosOutputLength(25)]        
-        public string MS_NAME { get; set; }
+        public string MsName { get; set; }
         [AmosOutputLength(8)]        
-        public string MS_ISSUE { get; set; }
+        public string MsIssue { get; set; }
         [AmosOutputLength(8)]        
-        public string MS_REVISION { get; set; }
+        public string MsRevision { get; set; }
         [AmosOutputLength(38)]        
-        public string TASKNUMBER { get; set; }
+        public string TaskNumber { get; set; }
         [AmosOutputLength(1)]        
-        public string OP_TASK { get; set; }
+        public string OpTask { get; set; }
         [AmosOutputLength(8)]        
-        public string TASK_REVISION { get; set; }
+        public string TaskRevision { get; set; }
         [AmosOutputLength(70)]        
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
     }
 }

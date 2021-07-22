@@ -5,10 +5,10 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartDefinition
     public class _075_XPARTACT
     {
         [AmosOutputLength(32)]      
-        public string PARTNO { get; set; }
+        public string PartNo { get; set; }
         [AmosOutputLength(80)]        
-        public string IPC_REFERENCE { get; set; }
+        public string IpcReference { get; set; }
         [AmosOutputLength(6)]        
-        public string AC_TYPE { get; set; }
+        public string AcType { get; set; }
     }
 }

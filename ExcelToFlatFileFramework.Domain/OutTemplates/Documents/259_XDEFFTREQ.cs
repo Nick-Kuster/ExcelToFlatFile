@@ -10,39 +10,39 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
     public class _259_XDEFFTREQ
     {
         [AmosOutputLength(25)]        
-        public string DOCNO { get; set; }
+        public string DocNo { get; set; }
         [AmosOutputLength(6)]        
-        public string DOC_TYPE { get; set; }
+        public string DocType { get; set; }
         [AmosOutputLength(4)]        
-        public string REVISION { get; set; }
+        public string Revision { get; set; }
         [AmosOutputLength(12)]        
-        public string ISSUED_BY { get; set; }
+        public string IssuedBy { get; set; }
         [AmosOutputLength(70)]        
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(1)]        
-        public string DIM_TYPE { get; set; }
+        public string DimType { get; set; }
         [AmosOutputLength(1)]        
-        public string THR_BASE { get; set; }
+        public string ThrBase { get; set; }
         [AmosOutputLength(1)]        
-        public string FL { get; set; }
+        public string Fl { get; set; }
         [AmosOutputLength(20)]        
-        public string DIM_GROUP { get; set; }
+        public string DimGroup { get; set; }
         [AmosOutputLength(2)]        
-        public string DIM { get; set; }
+        public string Dim { get; set; }
         [AmosOutputLength(10)]        
-        public string AMOUNT { get; set; }
+        public string Amount { get; set; }
         [AmosOutputLength(2)]        
-        public string THR_BASE_DIM { get; set; }
+        public string ThrBaseDim { get; set; }
         [AmosOutputLength(10)]        
-        public string THR_BASE_AMOUNT { get; set; }
+        public string ThrBaseAmount { get; set; }
         [AmosOutputLength(1)]        
-        public string UNLIMITED { get; set; }
+        public string Unlimited { get; set; }
         [AmosOutputLength(1)]        
-        public string TERMINATING { get; set; }
+        public string Terminating { get; set; }
         [AmosOutputLength(4)]        
-        public string CALC_STRAT { get; set; }
+        public string CalcStrat { get; set; }
         [AmosOutputLength(1)]        
-        public string AUTO_REP_BACK { get; set; }
+        public string AutoRepBack { get; set; }
 
     }
 }

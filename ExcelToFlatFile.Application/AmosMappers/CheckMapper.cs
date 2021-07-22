@@ -4,9 +4,9 @@ using ExcelToFlatFileFramework.Domain.OutTemplates.Checks;
 
 namespace ExcelToFlatFile.Application.AmosMappers
 {
-    public class CheckMapper : BaseMapper<ChecksTemplate, ChecksOutTemplate>
+    public class CheckMapper : BaseMapper<ChecksTemplate, _CHECKS_OUT_TEMPLATE>
     {
-        public override ChecksOutTemplate Map(List<ChecksTemplate> input)
+        public override _CHECKS_OUT_TEMPLATE Map(List<ChecksTemplate> input)
         {
             List<_294_XCHECKHI> xCheckHis = new List<_294_XCHECKHI>();
             // List<_118_XEFF> _118_XEFF = new List<_118_XEFF>();
@@ -31,7 +31,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 // _295_XCHECKPE.Add(GetXCheckPE(row));
             }
 
-            ChecksOutTemplate outTemplate = new ChecksOutTemplate()
+            _CHECKS_OUT_TEMPLATE outTemplate = new _CHECKS_OUT_TEMPLATE()
             {
                 _294_XCHECKHI = xCheckHis,
                 // _118_XEFF = _118_XEFF,
@@ -50,17 +50,17 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _118_XEFF
             {
-                EFF_TITLE = row.EFF_TITLE,
-                EFF_TITLE_PAR = "",
-                EFF_TITLE_HIGH = "", // ?
-                AC_TYPE = "", // ?
-                AC_MODEL = "", // ?
-                AC_SUB = null, // ?
-                EFF_AC_TYPE = "",
-                PARTNO = "",
-                SER_TYPE = "", // ?
-                CHANGEABLE = "", // ?
-                DESCRIPTION = ""
+                EffTitle = row.EFF_TITLE,
+                EffTitlePar = "",
+                EffTitleHigh = "", // ?
+                AcType = "", // ?
+                AcModel = "", // ?
+                AcSub = null, // ?
+                EffAcType = "",
+                PartNo = "",
+                SerType = "", // ?
+                Changeable = "", // ?
+                Description = ""
             };
 
             return output;
@@ -69,12 +69,12 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _119_XEFFSER
             {
-                EFF_TITLE = row.EFF_TITLE,
-                RANGE_TYPE = "", // ?
-                SERIALNO_FROM = "", // ?
-                SERIALNO_TO = "", // ?
-                INCL_EXCL = "", // ?
-                SER_SHIFT = "" 
+                EffTitle = row.EFF_TITLE,
+                RangeType = "", // ?
+                SerialNoFrom = "", // ?
+                SerialNoTo = "", // ?
+                InclExcl = "", // ?
+                SerShift = "" 
             };
 
             return output;
@@ -83,14 +83,14 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _281_XCHECKTY
             {
-                CHECK_TYPE = row.CHECK_TYPE,
-                DESCRIPTION = "", // ?
-                DEFAULT_STATION = "",
-                NBR_OF_INTERNAL_CHECKS = "", // ?
-                HAS_LIMIT = "", // ?
-                LETTERCHECK = "", // ?
-                COMPLIANCE = "", // ?
-                CATEGORY = ""
+                CheckType = row.CHECK_TYPE,
+                Description = "", // ?
+                DefaultStation = "",
+                NbrOfInternalChecks = "", // ?
+                HasLimit = "", // ?
+                LetterCheck = "", // ?
+                Compliance = "", // ?
+                Category = ""
             };
             return output;
         }
@@ -98,8 +98,8 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _282_XCHECKEFFLINK
             {
-                CHECK_TYPE = row.CHECK_TYPE,
-                EFF_TITLE = row.EFF_TITLE
+                CheckType = row.CHECK_TYPE,
+                EffTitle = row.EFF_TITLE
             };
 
             return output;
@@ -108,20 +108,20 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _284_XCHECKEFFTREQ
             {
-                CHECK_TYPE = row.CHECK_TYPE,
-                INTERNAL_CHECK = "", // ?
-                EFF_TITLE = row.EFF_TITLE,
-                DIM_TYPE = "", // ?
-                FL = "", // ?
-                DIM = "", // ?
-                AMOUNT = "", // ?
-                THR_BASE = "",
-                THR_BASE_DIM = "",
-                THR_BASE_AMOUNT = "",
-                UNLIMITED = "", // ?
-                TERMINATING = "", // ?
-                CALC_STRAT = "", // ?
-                AUTO_REP_BACK = ""
+                CheckType = row.CHECK_TYPE,
+                InternalCheck = "", // ?
+                EffTitle = row.EFF_TITLE,
+                DimType = "", // ?
+                Fl = "", // ?
+                Dim = "", // ?
+                Amount = "", // ?
+                ThrBase = "",
+                ThrBaseDim = "",
+                ThrBaseAmount = "",
+                Unlimited = "", // ?
+                Terminating = "", // ?
+                CalcStrat = "", // ?
+                AutoRepBack = ""
             };
 
             return output;
@@ -130,15 +130,15 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _285_XCHECKEFFWT
             {
-                CHECK_TYPE = row.CHECK_TYPE,
-                INTERNAL_CHECK = row.CHECK_TYPE,
-                EFF_TITLE = row.EFF_TITLE,
-                REVISION = "", // ?
-                ATA_CHAPTER = "", // ?
-                EVENT_CLASS = "",
-                DEFECT_CLASS = "",
-                PRIO = "",
-                PROJECTNO = ""
+                CheckType = row.CHECK_TYPE,
+                InternalCheck = row.CHECK_TYPE,
+                EffTitle = row.EFF_TITLE,
+                Revision = "", // ?
+                AtaChapter = "", // ?
+                EventClass = "",
+                DefectClass = "",
+                Prio = "",
+                ProjectNo = ""
             };
 
             return output;
@@ -147,36 +147,36 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _287_XCHECKEFFWS
             {
-                CHECK_TYPE = row.CHECK_TYPE,
-                INTERNAL_CHECK = row.CHECK_TYPE,
-                EFF_TITLE = row.EFF_TITLE,
-                SEQ_NO = "", // ?
-                WS_TYPE = "",
-                HEADER = "",
-                SIGN = "",
-                CRITICAL = "",
-                DEFUEL = "",
-                DOUBLE_INSP = "",
-                EL_POWER = "",
-                EVENT_OPEN = "",
-                EWIS = "",
-                EXT_HYDR = "",
-                HYDR_OFF = "",
-                IDLE_RUN = "",
-                INSURANCE = "",
-                NDT = "",
-                POWER_RUN = "",
-                TANK_ENTRY = "",
-                TEST_FLIGHT = "",
-                TROUBLESHOOTING = "",
-                WARRANTY = "",
-                ETOPS = "",
-                AD = "",
-                PHASE = "",
-                REVISION = "",
-                REV_STATUS = "", // ?
-                TEXT = "", // ?
-                COMMENT = ""
+                CheckType = row.CHECK_TYPE,
+                InternalCheck = row.CHECK_TYPE,
+                EffTitle = row.EFF_TITLE,
+                SeqNo = "", // ?
+                WsType = "",
+                Header = "",
+                Sign = "",
+                Critical = "",
+                Defuel = "",
+                DoubleInsp = "",
+                ElPower = "",
+                EventOpen = "",
+                Ewis = "",
+                ExtHydr = "",
+                HydrOff = "",
+                IdleRun = "",
+                Insurance = "",
+                Ndt = "",
+                PowerRun = "",
+                TankEntry = "",
+                TestFlight = "",
+                Troubleshooting = "",
+                Warranty = "",
+                Etops = "",
+                Ad = "",
+                Phase = "",
+                Revision = "",
+                RevStatus = "", // ?
+                Text = "", // ?
+                Comment = ""
             };
 
             return output;
@@ -185,24 +185,24 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _294_XCHECKHI()
             {
-                CHECK_TYPE = row.CHECK_TYPE,
-                INTERNAL_CHECK = row.CHECK_TYPE,
-                EFF_TITLE = row.EFF_TITLE,
-                AIRCRAFT = row.Aircraft,
-                PERF_TAH = row.PERF_TAH,
-                PERF_TAC = row.PERF_TAC,
-                PERF_DATE = row.PERF_DATE,
-                CONTROL_DIM_1 = "",
-                DUE_AMOUNT_1 = "",
-                PERF_AMOUNT_1 = "",
-                CONTROL_DIM_2 = "",
-                DUE_AMOUNT_2 = "",
-                PERF_AMOUNT_2 = "",
-                CONTROL_DIM_3 = "",
-                DUE_AMOUNT_3 = "",
-                PERF_AMOUNT_3 = "",
-                PERF_CUSTOMER_WO = "",
-                EVENT_IDENTIFIER = ""
+                CheckType = row.CHECK_TYPE,
+                InternalCheck = row.CHECK_TYPE,
+                EffTitle = row.EFF_TITLE,
+                Aircraft = row.Aircraft,
+                PerfTah = row.PERF_TAH,
+                PerfTac = row.PERF_TAC,
+                PerfDate = row.PERF_DATE,
+                ControlDim1 = "",
+                DueAmount1 = "",
+                PerfAmount1 = "",
+                ControlDim2 = "",
+                DueAmount2 = "",
+                PerfAmount2 = "",
+                ControlDim3 = "",
+                DueAmount3 = "",
+                PerfAmount3 = "",
+                PerfCustomerWo = "",
+                EventIdentifier = ""
             };
 
             return output;
@@ -211,18 +211,18 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _295_XCHECKPE
             {
-                CHECK_TYPE = row.CHECK_TYPE,
-                INTERNAL_CHECK = "", // ?
-                EFF_TITLE = row.EFF_TITLE,
-                AIRCRAFT = row.Aircraft,
-                NEVER_PERFORMED = row.NEVER_PERFORMED,
-                CONTROL_DIM_1 = "",  // ?
-                DUE_AMOUNT_1 = "",  // ?
-                CONTROL_DIM_2 = "",  // ?
-                DUE_AMOUNT_2 = "",  // ?
-                CONTROL_DIM_3 = "",  // ?
-                DUE_AMOUNT_3 = "",  // ?
-                EVENT_IDENTIFIER = "" 
+                CheckType = row.CHECK_TYPE,
+                InternalCheck = "", // ?
+                EffTitle = row.EFF_TITLE,
+                Aircraft = row.Aircraft,
+                NeverPerformed = row.NEVER_PERFORMED,
+                ControlDim1 = "",  // ?
+                DueAmount1 = "",  // ?
+                ControlDim2 = "",  // ?
+                DueAmount2 = "",  // ?
+                ControlDim3 = "",  // ?
+                DueAmount3 = "",  // ?
+                EventIdentifier = "" 
             };
 
             return output;

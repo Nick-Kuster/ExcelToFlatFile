@@ -5,72 +5,72 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartDefinition
     public class _068_XPART
     {
         [AmosOutputLength(32)]        
-        public string PARTNO { get; set; }
+        public string PartNo { get; set; }
         [AmosOutputLength(36)]        
         public string Description { get; set; }
         [AmosOutputLength(12)]        
-        public string ATA_CHAPTER { get; set; }
+        public string AtaChapter { get; set; }
         [AmosOutputLength(1)]        
-        public string MATERIAL_CLASS { get; set; }
+        public string MaterialClass { get; set; }
         [AmosOutputLength(6)]        
-        public string FA_AC_TYPE { get; set; }
+        public string FaAcType { get; set; }
         [AmosOutputLength(12)]        
-        public string ADDRESS { get; set; }
+        public string Address { get; set; }
         [AmosOutputLength(6)]        
-        public string STORETIME { get; set; }
+        public string StoreTime { get; set; }
         [AmosOutputLength(14)]        
-        public string WEIGHT { get; set; }
+        public string Weight { get; set; }
         [AmosOutputLength(14)]        
-        public string ALERT_QTY { get; set; }
+        public string AlertQty { get; set; }
         [AmosOutputLength(14)]        
-        public string REORDER_LEVEL { get; set; }
+        public string ReorderLevel { get; set; }
         [AmosOutputLength(14)]        
-        public string MAX_PURCH_QTY { get; set; }
+        public string MaxPurchQty { get; set; }
         [AmosOutputLength(4)]        
-        public string MEASURE_UNIT { get; set; }
+        public string MeasureUnit { get; set; }
         [AmosOutputLength(1)]        
-        public string TOOL { get; set; }
+        public string Tool { get; set; }
         [AmosOutputLength(1)]        
-        public string REPAIRABLE { get; set; }
+        public string Repairable { get; set; }
         [AmosOutputLength(16)]        
-        public string SIZE { get; set; }
+        public string Size { get; set; }
         [AmosOutputLength(50)]        
-        public string DOCUMENT_REF { get; set; }
+        public string DocumentRef { get; set; }
         [AmosOutputLength(36)]        
-        public string REMARKS { get; set; }
+        public string Remarks { get; set; }
         [AmosOutputLength(12)]        
-        public string DEFAULT_SUPPLIER { get; set; }
+        public string DefaultSupplier { get; set; }
         [AmosOutputLength(12)]        
-        public string DEFAULT_REPAIR { get; set; }
+        public string DefaultRepair { get; set; }
         [AmosOutputLength(12)]        
-        public string MANUFACTURER { get; set; }
+        public string Manufacturer { get; set; }
         [AmosOutputLength(1)]        
-        public string REORDER_MODEL { get; set; }
+        public string ReorderModel { get; set; }
         [AmosOutputLength(1)]        
-        public string STATUS { get; set; }
+        public string Status { get; set; }
         [AmosOutputLength(1)]        
-        public string ATA200_CONVERT { get; set; }
+        public string Ata200Convert { get; set; }
         [AmosOutputLength(4)]        
-        public string MAT_TYPE { get; set; }
+        public string MatType { get; set; }
         [AmosOutputLength(1)]        
-        public string FIXED_ASSET { get; set; }
+        public string FixedAsset { get; set; }
         [AmosOutputLength(4)]        
-        public string ORIGIN { get; set; }
+        public string Origin { get; set; }
         [AmosOutputLength(4)]        
-        public string MAX_SHOP_VISIT { get; set; }
+        public string MaxShopVisit { get; set; }
         [AmosOutputLength(8)]        
-        public string SW_RESET_COND { get; set; }
+        public string SwResetCond { get; set; }
         [AmosOutputLength(50)]        
-        public string SPECIFICATIONS { get; set; }
+        public string Specifications { get; set; }
         [AmosOutputLength(15)]        
-        public string EXT_STATE { get; set; }
+        public string ExtState { get; set; }
         [AmosOutputLength(14)]        
-        public string SAFETY_STOCK { get; set; }
+        public string SafetyStock { get; set; }
         [AmosOutputLength(1)]        
-        public string PMA { get; set; }
+        public string Pma { get; set; }
         [AmosOutputLength(4)]        
-        public string SPECIAL_MEASURE_UN { get; set; }
+        public string SpecialMeasureUn { get; set; }
         [AmosOutputLength(20)]        
-        public string RESOURCE_TYPE { get; set; }
+        public string ResourceType { get; set; }
     }
 }

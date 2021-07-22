@@ -5,20 +5,20 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartReq
     public class _149_XPARTREQPE 
     {
         [AmosOutputLength(38)]
-        public string PARTREQ_TITLE { get; set; } 
+        public string PartReqTitle { get; set; } 
         [AmosOutputLength(2)]
-        public string PARTREQ_TYPE { get; set; } 
+        public string PartReqType { get; set; } 
         [AmosOutputLength(70)]
-        public string EFF_TITLE { get; set; } 
+        public string EffTitle { get; set; } 
         [AmosOutputLength(32)]
-        public string PARTNO { get; set; } 
+        public string PartNo { get; set; } 
         [AmosOutputLength(20)]
-        public string SERIALNO { get; set; } 
+        public string SerialNo { get; set; } 
         [AmosOutputLength(2)]
-        public string DIMENSION { get; set; } 
+        public string Dimension { get; set; } 
         [AmosOutputLength(10)]
-        public string DUE_AMOUNT { get; set; } 
+        public string DueAmount { get; set; } 
         [AmosOutputLength(36)]
-        public string EVENT_IDENTIFIER { get; set; }
+        public string EventIdentifier { get; set; }
     }
 }

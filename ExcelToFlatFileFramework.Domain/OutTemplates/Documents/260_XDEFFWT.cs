@@ -10,26 +10,26 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
     public class _260_XDEFFWT
     {
         [AmosOutputLength(25)]        
-        public string DOCNO { get; set; }
+        public string DocNo { get; set; }
         [AmosOutputLength(6)]        
-        public string DOC_TYPE { get; set; }
+        public string DocType { get; set; }
         [AmosOutputLength(4)]        
-        public string REVISION { get; set; }
+        public string Revision { get; set; }
         [AmosOutputLength(12)]        
-        public string ISSUED_BY { get; set; }
+        public string IssuedBy { get; set; }
         [AmosOutputLength(70)]        
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(4)]        
-        public string WT_REVISION { get; set; }
+        public string WtRevision { get; set; }
         [AmosOutputLength(12)]        
-        public string ATA_CHAPTER { get; set; }
+        public string AtaChapter { get; set; }
         [AmosOutputLength(1)]        
-        public string EVENT_CLASS { get; set; }
+        public string EventClass { get; set; }
         [AmosOutputLength(1)]        
-        public string DEFECT_CLASS { get; set; }
+        public string DefectClass { get; set; }
         [AmosOutputLength(4)]        
-        public string PRIO { get; set; }
+        public string Prio { get; set; }
         [AmosOutputLength(14)]        
-        public string PROJECTNO { get; set; }
+        public string ProjectNo { get; set; }
     }
 }

@@ -10,90 +10,90 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
     public class _240_XDHE
     {
         [AmosOutputLength(25)]        
-        public string DOCNO { get; set; }
+        public string DocNo { get; set; }
         [AmosOutputLength(6)]        
-        public string DOC_TYPE { get; set; }
+        public string DocType { get; set; }
         [AmosOutputLength(4)]        
-        public string REVISION { get; set; }
+        public string Revision { get; set; }
         [AmosOutputLength(12)]        
-        public string ISSUED_BY { get; set; }
+        public string IssuedBy { get; set; }
         [AmosOutputLength(1)]        
-        public string AC_OR_COMP { get; set; }
+        public string AcOrComp { get; set; }
         [AmosOutputLength(12)]        
-        public string ATA_CHAPTER { get; set; }
+        public string AtaChapter { get; set; }
         [AmosOutputLength(4)]        
-        public string COMPLIANCE { get; set; }
+        public string Compliance { get; set; }
         [AmosOutputLength(70)]        
-        public string TEXT1 { get; set; }
+        public string Text1 { get; set; }
         [AmosOutputLength(70)]        
-        public string TEXT2 { get; set; }
+        public string Text2 { get; set; }
         [AmosOutputLength(10)]        
-        public string REV_DATE { get; set; }
+        public string RevDate { get; set; }
         [AmosOutputLength(10)]        
-        public string ISSUE_DATE { get; set; }
+        public string IssueDate { get; set; }
         [AmosOutputLength(10)]        
-        public string REC_DATE { get; set; }
+        public string RecDate { get; set; }
         [AmosOutputLength(1)]        
-        public string TIME_LIMIT { get; set; }
+        public string TimeLimit { get; set; }
         [AmosOutputLength(1)]        
-        public string REPETITIVE { get; set; }
+        public string Repetitive { get; set; }
         [AmosOutputLength(6)]        
-        public string EST_GROUDTIME { get; set; }
+        public string EstGroundTime { get; set; }
         [AmosOutputLength(10)]        
-        public string EFFECTIVE_DATE { get; set; }
+        public string EffectiveDate { get; set; }
         [AmosOutputLength(1)]        
-        public string OPS_AFFECTED { get; set; }
+        public string OpsAffected { get; set; }
         [AmosOutputLength(1)]        
-        public string SIM_AFFECTED { get; set; }
+        public string SimAffected { get; set; }
         [AmosOutputLength(1)]        
-        public string REMOVAL_REQ { get; set; }
+        public string RemovalReq { get; set; }
         [AmosOutputLength(1)]        
-        public string SHOP_OR_LINE { get; set; }
+        public string ShopOrLine { get; set; }
         [AmosOutputLength(12)]        
-        public string CONTROLLED_BY { get; set; }
+        public string ControlledBy { get; set; }
         [AmosOutputLength(1)]        
-        public string TYPE_OF_CHANGE { get; set; }
+        public string TypeOfChange { get; set; }
         [AmosOutputLength(1)]        
-        public string WARRANTY_LABOUR { get; set; }
+        public string WarrantyLabour { get; set; }
         [AmosOutputLength(1)]        
-        public string WARRANTY_MAT { get; set; }
+        public string WarrantyMat { get; set; }
         [AmosOutputLength(6)]        
-        public string EST_MH_DOC { get; set; }
+        public string EstMhDoc { get; set; }
         [AmosOutputLength(25)]        
-        public string ORG_DOCNO { get; set; }
+        public string OrgDocNo { get; set; }
         [AmosOutputLength(6)]        
-        public string ORG_DOC_TYPE { get; set; }
+        public string OrgDocType { get; set; }
         [AmosOutputLength(14)]        
-        public string LABOUR_COST { get; set; }
+        public string LabourCost { get; set; }
         [AmosOutputLength(14)]        
-        public string MAT_COST { get; set; }
+        public string MatCost { get; set; }
         [AmosOutputLength(1)]        
-        public string MOD_CAMPAIGN { get; set; }
+        public string ModCampaign { get; set; }
         [AmosOutputLength(1)]        
-        public string MOD_ATTRITION { get; set; }
+        public string ModAttrition { get; set; }
         [AmosOutputLength(8)]        
-        public string COSTCENTER { get; set; }
+        public string CostCenter { get; set; }
         [AmosOutputLength(10)]        
-        public string COST_TYPE { get; set; }
+        public string CostType { get; set; }
         [AmosOutputLength(1)]        
-        public string RELEASE_STATE { get; set; }
+        public string ReleaseState { get; set; }
         [AmosOutputLength(1)]        
-        public string INSPECTION { get; set; }
+        public string Inspection { get; set; }
         [AmosOutputLength(8)]        
-        public string ASSESS_RESP { get; set; }
+        public string AssessResp { get; set; }
         [AmosOutputLength(10)]        
-        public string ASSESS_START { get; set; }
+        public string AssessStart { get; set; }
         [AmosOutputLength(10)]        
-        public string ASSESS_END { get; set; }
+        public string AssessEnd { get; set; }
         [AmosOutputLength(1)]        
-        public string GRND_OPS_AFF { get; set; }
+        public string GrndOpsAff { get; set; }
         [AmosOutputLength(1)]        
-        public string TRIAL_INST { get; set; }
+        public string TrialInst { get; set; }
         [AmosOutputLength(1)]        
-        public string OCCASION { get; set; }
+        public string Occasion { get; set; }
         [AmosOutputLength(36)]        
-        public string UUID { get; set; }
+        public string Uuid { get; set; }
         [AmosOutputLength(100)]
-        public string IMP_NOTES { get; set; }
+        public string ImpNotes { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.Taskcard
 {
-    public class TaskcardOutTemplate
+    public class _TASKCARD_OUT_TEMPLATE
     {
         public List<_118_XEFF> _118_XEFF { get; set; }
         public List<_119_XEFFSER> _119_XEFFSER { get; set; }

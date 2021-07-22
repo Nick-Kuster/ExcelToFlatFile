@@ -5,20 +5,20 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartReq
     public class _134_XPARTREQ
     {
         [AmosOutputLength(38)]        
-        public string PARTREQ_TITLE { get; set; }
+        public string PartReqTitle { get; set; }
         [AmosOutputLength(2)]        
-        public string PARTREQ_TYPE { get; set; }
+        public string PartReqType { get; set; }
         [AmosOutputLength(36)]        
-        public string DESCRIPTION { get; set; }
+        public string Description { get; set; }
         [AmosOutputLength(1)]        
-        public string REMOVAL_REQ { get; set; }
+        public string RemovalReq { get; set; }
         [AmosOutputLength(1)]        
-        public string SHELF_PERF { get; set; }
+        public string ShelfPerf { get; set; }
         [AmosOutputLength(4)]        
-        public string HARD_SOFT { get; set; }
+        public string HardSoft { get; set; }
         [AmosOutputLength(1)]        
-        public string PRO_RATA { get; set; }
+        public string ProRata { get; set; }
         [AmosOutputLength(10)]        
-        public string RATING { get; set; }
+        public string Rating { get; set; }
     }
 }

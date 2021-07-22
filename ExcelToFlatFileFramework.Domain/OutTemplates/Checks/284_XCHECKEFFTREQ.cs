@@ -10,32 +10,32 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Checks
     public class _284_XCHECKEFFTREQ
     {
         [AmosOutputLength(20)]
-        public string CHECK_TYPE { get; set; }
+        public string CheckType { get; set; }
         [AmosOutputLength(22)]
-        public string INTERNAL_CHECK { get; set; }
+        public string InternalCheck { get; set; }
         [AmosOutputLength(70)]
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(1)]
-        public string DIM_TYPE { get; set; }
+        public string DimType { get; set; }
         [AmosOutputLength(1)]
-        public string FL { get; set; }
+        public string Fl { get; set; }
         [AmosOutputLength(2)]
-        public string DIM { get; set; }
+        public string Dim { get; set; }
         [AmosOutputLength(10)]
-        public string AMOUNT { get; set; }
+        public string Amount { get; set; }
         [AmosOutputLength(1)]
-        public string THR_BASE { get; set; }
+        public string ThrBase { get; set; }
         [AmosOutputLength(2)]
-        public string THR_BASE_DIM { get; set; }
+        public string ThrBaseDim { get; set; }
         [AmosOutputLength(10)]
-        public string THR_BASE_AMOUNT { get; set; }
+        public string ThrBaseAmount { get; set; }
         [AmosOutputLength(1)]
-        public string UNLIMITED { get; set; }
+        public string Unlimited { get; set; }
         [AmosOutputLength(1)]
-        public string TERMINATING { get; set; }
+        public string Terminating { get; set; }
         [AmosOutputLength(4)]
-        public string CALC_STRAT { get; set; }
+        public string CalcStrat { get; set; }
         [AmosOutputLength(1)]
-        public string AUTO_REP_BACK { get; set; }
+        public string AutoRepBack { get; set; }
     }
 }

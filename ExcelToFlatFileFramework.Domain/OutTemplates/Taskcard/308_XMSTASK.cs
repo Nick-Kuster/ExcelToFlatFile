@@ -5,12 +5,12 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Taskcard
     public class _308_XMSTASK
     {
         [AmosOutputLength(25)]        
-        public string MS_NAME { get; set; }
+        public string MsName { get; set; }
         [AmosOutputLength(38)]        
-        public string TASKNUMBER { get; set; }
+        public string TaskNumber { get; set; }
         [AmosOutputLength(1)]        
-        public string OP_TASK { get; set; }
+        public string OpTask { get; set; }
         [AmosOutputLength(12)]        
-        public string ATA_CHAPTER { get; set; }
+        public string AtaChapter { get; set; }
     }
 }

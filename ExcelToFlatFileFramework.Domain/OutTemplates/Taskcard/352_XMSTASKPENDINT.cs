@@ -5,16 +5,16 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Taskcard
     public class _352_XMSTASKPENDINT
     {
         [AmosOutputLength(38)]        
-        public string TASKNUMBER { get; set; }
+        public string TaskNumber { get; set; }
         [AmosOutputLength(6)]        
-        public string AC_REGISTR { get; set; }
+        public string AcRegistr { get; set; }
         [AmosOutputLength(2)]        
-        public string DIMENSION { get; set; }
+        public string Dimension { get; set; }
         [AmosOutputLength(10)]        
-        public string AMOUNT_DUE { get; set; }
+        public string AmountDue { get; set; }
         [AmosOutputLength(50)]        
-        public string TASKCARDNO { get; set; }
+        public string TaskcardNo { get; set; }
         [AmosOutputLength(12)]        
-        public string TASKCARD_ID { get; set; }
+        public string TaskcardId { get; set; }
     }
 }

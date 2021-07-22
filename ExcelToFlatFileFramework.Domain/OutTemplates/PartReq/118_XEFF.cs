@@ -5,26 +5,26 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartReq
     public class _118_XEFF
     {
         [AmosOutputLength(70)]        
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(70)]        
-        public string EFF_TITLE_PAR { get; set; }
+        public string EffTitlePar { get; set; }
         [AmosOutputLength(70)]        
-        public string EFF_TITLE_HIGH { get; set; }
+        public string EffTitleHigh { get; set; }
         [AmosOutputLength(6)]        
-        public string AC_TYPE { get; set; }
+        public string AcType { get; set; }
         [AmosOutputLength(6)]        
-        public string AC_MODEL { get; set; }
+        public string AcModel { get; set; }
         [AmosOutputLength(6)]        
-        public string AC_SUB { get; set; }
+        public string AcSub { get; set; }
         [AmosOutputLength(6)]        
-        public string EFF_AC_TYPE { get; set; }
+        public string EffAcType { get; set; }
         [AmosOutputLength(32)]        
-        public string PARTNO { get; set; }
+        public string PartNo { get; set; }
         [AmosOutputLength(2)]        
-        public string SER_TYPE { get; set; }
+        public string SerType { get; set; }
         [AmosOutputLength(1)]        
-        public string CHANGEABLE { get; set; }
+        public string Changeable { get; set; }
         [AmosOutputLength(0)]        
-        public string DESCRIPTION { get; set; }
+        public string Description { get; set; }
     }
 }

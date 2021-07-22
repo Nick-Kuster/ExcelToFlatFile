@@ -5,9 +5,9 @@ using NPOI.SS.Formula.Functions;
 
 namespace ExcelToFlatFile.Application.AmosMappers
 {
-    public class TaskcardMapper : BaseMapper<TaskcardTemplate, TaskcardOutTemplate>
+    public class TaskcardMapper : BaseMapper<TaskcardTemplate, _TASKCARD_OUT_TEMPLATE>
     {
-        public override TaskcardOutTemplate Map(List<TaskcardTemplate> input)
+        public override _TASKCARD_OUT_TEMPLATE Map(List<TaskcardTemplate> input)
         {
             // List<_118_XEFF> _118_XEFF = new List<_118_XEFF>();
             // List<_119_XEFFSER> _119_XEFFSER = new List<_119_XEFFSER>();
@@ -40,7 +40,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 xmstaskpresets.Add(GetXMsTaskPresets(row));
             }
 
-            TaskcardOutTemplate outTemplate = new TaskcardOutTemplate
+            _TASKCARD_OUT_TEMPLATE outTemplate = new _TASKCARD_OUT_TEMPLATE
             {
                 // _118_XEFF = _118_XEFF,
                 // _119_XEFFSER = _119_XEFFSER,
@@ -63,17 +63,17 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _118_XEFF
             {
-                EFF_TITLE = row.EFF_TITLE,
-                EFF_TITLE_PAR = "",
-                EFF_TITLE_HIGH = "",
-                AC_TYPE = "737",
-                AC_MODEL = row.AC_MODEL,
-                AC_SUB = row.AC_SUB,
-                EFF_AC_TYPE = "",
-                PARTNO = "", // ?
-                SER_TYPE = "", // ?
-                CHANGEABLE = "", // ?
-                DESCRIPTION = ""
+                EffTitle = row.EFF_TITLE,
+                EffTitlePar = "",
+                EffTitleHigh = "",
+                AcType = "737",
+                AcModel = row.AC_MODEL,
+                AcSub = row.AC_SUB,
+                EffAcType = "",
+                PartNo = "", // ?
+                SerType = "", // ?
+                Changeable = "", // ?
+                Description = ""
             };
             return output;
         }
@@ -81,12 +81,12 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _119_XEFFSER
             {
-                EFF_TITLE = row.EFF_TITLE,
-                RANGE_TYPE = "", // ?
-                SERIALNO_FROM = "", // ?
-                SERIALNO_TO = "", // ?
-                INCL_EXCL = "", // ?
-                SER_SHIFT = ""
+                EffTitle = row.EFF_TITLE,
+                RangeType = "", // ?
+                SerialNoFrom = "", // ?
+                SerialNoTo = "", // ?
+                InclExcl = "", // ?
+                SerShift = ""
             };
             return output;
         }
@@ -94,10 +94,10 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _308_XMSTASK
             {
-                MS_NAME = "", // ?
-                TASKNUMBER = row.TASKNUMBER,
-                OP_TASK = "", // ?
-                ATA_CHAPTER = "" // ?
+                MsName = "", // ?
+                TaskNumber = row.TASKNUMBER,
+                OpTask = "", // ?
+                AtaChapter = "" // ?
             };
             return output;
         }
@@ -105,34 +105,34 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _309_XMSTASKRV
             {
-                MS_NAME = "", // ?
-                MS_ISSUE = "", // ?
-                MS_REVISION = "", // ?
-                TASKNUMBER = row.TASKNUMBER,
-                OP_TASK = "", // ?
-                TITLE = "", // ?
-                TASK_REVISION = "ORG", 
-                TASK_REVISION_DATE = "", // ?
-                TASK_REVISION_REASON = "", // ?
-                RELEASE_DATE = "", // ?
-                COMPLIANCE = "", // ?
-                STATUS = "", // ?
-                TASK_TYPE = "", // ?
-                INTERVAL_TYPE = "", // ?
-                MAXRECURRENCE = "",
-                NOT = "",
-                MRB_REVISION = "",
-                MRB_REVISION_DATE = "",
-                MRB_REVISION_REASON = "",
-                EST_MH_MRB = "",
-                REQ_MAND_REP = "",
-                CRX_REV_FLAG = "",
-                CP_SEQ = "",
-                STATE = "",
-                EFF_NOTES = "",
-                NOTES = "",
-                MRB_TEXT = "",
-                REMARKS = ""
+                MsName = "", // ?
+                MsIssue = "", // ?
+                MsRevision = "", // ?
+                TaskNumber = row.TASKNUMBER,
+                OpTask = "", // ?
+                Title = "", // ?
+                TaskRevision = "ORG", 
+                TaskRevisionDate = "", // ?
+                TaskRevisionReason = "", // ?
+                ReleaseDate = "", // ?
+                Compliance = "", // ?
+                Status = "", // ?
+                TaskType = "", // ?
+                IntervalType = "", // ?
+                MaxRecurrence = "",
+                NotApplicable = "",
+                MrbRevision = "",
+                MrbRevisionDate = "",
+                MrbRevisionReason = "",
+                EstMhMrb = "",
+                ReqMandRep = "",
+                CrxRevFlag = "",
+                CpSeq = "",
+                State = "",
+                EffNotes = "",
+                Notes = "",
+                MrbText = "",
+                Remarks = ""
             };
             return output;
         }
@@ -146,26 +146,26 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _321_XMSTASKIV
             {
-                MS_NAME = "", // ?
-                MS_ISSUE = "", // ?
-                MS_REVISION = "",// ?
-                TASKNUMBER = row.TASKNUMBER,
-                OP_TASK = "Y",
-                TASK_REVISION = "ORG",
-                TYPE = "", // ?
-                DIM_TYPE = "", // ?
-                THR_BASE = "", // ?
-                DIM_GROUP = "", // ?
-                DIMENSION = "", // ?
-                AMOUNT = "", // ?
-                THR_BASE_DIM = "", // ?
-                THR_BASE_AMOUNT = "", // ?
-                UNLIMITED = "", // ?
-                TERMINATING = "", // ?
-                CALC_LOGIC = "", // ?
-                CALC_STRAT = "", // ?
-                AUTO_REP_BACK = "", // ?
-                NOTES = "" // ?
+                MsName = "", // ?
+                MsIssue = "", // ?
+                MsRevision = "",// ?
+                TaskNumber = row.TASKNUMBER,
+                OpTask = "Y",
+                TaskRevision = "ORG",
+                Type = "", // ?
+                DimType = "", // ?
+                ThrBase = "", // ?
+                DimGroup = "", // ?
+                Dimension = "", // ?
+                Amount = "", // ?
+                ThrBaseDim = "", // ?
+                ThrBaseAmount = "", // ?
+                Unlimited = "", // ?
+                Terminating = "", // ?
+                CalcLogic = "", // ?
+                CalcStrat = "", // ?
+                AutoRepBack = "", // ?
+                Notes = "" // ?
             }; 
             return output;
         }
@@ -173,18 +173,18 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _325_XMSTASKWT
             {
-                MS_NAME = "", // ?
-                MS_ISSUE = "", // ?
-                MS_REVISION = "", // ?
-                TASKNUMBER = row.TASKNUMBER,
-                OP_TASK = "",// ?
-                TASK_REVISION = "",// ?
-                REVISION =  "1",
-                ATA_CHAPTER = "", // ?
-                EVENT_CLASS = "", 
-                DEFECT_CLASS = "", 
-                PRIO = "",
-                PROJECTNO = ""
+                MsName = "", // ?
+                MsIssue = "", // ?
+                MsRevision = "", // ?
+                TaskNumber = row.TASKNUMBER,
+                OpTask = "",// ?
+                TaskRevision = "",// ?
+                Revision =  "1",
+                AtaChapter = "", // ?
+                EventClass = "", 
+                DefectClass = "", 
+                Prio = "",
+                ProjectNo = ""
             };
             return output;
         }
@@ -192,39 +192,39 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _330_XMSTSAKITWS
             {
-                MS_NAME = "", // ?
-                MS_ISSUE = "", // ?
-                MS_REVISION = "", // ?
-                TASKNUMBER = "",
-                OP_TASK = "", // ?
-                TASK_REVISION = "", // ?
-                SEQ_NO = "", // ?
-                WS_TYPE = "",
-                HEADER = "",
-                SIGN = "",
-                CRITICAL = "",
-                DEFUEL = "",
-                DOUBLE_INSP = "",
-                EL_POWER = "",
-                EVENT_OPEN = "",
-                EWIS = "",
-                EXT_HYRD = "",
-                HYDR_OFF = "",
-                IDLE_RUN = "",
-                INSURANCE = "",
-                NDT = "",
-                POWER_RUN = "",
-                TANK_ENTRY = "",
-                TEST_FLIGHT = "",
-                TROUBLESHOOTING = "",
-                WARRANTY = "",
-                ETOPS = "",
-                AD = "",
-                PHASE = "",
-                REVISION = "",
-                REV_STATUS = "null", // ?
-                TEXT = "", // ?
-                COMMENT = "null"
+                MsName = "", // ?
+                MsIssue = "", // ?
+                MsRevision = "", // ?
+                TaskNumber = "",
+                OpTask = "", // ?
+                TaskRevision = "", // ?
+                SeqNo = "", // ?
+                WsType = "",
+                Header = "",
+                Sign = "",
+                Critical = "",
+                Defuel = "",
+                DoubleInsp = "",
+                ElPower = "",
+                EventOpen = "",
+                Ewis = "",
+                ExtHyrd = "",
+                HydrOff = "",
+                IdleRun = "",
+                Insurance = "",
+                Ndt = "",
+                PowerRun = "",
+                TankEntry = "",
+                TestFlight = "",
+                Troubleshooting = "",
+                Warranty = "",
+                Etops = "",
+                Ad = "",
+                Phase = "",
+                Revision = "",
+                RevStatus = "null", // ?
+                Text = "", // ?
+                Comment = "null"
             };
             return output;
         }
@@ -232,13 +232,13 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _339_XMSTASKITEF
             {
-                MS_NAME = "", // ?
-                MS_ISSUE = "", // ?
-                MS_REVISION = "", // ?
-                TASKNUMBER = row.TASKNUMBER,
-                OP_TASK = "", // ?
-                TASK_REVISION = "", // ?
-                EFF_TITLE = row.EFF_TITLE
+                MsName = "", // ?
+                MsIssue = "", // ?
+                MsRevision = "", // ?
+                TaskNumber = row.TASKNUMBER,
+                OpTask = "", // ?
+                TaskRevision = "", // ?
+                EffTitle = row.EFF_TITLE
             }; 
             return output;
         }
@@ -246,27 +246,27 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             _350_XMSTASKHIST output = new _350_XMSTASKHIST
             {
-                MS_NAME = null, // ?
-                MS_ISSUE = null, // ?
-                MS_REVISION = null, // ?
-                TASKNUMBER = row.TASKNUMBER,
-                OP_TASK = null, // ?
-                TASK_REVISION = null, // ?
-                TASKCARDNO = "", // ?
-                TASKCARD_ID = null, // ?
-                AC_REGISTR = row.AC_REGISTR,
-                MECH_SIGN = "", // ?
-                RELEASE_STATION = "", // ?
-                RELEASE_TIME = "", // ?
-                DUE_TAH = "", // ?
-                PERF_TAH = "", // ?
-                DUE_TAC = "", // ?
-                PERF_TAC = "", // ?
-                DUE_DATE = row.DUE_DATE,
-                PERF_DATE = row.PERFORMED_DATE,
-                UNIQUE_ID = "", // ?
-                EVENT_IDENTIFIER = "", // ?
-                REMARKS = "" // ?
+                MsName = null, // ?
+                MsIssue = null, // ?
+                MsRevision = null, // ?
+                TaskNumber = row.TASKNUMBER,
+                OpTask = null, // ?
+                TaskRevision = null, // ?
+                TaskcardNo = "", // ?
+                TaskcardId = null, // ?
+                AcRegistr = row.AC_REGISTR,
+                MechSign = "", // ?
+                ReleaseStation = "", // ?
+                ReleaseTime = "", // ?
+                DueTah = "", // ?
+                PerfTah = "", // ?
+                DueTac = "", // ?
+                PerfTac = "", // ?
+                DueDate = row.DUE_DATE,
+                PerfDate = row.PERFORMED_DATE,
+                UniqueId = "", // ?
+                EventIdentifier = "", // ?
+                Remarks = "" // ?
             };
 
             return output;
@@ -275,11 +275,11 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             _351_XMSTASKPEND output = new _351_XMSTASKPEND()
             {
-                TASKNUMBER = input.TASKNUMBER,
-                AC_REGISTR = input.TASKNUMBER,
-                TASKCARDNO = "",
-                TASKCARD_ID = "",
-                EVENT_IDENTIFIER = ""
+                TaskNumber = input.TASKNUMBER,
+                AcRegistr = input.TASKNUMBER,
+                TaskcardNo = "",
+                TaskcardId = "",
+                EventIdentifier = ""
             };
             return output;
         }
@@ -287,12 +287,12 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             _352_XMSTASKPENDINT output = new _352_XMSTASKPENDINT()
             {
-                TASKNUMBER = input.TASKNUMBER,
-                AC_REGISTR = input.TASKNUMBER,
-                DIMENSION = "", // Do not have this in template
-                AMOUNT_DUE = "",
-                TASKCARDNO = "",
-                TASKCARD_ID = ""
+                TaskNumber = input.TASKNUMBER,
+                AcRegistr = input.TASKNUMBER,
+                Dimension = "", // Do not have this in template
+                AmountDue = "",
+                TaskcardNo = "",
+                TaskcardId = ""
             };
 
             return output;
@@ -301,16 +301,16 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             _354_XMSTASKPRESET output = new _354_XMSTASKPRESET()
             {
-                TASKNUMBER = input.TASKNUMBER,
-                AC_REGISTR = input.TASKNUMBER,
-                DIMENSION = "", // Not in Template
-                AMOUNT_DUE = "", // Dimension not in template
-                DUE_DAY_TIME = "",
-                CHANGED_DATE = "",
-                CHANGED_TIME = "",
-                REQ_LINK_HEADERNO_OP = "",
-                TASKCARDNO = "",
-                TASKCARD_ID = ""
+                TaskNumber = input.TASKNUMBER,
+                AcRegistr = input.TASKNUMBER,
+                Dimension = "", // Not in Template
+                AmountDue = "", // Dimension not in template
+                DueDayTime = "",
+                ChangedDate = "",
+                ChangedTime = "",
+                ReqLinkHeaderNoOp = "",
+                TaskcardNo = "",
+                TaskcardId = ""
             };
             return output;
         }

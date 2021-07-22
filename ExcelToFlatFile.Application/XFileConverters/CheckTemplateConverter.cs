@@ -32,7 +32,7 @@ namespace ExcelToFlatFile.Application.XFileConverters
             ConvertOutTemplateToStringHelper outputTemplateStringHelper = new ConvertOutTemplateToStringHelper();
 
             CheckMapper checkMapper = new CheckMapper();
-            ChecksOutTemplate checkOut = checkMapper.Map(templateRows);
+            _CHECKS_OUT_TEMPLATE checkOut = checkMapper.Map(templateRows);
             
             File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Checks\294_XCHECKHI.txt",  outputTemplateStringHelper.ConvertToString(checkOut._294_XCHECKHI));
         }

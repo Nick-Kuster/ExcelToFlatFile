@@ -2,23 +2,23 @@
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
 {
-    public class XDSOFF
+    public class _XDSOFF
     {
         [AmosOutputLength(30)]        
-        public string DOCNO_1 { get; set; }
+        public string Docno1 { get; set; }
         [AmosOutputLength(6)]        
-        public string DOC_TYPE_1 { get; set; }
+        public string DocType1 { get; set; }
         [AmosOutputLength(4)]        
-        public string REVISION_1 { get; set; }
+        public string Revision1 { get; set; }
         [AmosOutputLength(12)]        
-        public string ISSUED_BY_1 { get; set; }
+        public string IssuedBy1 { get; set; }
         [AmosOutputLength(30)]        
-        public string DOCNO_2 { get; set; }
+        public string Docno2 { get; set; }
         [AmosOutputLength(6)]        
-        public string DOC_TYPE_2 { get; set; }
+        public string DocType2 { get; set; }
         [AmosOutputLength(4)]        
-        public string REVISION_2 { get; set; }
+        public string Revision2 { get; set; }
         [AmosOutputLength(12)]        
-        public string ISSUED_BY_2 { get; set; }
+        public string IssuedBy2 { get; set; }
     }
 }

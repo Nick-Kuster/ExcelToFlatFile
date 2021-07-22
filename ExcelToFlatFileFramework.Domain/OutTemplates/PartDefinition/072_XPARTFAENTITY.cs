@@ -5,8 +5,8 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartDefinition
     public class _072_XPARTFAENTITY
     {
         [AmosOutputLength(32)]        
-        public string PARTNO { get; set; }
+        public string PartNo { get; set; }
         [AmosOutputLength(12)]        
-        public string ENTITY { get; set; }
+        public string Entity { get; set; }
     }
 }

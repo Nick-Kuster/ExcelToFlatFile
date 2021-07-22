@@ -10,14 +10,14 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
     public class _243_XDHETX
     {
         [AmosOutputLength(25)]    
-        public string DOCNO { get; set; }
+        public string DocNo { get; set; }
         [AmosOutputLength(6)]        
-        public string DOC_TYPE { get; set; }
+        public string DocType { get; set; }
         [AmosOutputLength(4)]        
-        public string REVISION { get; set; }
+        public string Revision { get; set; }
         [AmosOutputLength(12)]        
-        public string ISSUED_BY { get; set; }
+        public string IssuedBy { get; set; }
         [AmosOutputLength(70)]        
-        public string TEXT { get; set; }
+        public string Text { get; set; }
     }
 }

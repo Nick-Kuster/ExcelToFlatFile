@@ -5,44 +5,44 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Taskcard
     public class _321_XMSTASKIV
     {
         [AmosOutputLength(25)]        
-        public string MS_NAME { get; set; }
+        public string MsName { get; set; }
         [AmosOutputLength(8)]        
-        public string MS_ISSUE { get; set; }
+        public string MsIssue { get; set; }
         [AmosOutputLength(8)]        
-        public string MS_REVISION { get; set; }
+        public string MsRevision { get; set; }
         [AmosOutputLength(38)]        
-        public string TASKNUMBER { get; set; }
+        public string TaskNumber { get; set; }
         [AmosOutputLength(1)]        
-        public string OP_TASK { get; set; }
+        public string OpTask { get; set; }
         [AmosOutputLength(8)]        
-        public string TASK_REVISION { get; set; }
+        public string TaskRevision { get; set; }
         [AmosOutputLength(2)]        
-        public string TYPE { get; set; }
+        public string Type { get; set; }
         [AmosOutputLength(2)]        
-        public string DIM_TYPE { get; set; }
+        public string DimType { get; set; }
         [AmosOutputLength(1)]        
-        public string THR_BASE { get; set; }
+        public string ThrBase { get; set; }
         [AmosOutputLength(20)]        
-        public string DIM_GROUP { get; set; }
+        public string DimGroup { get; set; }
         [AmosOutputLength(2)]        
-        public string DIMENSION { get; set; }
+        public string Dimension { get; set; }
         [AmosOutputLength(10)]        
-        public string AMOUNT { get; set; }
+        public string Amount { get; set; }
         [AmosOutputLength(2)]        
-        public string THR_BASE_DIM { get; set; }
+        public string ThrBaseDim { get; set; }
         [AmosOutputLength(10)]        
-        public string THR_BASE_AMOUNT { get; set; }
+        public string ThrBaseAmount { get; set; }
         [AmosOutputLength(1)]        
-        public string UNLIMITED { get; set; }
+        public string Unlimited { get; set; }
         [AmosOutputLength(1)]        
-        public string TERMINATING { get; set; }
+        public string Terminating { get; set; }
         [AmosOutputLength(1)]        
-        public string CALC_LOGIC { get; set; }
+        public string CalcLogic { get; set; }
         [AmosOutputLength(4)]        
-        public string CALC_STRAT { get; set; }
+        public string CalcStrat { get; set; }
         [AmosOutputLength(1)]        
-        public string AUTO_REP_BACK { get; set; }
+        public string AutoRepBack { get; set; }
         [AmosOutputLength(70)]        
-        public string NOTES { get; set; }
+        public string Notes { get; set; }
     }
 }

@@ -10,8 +10,8 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Checks
     public class _282_XCHECKEFFLINK
     {
         [AmosOutputLength(20)]
-        public string CHECK_TYPE { get; set; }
+        public string CheckType { get; set; }
         [AmosOutputLength(70)]
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
     }
 }

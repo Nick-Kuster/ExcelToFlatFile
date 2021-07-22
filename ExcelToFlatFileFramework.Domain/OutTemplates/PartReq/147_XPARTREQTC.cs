@@ -5,18 +5,18 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartReq
     public class _147_XPARTREQTC
     {
         [AmosOutputLength(38)]        
-        public string PARTREQ_TITLE { get; set; }
+        public string PartReqTitle { get; set; }
         [AmosOutputLength(2)]        
-        public string PARTREQ_TYPE { get; set; }
+        public string PartReqType { get; set; }
         [AmosOutputLength(70)]        
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(25)]        
-        public string MS_NAME { get; set; }
+        public string MsName { get; set; }
         [AmosOutputLength(38)]        
-        public string TASKNUMBER { get; set; }
+        public string TaskNumber { get; set; }
         [AmosOutputLength(12)]        
-        public string OPERATOR { get; set; }
+        public string Operator { get; set; }
         [AmosOutputLength(2)]        
-        public string PRINT_MODE { get; set; }
+        public string PrintMode { get; set; }
     }
 }

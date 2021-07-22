@@ -32,7 +32,7 @@ namespace ExcelToFlatFile.Application.XFileConverters
             ConvertOutTemplateToStringHelper outputTemplateStringHelper = new ConvertOutTemplateToStringHelper();
 
             TaskcardMapper taskcardMapper = new TaskcardMapper();
-            TaskcardOutTemplate taskcardOut = taskcardMapper.Map(templateRows);
+            _TASKCARD_OUT_TEMPLATE taskcardOut = taskcardMapper.Map(templateRows);
             
             File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Taskcards\350Xmstaskhist.txt",  outputTemplateStringHelper.ConvertToString(taskcardOut._350Xmstaskhist));
             File.WriteAllText(@"C:\Documentation\AMOS\XFileConversion\Output\Taskcards\351_XMSTASKPEND.txt",  outputTemplateStringHelper.ConvertToString(taskcardOut._351_XMSTASKPEND));

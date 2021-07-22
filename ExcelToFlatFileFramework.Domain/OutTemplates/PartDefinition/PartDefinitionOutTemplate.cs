@@ -2,7 +2,7 @@
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartDefinition
 {
-    public class PartDefinitionOutTemplate
+    public class _PART_DEFINITION_OUT_TEMPLATE
     {
         public List<_068_XPART> _068_XPART { get; set; }
         public List<_072_XPARTFAENTITY> _072_XPARTFAENTITY { get; set; }

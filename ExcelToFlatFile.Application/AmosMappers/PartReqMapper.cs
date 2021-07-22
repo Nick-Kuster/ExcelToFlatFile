@@ -7,9 +7,9 @@ using Org.BouncyCastle.Crypto.Tls;
 
 namespace ExcelToFlatFile.Application.AmosMappers
 {
-    public class PartReqMapper : BaseMapper<PartTemplate, PartReqOutTemplate>
+    public class PartReqMapper : BaseMapper<PartTemplate, _PART_REQ_OUT_TEMPLATE>
     {
-        public override PartReqOutTemplate Map(List<PartTemplate> input)
+        public override _PART_REQ_OUT_TEMPLATE Map(List<PartTemplate> input)
         {
             // List<_118_XEFF> _118_XEFF = new List<_118_XEFF>();
             // List<_119_XEFFSER> _119_XEFFSER = new List<_119_XEFFSER>();
@@ -51,7 +51,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 }
             }
             
-            PartReqOutTemplate outTemplate = new PartReqOutTemplate
+            _PART_REQ_OUT_TEMPLATE outTemplate = new _PART_REQ_OUT_TEMPLATE
             {
                 // _118_XEFF = _118_XEFF,
                 // _119_XEFFSER = _119_XEFFSER,
@@ -72,17 +72,17 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _118_XEFF
             {
-                EFF_TITLE = row.Eff_Title,
-                EFF_TITLE_PAR = "",
-                EFF_TITLE_HIGH = "",
-                AC_TYPE = "737",
-                AC_MODEL = "",
-                AC_SUB = "",
-                EFF_AC_TYPE = "",
-                PARTNO = row.PART_NUMBER,
-                SER_TYPE = "L",
-                CHANGEABLE = "Y",
-                DESCRIPTION = row.Part_Req_Description // ? Does not have a length requirement
+                EffTitle = row.Eff_Title,
+                EffTitlePar = "",
+                EffTitleHigh = "",
+                AcType = "737",
+                AcModel = "",
+                AcSub = "",
+                EffAcType = "",
+                PartNo = row.PART_NUMBER,
+                SerType = "L",
+                Changeable = "Y",
+                Description = row.Part_Req_Description // ? Does not have a length requirement
             };
             return output;
         }
@@ -90,12 +90,12 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _119_XEFFSER
             {
-                EFF_TITLE = row.Eff_Title,
-                RANGE_TYPE = row.RANGE_TYPE, // Mandatory if range-type = "S" or "R"
-                SERIALNO_FROM = row.SERIALNO_FROM,
-                SERIALNO_TO = row.SERIALNO_TO,
-                INCL_EXCL = row.INCL_EXCL,
-                SER_SHIFT = ""
+                EffTitle = row.Eff_Title,
+                RangeType = row.RANGE_TYPE, // Mandatory if range-type = "S" or "R"
+                SerialNoFrom = row.SERIALNO_FROM,
+                SerialNoTo = row.SERIALNO_TO,
+                InclExcl = row.INCL_EXCL,
+                SerShift = ""
             };
             return output;
         }
@@ -103,14 +103,14 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _134_XPARTREQ
             {
-                PARTREQ_TITLE = row.Part_Req_Title,
-                PARTREQ_TYPE = row.REQUIREMENT,
-                DESCRIPTION = row.Part_Req_Description,
-                REMOVAL_REQ = row.Removal_Req,
-                SHELF_PERF = "N",
-                HARD_SOFT = "H",
-                PRO_RATA = "",
-                RATING = ""
+                PartReqTitle = row.Part_Req_Title,
+                PartReqType = row.REQUIREMENT,
+                Description = row.Part_Req_Description,
+                RemovalReq = row.Removal_Req,
+                ShelfPerf = "N",
+                HardSoft = "H",
+                ProRata = "",
+                Rating = ""
             };
             return output;
         }
@@ -118,9 +118,9 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _135_XPARTREQEFFLINK
             {
-                PARTREQ_TITLE = "", // Part Req Type?
-                PARTREQ_TYPE = row.REQUIREMENT,
-                EFF_TITLE = row.Eff_Title
+                PartReqTitle = "", // Part Req Type?
+                PartReqType = row.REQUIREMENT,
+                EffTitle = row.Eff_Title
             };
             return output;
         }
@@ -128,21 +128,21 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _136_XPARTREQTREQ
             {
-                PARTREQ_TITLE = "", // Part Req Type?
-                PARTREQ_TYPE = row.REQUIREMENT,
-                EFF_TITLE = row.Eff_Title,
-                DIM_TYPE = row.DIM_TYPE,
-                THR_BASE = "",
-                FL = "",
-                DIM = controldim,
-                AMOUNT = GetIntervalAmount(row, controldim),
-                THR_BASE0DIM = "",
-                THR_BASE_AMOUNT = "",
-                UNLIMITED = row.UNLIMITED,
-                TERMINATING = row.TERMINATING,
-                CALC_STRAT = "1",
-                AUTO_REP_BACK = "",
-                NOTES = ""
+                PartReqTitle = "", // Part Req Type?
+                PartReqType = row.REQUIREMENT,
+                EffTitle = row.Eff_Title,
+                DimType = row.DIM_TYPE,
+                ThrBase = "",
+                Fl = "",
+                Dim = controldim,
+                Amount = GetIntervalAmount(row, controldim),
+                ThrBase0Dim = "",
+                ThrBaseAmount = "",
+                Unlimited = row.UNLIMITED,
+                Terminating = row.TERMINATING,
+                CalcStrat = "1",
+                AutoRepBack = "",
+                Notes = ""
             };
             return output;
         }
@@ -150,15 +150,15 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _137_XPARTREQWT
             {
-                PARTREQ_TITLE = "", // Part Req Type?
-                PARTREQ_TYPE = row.REQUIREMENT,
-                EFF_TITLE = row.Eff_Title,
-                REVISION = "",
-                ATA_CHAPTER = row.ATA,
-                EVENT_CLASS = "",
-                DEFECT_CLASS = "",
-                PRIO = "",
-                PROJECTNO = ""
+                PartReqTitle = "", // Part Req Type?
+                PartReqType = row.REQUIREMENT,
+                EffTitle = row.Eff_Title,
+                Revision = "",
+                AtaChapter = row.ATA,
+                EventClass = "",
+                DefectClass = "",
+                Prio = "",
+                ProjectNo = ""
             };
             return output;
         }
@@ -166,36 +166,36 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _139_XPARTREQWS
             {
-                PARTREQ_TITLE = "",  // Part Req Type?
-                PARTREQ_TYPE = row.REQUIREMENT,
-                EFF_TITLE = row.Eff_Title,
-                SEQ_NO = "1",
-                WS_TYPE = "",
-                HEADER = "",
-                SIGN = "",
-                CRITICAL = "",
-                DEFUEL = "",
-                DOUBLE_INSP = "",
-                EL_POWER = "",
-                EVENT_OPEN = "",
-                EWIS = "",
-                EXT_HYDR = "",
-                HYDR_OFF = "",
-                IDLE_RUN = "",
-                INSURANCE = "",
-                NDT = "",
-                POWER_RUN = "",
-                TANK_ENTRY = "",
-                TEST_FLIGHT = "",
-                TROUBLESHOOTING = "",
-                WARRANTY = "",
-                ETOPS = "",
-                AD = "",
-                PHASE = "",
-                REVISION = "",
-                REV_STATUS = "",
-                TEXT = GetText(row.REQUIREMENT),
-                COMMENT = ""
+                PartReqTitle = "",  // Part Req Type?
+                PartReqType = row.REQUIREMENT,
+                EffTitle = row.Eff_Title,
+                SeqNo = "1",
+                WsType = "",
+                Header = "",
+                Sign = "",
+                Critical = "",
+                Defuel = "",
+                DoubleInsp = "",
+                ElPower = "",
+                EventOpen = "",
+                Ewis = "",
+                ExtHydr = "",
+                HydrOff = "",
+                IdleRun = "",
+                Insurance = "",
+                Ndt = "",
+                PowerRun = "",
+                TankEntry = "",
+                TestFlight = "",
+                Troubleshooting = "",
+                Warranty = "",
+                Etops = "",
+                Ad = "",
+                Phase = "",
+                Revision = "",
+                RevStatus = "",
+                Text = GetText(row.REQUIREMENT),
+                Comment = ""
             };
             return output;
         }
@@ -235,13 +235,13 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _147_XPARTREQTC
             {
-                PARTREQ_TITLE = "", // Part Req Type?
-                PARTREQ_TYPE = row.REQUIREMENT,
-                EFF_TITLE = row.Eff_Title,
-                MS_NAME = "MTLM",
-                TASKNUMBER = row.TaskcardReference,
-                OPERATOR = "VXP",
-                PRINT_MODE = "YN"
+                PartReqTitle = "", // Part Req Type?
+                PartReqType = row.REQUIREMENT,
+                EffTitle = row.Eff_Title,
+                MsName = "MTLM",
+                TaskNumber = row.TaskcardReference,
+                Operator = "VXP",
+                PrintMode = "YN"
             };
             return output;
         }
@@ -263,17 +263,17 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _148_XPARTREQHI()
             {
-                PARTREQ_TITLE = input.Part_Req_Title,
-                PARTREQ_TYPE = input.REQUIREMENT,
-                EFF_TITLE = input.Eff_Title,
-                PARTNO = input.PART_NUMBER,
-                SERIALNO = input.SERIAL_NUMBER,
-                PERF_DATE = input.LAST_REQ_DATE.SetToEmptyIfMatch("UNK").ConvertToFormattedDateString("dd.MM.yy"),
-                CONTROL_DIM = controlDim,
-                DUE_AMOUNT = GetDueAmount(input, controlDim),
-                PERF_AMOUNT = GetPerfAmount(input, controlDim),
-                UNIQUE_ID = Guid.NewGuid().ToString(),
-                EVENT_IDENTIFIER = ""
+                PartReqTitle = input.Part_Req_Title,
+                PartReqType = input.REQUIREMENT,
+                EffTitle = input.Eff_Title,
+                PartNo = input.PART_NUMBER,
+                SerialNo = input.SERIAL_NUMBER,
+                PerfDate = input.LAST_REQ_DATE.SetToEmptyIfMatch("UNK").ConvertToFormattedDateString("dd.MM.yy"),
+                ControlDim = controlDim,
+                DueAmount = GetDueAmount(input, controlDim),
+                PerfAmount = GetPerfAmount(input, controlDim),
+                UniqueId = Guid.NewGuid().ToString(),
+                EventIdentifier = ""
             };
 
             return output;
@@ -327,14 +327,14 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _149_XPARTREQPE()
             {
-                PARTREQ_TITLE = input.Part_Req_Title,
-                PARTREQ_TYPE = input.REQUIREMENT,
-                EFF_TITLE = input.Eff_Title,
-                PARTNO = input.PART_NUMBER,
-                SERIALNO = input.SERIAL_NUMBER,
-                DIMENSION = controlDim,
-                DUE_AMOUNT = GetDueAmount(input, controlDim),
-                EVENT_IDENTIFIER = ""
+                PartReqTitle = input.Part_Req_Title,
+                PartReqType = input.REQUIREMENT,
+                EffTitle = input.Eff_Title,
+                PartNo = input.PART_NUMBER,
+                SerialNo = input.SERIAL_NUMBER,
+                Dimension = controlDim,
+                DueAmount = GetDueAmount(input, controlDim),
+                EventIdentifier = ""
             };
 
             return output;

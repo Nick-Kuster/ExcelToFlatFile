@@ -10,68 +10,68 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
     public class _262_XDEFFWS
     {
         [AmosOutputLength(25)]        
-        public string DOCNO { get; set; }
+        public string DocNo { get; set; }
         [AmosOutputLength(6)]        
-        public string DOC_TYPE { get; set; }
+        public string DocType { get; set; }
         [AmosOutputLength(4)]        
-        public string REVISION { get; set; }
+        public string Revision { get; set; }
         [AmosOutputLength(12)]        
-        public string ISSUED_BY { get; set; }
+        public string IssuedBy { get; set; }
         [AmosOutputLength(70)]        
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosOutputLength(4)]        
-        public string SEQ_NO { get; set; }
+        public string SeqNo { get; set; }
         [AmosOutputLength(1)]        
-        public string WS_TYPE { get; set; }
+        public string WsType { get; set; }
         [AmosOutputLength(70)]        
-        public string HEADER { get; set; }
+        public string Header { get; set; }
         [AmosOutputLength(8)]        
-        public string SIGN { get; set; }
+        public string Sign { get; set; }
         [AmosOutputLength(1)]        
-        public string CRITICAL { get; set; }
+        public string Critical { get; set; }
         [AmosOutputLength(1)]        
-        public string DEFUEL { get; set; }
+        public string Defuel { get; set; }
         [AmosOutputLength(1)]        
-        public string DOUBLE_INSP { get; set; }
+        public string DoubleInsp { get; set; }
         [AmosOutputLength(1)]        
-        public string EL_POWER { get; set; }
+        public string ElPower { get; set; }
         [AmosOutputLength(1)]        
-        public string EVENT_OPEN { get; set; }
+        public string EventOpen { get; set; }
         [AmosOutputLength(1)]        
-        public string EWIS { get; set; }
+        public string Ewis { get; set; }
         [AmosOutputLength(1)]        
-        public string EXT_HYDR { get; set; }
+        public string ExtHydr { get; set; }
         [AmosOutputLength(1)]        
-        public string HYDR_OFF { get; set; }
+        public string HydrOff { get; set; }
         [AmosOutputLength(1)]        
-        public string IDLE_RUN { get; set; }
+        public string IdleRun { get; set; }
         [AmosOutputLength(1)]        
-        public string INSURANCE { get; set; }
+        public string Insurance { get; set; }
         [AmosOutputLength(1)]        
-        public string NDT { get; set; }
+        public string Ndt { get; set; }
         [AmosOutputLength(1)]        
-        public string POWER_RUN { get; set; }
+        public string PowerRun { get; set; }
         [AmosOutputLength(1)]        
-        public string TANK_ENTRY { get; set; }
+        public string TankEntry { get; set; }
         [AmosOutputLength(1)]        
-        public string TEST_FLIGHT { get; set; }
+        public string TestFlight { get; set; }
         [AmosOutputLength(1)]        
-        public string TROUBLESHOOTING { get; set; }
+        public string Troubleshooting { get; set; }
         [AmosOutputLength(1)]        
-        public string WARRANTY { get; set; }
+        public string Warranty { get; set; }
         [AmosOutputLength(1)]        
-        public string ETOPS { get; set; }
+        public string Etops { get; set; }
         [AmosOutputLength(1)]        
-        public string AD { get; set; }
+        public string Ad { get; set; }
         [AmosOutputLength(15)]        
-        public string PHASE { get; set; }
+        public string Phase { get; set; }
         [AmosOutputLength(4)]        
-        public string WS_REV { get; set; }
+        public string WsRev { get; set; }
         [AmosOutputLength(1)]        
-        public string REV_STATUS { get; set; }
+        public string RevStatus { get; set; }
         [AmosOutputLength(1500)]        
-        public string TEXT { get; set; }
+        public string Text { get; set; }
         [AmosOutputLength(1000)]        
-        public string COMMENT { get; set; }
+        public string Comment { get; set; }
     }
 }

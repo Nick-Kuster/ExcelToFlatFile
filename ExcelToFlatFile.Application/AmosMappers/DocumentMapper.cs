@@ -6,9 +6,9 @@ using ExcelToFlatFileFramework.Domain.OutTemplates.Documents;
 
 namespace ExcelToFlatFile.Application.AmosMappers
 {
-    public class DocumentMapper : BaseMapper<DocumentTemplate, DocumentOutTemplate>
+    public class DocumentMapper : BaseMapper<DocumentTemplate, _DOCUMENT_OUT_TEMPLATE>
     {
-        public override DocumentOutTemplate Map(List<DocumentTemplate> input)
+        public override _DOCUMENT_OUT_TEMPLATE Map(List<DocumentTemplate> input)
         {
             List<_118_XEFF> _118_XEFF = new List<_118_XEFF>();
             List<_119_XEFFSER> _119_XEFFSER = new List<_119_XEFFSER>();
@@ -23,7 +23,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
             List<_262_XDEFFWS> _262_XDEFFWS = new List<_262_XDEFFWS>();
             List<_268_XDHIST> _268_XDHIST = new List<_268_XDHIST>();
             List<_269_XDPEND> _269_XDPEND = new List<_269_XDPEND>();
-            List<XDSOFF> XDSOFF = new List<XDSOFF>();
+            List<_XDSOFF> XDSOFF = new List<_XDSOFF>();
 
             foreach (var row in input)
             {
@@ -31,7 +31,10 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 // _119_XEFFSER.Add(GetXEFFSER(row));
                 // _240_XDHE.Add(GetXDHE(row));
                 // // ONLY documents with "AC-OR-COMP" =  "C" gets an entry in this file (241)
-                // _241_XDCOMPACTYPE.Add(GetXDCOMPACTYPE(row));
+                // if (row.AC_OR_COMP == "C")
+                // {
+                //     _241_XDCOMPACTYPE.Add(GetXDCOMPACTYPE(row));
+                // }
                 // _243_XDHETX.Add(GetXDHETX(row));
                 // _245_XDWS.Add(GetXDWS(row));
                 // _247_XDHECT.Add(GetXDHECT(row));
@@ -44,7 +47,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 // XDSOFF.Add(GetXDSOFF(row));
             }
 
-            DocumentOutTemplate outTemplate = new DocumentOutTemplate()
+            _DOCUMENT_OUT_TEMPLATE outTemplate = new _DOCUMENT_OUT_TEMPLATE()
             {
                 // _118_XEFF = _118_XEFF,
                 // _119_XEFFSER = _119_XEFFSER,
@@ -68,17 +71,17 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _118_XEFF
             {
-                EFF_TITLE = row.EFF_TITLE,
-                EFF_TITLE_PAR = "",
-                EFF_TITLE_HIGH = "",
-                AC_TYPE = row.AC_TYPE,
-                AC_MODEL = row.AC_MODEL,
-                AC_SUB = row.AC_SUB,
-                EFF_AC_TYPE = "",
-                PARTNO = row.PartNo,
-                SER_TYPE = "", // ?
-                CHANGEABLE = "", // ?
-                DESCRIPTION = "" // ?
+                EffTitle = row.EFF_TITLE,
+                EffTitlePar = "",
+                EffTitleHigh = "",
+                AcType = row.AC_TYPE,
+                AcModel = row.AC_MODEL,
+                AcSub = row.AC_SUB,
+                EffAcType = "",
+                PartNo = row.PartNo,
+                SerType = "", // ?
+                Changeable = "", // ?
+                Description = "" // ?
             };
 
             return output;
@@ -87,12 +90,12 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _119_XEFFSER
             {
-                EFF_TITLE = row.EFF_TITLE,
-                RANGE_TYPE = "", // ?
-                SERIALNO_FROM = "", // ?
-                SERIALNO_TO = "", // ?
-                INCL_EXCL = "", // ?
-                SER_SHIFT = ""
+                EffTitle = row.EFF_TITLE,
+                RangeType = "", // ?
+                SerialNoFrom = "", // ?
+                SerialNoTo = "", // ?
+                InclExcl = "", // ?
+                SerShift = ""
             };
 
             return output;
@@ -101,49 +104,49 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _240_XDHE
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                AC_OR_COMP = row.AC_OR_COMP,
-                ATA_CHAPTER = row.ATA_CHAPTER,
-                COMPLIANCE = "?",
-                TEXT1 = row.TEXT1,
-                TEXT2 = row.TEXT2,
-                REV_DATE = row.REV_DATE,
-                ISSUE_DATE = row.ISSUE_DATE,
-                REC_DATE = "",
-                TIME_LIMIT = row.TIME_LIMIT,
-                REPETITIVE = row.REPETITIVE,
-                EST_GROUDTIME = "",
-                EFFECTIVE_DATE = row.EFFECTIVE_DATE,
-                OPS_AFFECTED = "",
-                SIM_AFFECTED = "",
-                REMOVAL_REQ = "",
-                SHOP_OR_LINE = "",
-                CONTROLLED_BY = "",
-                TYPE_OF_CHANGE = "",
-                WARRANTY_LABOUR = "",
-                WARRANTY_MAT = "",
-                EST_MH_DOC = "",
-                ORG_DOCNO = "",
-                ORG_DOC_TYPE = "",
-                LABOUR_COST = "",
-                MAT_COST = "",
-                MOD_CAMPAIGN = "",
-                MOD_ATTRITION = "",
-                COSTCENTER = "",
-                COST_TYPE = "",
-                RELEASE_STATE = "",
-                INSPECTION = "",
-                ASSESS_RESP = "",
-                ASSESS_START = "",
-                ASSESS_END = "",
-                GRND_OPS_AFF = "",
-                TRIAL_INST = "",
-                OCCASION = "",
-                UUID = "",
-                IMP_NOTES = ""
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                AcOrComp = row.AC_OR_COMP,
+                AtaChapter = row.ATA_CHAPTER,
+                Compliance = "?",
+                Text1 = row.TEXT1,
+                Text2 = row.TEXT2,
+                RevDate = row.REV_DATE,
+                IssueDate = row.ISSUE_DATE,
+                RecDate = "",
+                TimeLimit = row.TIME_LIMIT,
+                Repetitive = row.REPETITIVE,
+                EstGroundTime = "",
+                EffectiveDate = row.EFFECTIVE_DATE,
+                OpsAffected = "",
+                SimAffected = "",
+                RemovalReq = "",
+                ShopOrLine = "",
+                ControlledBy = "",
+                TypeOfChange = "",
+                WarrantyLabour = "",
+                WarrantyMat = "",
+                EstMhDoc = "",
+                OrgDocNo = "",
+                OrgDocType = "",
+                LabourCost = "",
+                MatCost = "",
+                ModCampaign = "",
+                ModAttrition = "",
+                CostCenter = "",
+                CostType = "",
+                ReleaseState = "",
+                Inspection = "",
+                AssessResp = "",
+                AssessStart = "",
+                AssessEnd = "",
+                GrndOpsAff = "",
+                TrialInst = "",
+                Occasion = "",
+                Uuid = "",
+                ImpNotes = ""
             }; 
             return output;
         }
@@ -152,11 +155,11 @@ namespace ExcelToFlatFile.Application.AmosMappers
             // ONLY documents with "AC-OR-COMP" =  "C" gets an entry in this file
             var output = new _241_XDCOMPACTYPE
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                AC_TYPE = "737"
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                AcType = "737"
             }; 
             return output;
         }
@@ -164,11 +167,11 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _243_XDHETX
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                TEXT = row.TEXT1
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                Text = row.TEXT1
             };
             return output;
         }
@@ -177,37 +180,37 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _245_XDWS
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                SEQ_NO = "?",
-                WS_TYPE = "",
-                HEADER = "",
-                SIGN = "",
-                CRITICAL = "",
-                DEFUEL = "",
-                DOUBLE_INSP = "",
-                EL_POWER = "",
-                EVENT_OPEN = "",
-                EWIS = "",
-                EXT_HYDR = "",
-                HYDR_OFF = "",
-                IDLE_RUN = "",
-                INSURANCE = "",
-                NDT = "",
-                POWER_RUN = "",
-                TANK_ENTRY = "",
-                TEST_FLIGHT = "",
-                TROUBLESHOOTING = "",
-                WARRANTY = "",
-                ETOPS = "",
-                AD = "",
-                PHASE = "",
-                WS_REV = "",
-                REV_STATUS = "", // ?
-                TEXT = row.TEXT, // This says "Columns" (plural)... does it want all 3 text fields from template?
-                COMMENT = ""
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                SeqNo = "?",
+                WsType = "",
+                Header = "",
+                Sign = "",
+                Critical = "",
+                Defuel = "",
+                DoubleInsp = "",
+                ElPower = "",
+                EventOpen = "",
+                Ewis = "",
+                ExtHydr = "",
+                HydrOff = "",
+                IdleRun = "",
+                Insurance = "",
+                Ndt = "",
+                PowerRun = "",
+                TankEntry = "",
+                TestFlight = "",
+                Troubleshooting = "",
+                Warranty = "",
+                Etops = "",
+                Ad = "",
+                Phase = "",
+                WsRev = "",
+                RevStatus = "", // ?
+                Text = row.TEXT, // This says "Columns" (plural)... does it want all 3 text fields from template?
+                Comment = ""
             };
             return output;
         }
@@ -215,11 +218,11 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _247_XDHECT
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                TEXT = row.TEXT1
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                Text = row.TEXT1
             };
             return output;
         }
@@ -227,14 +230,14 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _255_XDEFFLINK
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                EFF_TITLE = row.EFF_TITLE,
-                AUTO_STATUS = "",
-                NEXT_SHOPVIS = "",
-                PRINT_REL0CERT = ""
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                EffTitle = row.EFF_TITLE,
+                AutoStatus = "",
+                NextShopVis = "",
+                PrintRel0Cert = ""
             }; 
             return output;
         }
@@ -242,23 +245,23 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _259_XDEFFTREQ
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                EFF_TITLE = row.EFF_TITLE,
-                DIM_TYPE = "", // ?
-                THR_BASE = "",// ?
-                FL = "", // ?
-                DIM_GROUP = "",
-                DIM = "", // ?
-                AMOUNT = "", // ?
-                THR_BASE_DIM = "",
-                THR_BASE_AMOUNT = "",
-                UNLIMITED = row.UNLIMITED,
-                TERMINATING = "", // ?
-                CALC_STRAT = "", // ?
-                AUTO_REP_BACK = ""
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                EffTitle = row.EFF_TITLE,
+                DimType = "", // ?
+                ThrBase = "",// ?
+                Fl = "", // ?
+                DimGroup = "",
+                Dim = "", // ?
+                Amount = "", // ?
+                ThrBaseDim = "",
+                ThrBaseAmount = "",
+                Unlimited = row.UNLIMITED,
+                Terminating = "", // ?
+                CalcStrat = "", // ?
+                AutoRepBack = ""
             }; return output;
         }
 
@@ -266,17 +269,17 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _260_XDEFFWT
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                EFF_TITLE = row.EFF_TITLE,
-                WT_REVISION = "",
-                ATA_CHAPTER = row.ATA_CHAPTER,
-                EVENT_CLASS = "",
-                DEFECT_CLASS = "",
-                PRIO = "",
-                PROJECTNO = ""
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                EffTitle = row.EFF_TITLE,
+                WtRevision = "",
+                AtaChapter = row.ATA_CHAPTER,
+                EventClass = "",
+                DefectClass = "",
+                Prio = "",
+                ProjectNo = ""
             };
             return output;
         }
@@ -284,38 +287,38 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _262_XDEFFWS
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                EFF_TITLE = row.EFF_TITLE,
-                SEQ_NO = "", // ?
-                WS_TYPE = "",
-                HEADER = "",
-                SIGN = "",
-                CRITICAL = "",
-                DEFUEL = "",
-                DOUBLE_INSP = "",
-                EL_POWER = "",
-                EVENT_OPEN = "",
-                EWIS = "",
-                EXT_HYDR = "",
-                HYDR_OFF = "",
-                IDLE_RUN = "",
-                INSURANCE = "",
-                NDT = "",
-                POWER_RUN = "",
-                TANK_ENTRY = "",
-                TEST_FLIGHT = "",
-                TROUBLESHOOTING = "",
-                WARRANTY = "",
-                ETOPS = "",
-                AD = "",
-                PHASE = "",
-                WS_REV = "",
-                REV_STATUS = "", // ?
-                TEXT = row.TEXT, // This says "Columns" (plural)... does it want all 3 text fields from template?
-                COMMENT = ""
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                EffTitle = row.EFF_TITLE,
+                SeqNo = "", // ?
+                WsType = "",
+                Header = "",
+                Sign = "",
+                Critical = "",
+                Defuel = "",
+                DoubleInsp = "",
+                ElPower = "",
+                EventOpen = "",
+                Ewis = "",
+                ExtHydr = "",
+                HydrOff = "",
+                IdleRun = "",
+                Insurance = "",
+                Ndt = "",
+                PowerRun = "",
+                TankEntry = "",
+                TestFlight = "",
+                Troubleshooting = "",
+                Warranty = "",
+                Etops = "",
+                Ad = "",
+                Phase = "",
+                WsRev = "",
+                RevStatus = "", // ?
+                Text = row.TEXT, // This says "Columns" (plural)... does it want all 3 text fields from template?
+                Comment = ""
             }; return output;
         }
         
@@ -323,34 +326,34 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             _268_XDHIST output = new _268_XDHIST()
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                EFF_TITLE = row.EFF_TITLE,
-                AC_REGISTR = row.AC_REGISTR,
-                PARTNO = row.PartNo,
-                SERIALNUMBER = row.SerialNumber,
-                PERF_HOURS = row.PERF_HOURS.MultiplyStringByInt(60),
-                PERF_CYCLES = row.PERF_CYCLES,
-                PERF_DATE = row.PERF_DATE.ConvertToFormattedDateString("dd.MM.yyyy"),
-                DIM_1 = "",
-                DUE_AMOUNT_1 = "",
-                PERF_AMOUNT_1 = "",
-                DIM_2 = "",
-                DUE_AMOUNT_2 = "",
-                PERF_AMOUNT_2 = "",
-                DIM_3 = "",
-                DUE_AMOUNT_3 = "",
-                PERF_AMOUNT_3 = "",
-                PERF_STATUS = row.STATUS,
-                PARTLY_PERF = "N",
-                PERF_REFDOC = "",
-                PERF_CUSTOMER_WO = "",
-                UNIQUE_ROT_ID = "",
-                IS_LAST_HISTORY = "Y",
-                EVENT_IDENTIFIER = "",
-                PERF_TEXT = ""
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                EffTitle = row.EFF_TITLE,
+                AcRegistr = row.AC_REGISTR,
+                PartNo = row.PartNo,
+                SerialNumber = row.SerialNumber,
+                PerfHours = row.PERF_HOURS.MultiplyStringByInt(60),
+                PerfCycles = row.PERF_CYCLES,
+                PerfDate = row.PERF_DATE.ConvertToFormattedDateString("dd.MM.yyyy"),
+                Dim1 = "",
+                DueAmount1 = "",
+                PerfAmount1 = "",
+                Dim2 = "",
+                DueAmount2 = "",
+                PerfAmount2 = "",
+                Dim3 = "",
+                DueAmount3 = "",
+                PerfAmount3 = "",
+                PerfStatus = row.STATUS,
+                PartlyPerf = "N",
+                PerfRefDoc = "",
+                PerfCustomerWo = "",
+                UniqueRotId = "",
+                IsLastHistory = "Y",
+                EventIdentifier = "",
+                PerfText = ""
             };
 
             return output;
@@ -359,33 +362,33 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             _269_XDPEND output = new _269_XDPEND()
             {
-                DOCNO = row.DOCNO,
-                DOC_TYPE = row.DOC_TYPE,
-                REVISION = row.REVISION,
-                ISSUED_BY = row.ISSUED_BY,
-                EFF_TITLE = row.EFF_TITLE,
-                AC_REGISTR = row.AC_REGISTR,
-                PARTNO = row.PartNo,
-                SERIALNUMBER = row.SerialNumber,
-                OPEN_STATUS = row.STATUS,
-                DUE_CUSTOMER_WO = "",
-                EVENT_IDENTIFIER = ""
+                DocNo = row.DOCNO,
+                DocType = row.DOC_TYPE,
+                Revision = row.REVISION,
+                IssuedBy = row.ISSUED_BY,
+                EffTitle = row.EFF_TITLE,
+                AcRegistr = row.AC_REGISTR,
+                PartNo = row.PartNo,
+                SerialNumber = row.SerialNumber,
+                OpenStatus = row.STATUS,
+                DueCustomerWo = "",
+                EventIdentifier = ""
             };
             FillDueDIMLogic(output, row);
             return output;
         }
-        private XDSOFF GetXDSOFF(DocumentTemplate row)
+        private _XDSOFF GetXDSOFF(DocumentTemplate row)
         {
-            var output = new XDSOFF
+            var output = new _XDSOFF
             {
-                DOCNO_1 = row.DOCNO,
-                DOC_TYPE_1 = row.DOC_TYPE,
-                REVISION_1 = row.REVISION,
-                ISSUED_BY_1 = row.ISSUED_BY,
-                DOCNO_2 = row.DOCNO,
-                DOC_TYPE_2 = row.DOC_TYPE,
-                REVISION_2 = row.REVISION,
-                ISSUED_BY_2 = row.ISSUED_BY
+                Docno1 = row.DOCNO,
+                DocType1 = row.DOC_TYPE,
+                Revision1 = row.REVISION,
+                IssuedBy1 = row.ISSUED_BY,
+                Docno2 = row.DOCNO,
+                DocType2 = row.DOC_TYPE,
+                Revision2 = row.REVISION,
+                IssuedBy2 = row.ISSUED_BY
             };
             return output;
         }
@@ -414,18 +417,18 @@ namespace ExcelToFlatFile.Application.AmosMappers
 
             if (dueList.Count >= 1)
             {
-                output.DUE_DIM_1 = dimensionList[0];
-                output.DUE_AMOUNT_1 = dueList[0];
+                output.DueDim1 = dimensionList[0];
+                output.DueAmount1 = dueList[0];
             }
             if (dueList.Count >= 2)
             {
-                output.DUE_DIM_2 = dimensionList[1];
-                output.DUE_AMOUNT_2 = dueList[1];
+                output.DueDim2 = dimensionList[1];
+                output.DueAmount2 = dueList[1];
             }
             if (dueList.Count >= 3)
             {
-                output.DUE_DIM_3 = dimensionList[2];
-                output.DUE_AMOUNT_3 = dueList[2];
+                output.DueDim3 = dimensionList[2];
+                output.DueAmount3 = dueList[2];
             }
         }
     }
