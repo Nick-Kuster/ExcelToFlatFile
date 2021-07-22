@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ExcelToFlatFileFramework.Domain.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.Taskcard
 {
     public class _351_XMSTASKPEND
     {
-        public string TASKNUMBER { get; set; } //[38][m]
-        public string AC_REGISTR { get; set; } //[6][m]
-        public string TASKCARDNO { get; set; } //[50]
-        public string TASKCARD_ID { get; set; } //[12]
-        public string EVENT_IDENTIFIER { get; set; } //[36]
+        [AmosOutputLength(38)]        
+        public string TASKNUMBER { get; set; }
+        [AmosOutputLength(6)]        
+        public string AC_REGISTR { get; set; }
+        [AmosOutputLength(50)]        
+        public string TASKCARDNO { get; set; }
+        [AmosOutputLength(12)]        
+        public string TASKCARD_ID { get; set; }
+        [AmosOutputLength(36)]        
+        public string EVENT_IDENTIFIER { get; set; }
     }
 }

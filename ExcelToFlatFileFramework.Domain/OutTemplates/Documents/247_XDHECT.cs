@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExcelToFlatFileFramework.Domain.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.Documents
 {
     public class _247_XDHECT
     {
-        public string DOCNO { get; set; } //[25][m]
-        public string DOC_TYPE { get; set; } //[6][m]
-        public string REVISION { get; set; } //[4][m]
-        public string ISSUED_BY { get; set; } //[12][m]
-        public string TEXT { get; set; } //[70][m]
+        [AmosOutputLength(25)]        
+        public string DOCNO { get; set; }
+        [AmosOutputLength(6)]        
+        public string DOC_TYPE { get; set; }
+        [AmosOutputLength(4)]        
+        public string REVISION { get; set; }
+        [AmosOutputLength(12)]        
+        public string ISSUED_BY { get; set; }
+        [AmosOutputLength(70)]        
+        public string TEXT { get; set; }
     }
 }

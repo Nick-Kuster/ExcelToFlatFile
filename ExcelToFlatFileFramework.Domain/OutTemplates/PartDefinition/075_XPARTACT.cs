@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ExcelToFlatFileFramework.Domain.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartDefinition
 {
     public class _075_XPARTACT
     {
-        public string PARTNO { get; set; } //[32][m]
-        public string IPC_REFERENCE { get; set; } //[80]
-        public string AC_TYPE { get; set; } //[6][m]
+        [AmosOutputLength(32)]      
+        public string PARTNO { get; set; }
+        [AmosOutputLength(80)]        
+        public string IPC_REFERENCE { get; set; }
+        [AmosOutputLength(6)]        
+        public string AC_TYPE { get; set; }
     }
 }

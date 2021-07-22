@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExcelToFlatFileFramework.Domain.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.Checks
 {
     public class _282_XCHECKEFFLINK
     {
-        public string CHECK_TYPE { get; set; } //[20][m]
-        public string EFF_TITLE { get; set; } //[70][m]
+        [AmosOutputLength(20)]
+        public string CHECK_TYPE { get; set; }
+        [AmosOutputLength(70)]
+        public string EFF_TITLE { get; set; }
     }
 }

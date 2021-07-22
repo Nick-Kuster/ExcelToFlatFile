@@ -82,7 +82,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 PARTNO = row.PART_NUMBER,
                 SER_TYPE = "L",
                 CHANGEABLE = "Y",
-                DESCRIPTION = row.Part_Req_Description
+                DESCRIPTION = row.Part_Req_Description // ? Does not have a length requirement
             };
             return output;
         }

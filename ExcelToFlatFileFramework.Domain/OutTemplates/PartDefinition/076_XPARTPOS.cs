@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ExcelToFlatFileFramework.Domain.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartDefinition
 {
     public class _076_XPARTPOS
     {
-        public string PARTNO { get; set; } //[32][m]
-        public string AC_TYPE { get; set; } //[6][m]
-        public string POSITION { get; set; } //[14][m]
-        public string ATA_CHAPTER { get; set; } //[12][m]
+        [AmosOutputLength(32)]        
+        public string PARTNO { get; set; }
+        [AmosOutputLength(6)]        
+        public string AC_TYPE { get; set; }
+        [AmosOutputLength(14)]        
+        public string POSITION { get; set; }
+        [AmosOutputLength(12)]        
+        public string ATA_CHAPTER { get; set; }
     }
 }

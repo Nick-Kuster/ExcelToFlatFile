@@ -1,24 +1,24 @@
 ﻿using ExcelToFlatFileFramework.Domain.Attributes;
-using ExcelToFlatFileFramework.Domain.Enums;
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartReq
 {
-    public class _149_XPARTREQPE {
+    public class _149_XPARTREQPE 
+    {
         [AmosOutputLength(38)]
-        public string PARTREQ_TITLE { get; set; } // [38][m]
+        public string PARTREQ_TITLE { get; set; } 
         [AmosOutputLength(2)]
-        public string PARTREQ_TYPE { get; set; } // [2][m]
+        public string PARTREQ_TYPE { get; set; } 
         [AmosOutputLength(70)]
-        public string EFF_TITLE { get; set; } // [70][m]
+        public string EFF_TITLE { get; set; } 
         [AmosOutputLength(32)]
-        public string PARTNO { get; set; } // [32][m]
+        public string PARTNO { get; set; } 
         [AmosOutputLength(20)]
-        public string SERIALNO { get; set; } // [20][m]
+        public string SERIALNO { get; set; } 
         [AmosOutputLength(2)]
-        public string DIMENSION { get; set; } // [2][m]
+        public string DIMENSION { get; set; } 
         [AmosOutputLength(10)]
-        public string DUE_AMOUNT { get; set; } // [10][m]
+        public string DUE_AMOUNT { get; set; } 
         [AmosOutputLength(36)]
-        public string EVENT_IDENTIFIER { get; set; } // [36]
+        public string EVENT_IDENTIFIER { get; set; }
     }
 }

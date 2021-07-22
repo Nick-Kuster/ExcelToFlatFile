@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ExcelToFlatFileFramework.Domain.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartReq
 {
     public class _135_XPARTREQEFFLINK
     {
-        public string PARTREQ_TITLE { get; set; } //[38][m]
-        public string PARTREQ_TYPE { get; set; } //[2][m]
-        public string EFF_TITLE { get; set; } //[70][m]
+        [AmosOutputLength(38)]        
+        public string PARTREQ_TITLE { get; set; }
+        [AmosOutputLength(2)]        
+        public string PARTREQ_TYPE { get; set; }
+        [AmosOutputLength(70)]        
+        public string EFF_TITLE { get; set; }
     }
 }

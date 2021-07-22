@@ -152,7 +152,6 @@ namespace ExcelToFlatFile.Application.AmosMappers
             // ONLY documents with "AC-OR-COMP" =  "C" gets an entry in this file
             var output = new _241_XDCOMPACTYPE
             {
-                NOTE = "", // ?
                 DOCNO = row.DOCNO,
                 DOC_TYPE = row.DOC_TYPE,
                 REVISION = row.REVISION,
