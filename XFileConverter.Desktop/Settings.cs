@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace XFileConverter.Desktop
+﻿namespace XFileConverter.Desktop
 {
     public class Settings
     {
@@ -14,5 +8,6 @@ namespace XFileConverter.Desktop
         public string TaskcardTemplate { get; set; }
         public string XfileOutputDir { get; set; }
         public string ErrorFileDir { get; set; }
+        public string GeneratedTemplatesDir { get; set; }
     }
 }

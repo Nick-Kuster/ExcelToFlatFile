@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ExcelToFlatFileFramework.Domain.Attributes;
+using Npoi.Mapper.Attributes;
 
 namespace ExcelToFlatFileFramework.Domain.InTemplates
 {
+    [AmosAtLeastOneRequired("PERFORMED_DATE", "PERFORMED_HOURS", "PERFORMED_CYCLES")]
+    [AmosAtLeastOneRequired("DUE_DATE", "DUE_HOURS", "DUE_CYCLES")]
     public class TaskcardTemplate : ValidationBase
     {
         [Column("TASKNUMBER")]
@@ -22,8 +21,7 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
         public string AC_MODEL { get; set; }
         [Column("AC-SUB")]
         public string AC_SUB { get; set; }
-        [Column("AC-REGISTR")]
-        [AmosRequired]
+        [Column("AC-REGISTR")] // This Column is required, but the value always defaults to the user-defined value.
         public string AC_REGISTR { get; set; }
         [Column("PERFORMED DATE")]
         public string PERFORMED_DATE { get; set; }

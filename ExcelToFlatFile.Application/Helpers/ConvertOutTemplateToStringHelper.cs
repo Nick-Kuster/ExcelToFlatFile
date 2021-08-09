@@ -22,7 +22,7 @@ namespace ExcelToFlatFile.Application.Helpers
                     {
                         var attr = (AmosOutputLength)attributes[0];
                         var length = attr.Length;
-                        var propValue =propertyInfo.GetValue(item)?.ToString() ?? null;
+                        var propValue =propertyInfo.GetValue(item)?.ToString() ?? "";
                         sb.Append(propValue);
                         var whiteSpace = length - propValue?.Length;
                         for (int i = 0; i < whiteSpace; i++)

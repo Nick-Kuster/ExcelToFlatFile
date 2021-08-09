@@ -85,7 +85,6 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
         [Column("AC-SUB")]
         public string AC_SUB { get; set; }
         [Column("TEXT")]
-        [AmosRequired]
         public string TEXT { get; set; }
         [Column("PERF-HOURS")]
         [AmosRequired]

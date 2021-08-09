@@ -8,28 +8,36 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
     public class ChecksTemplate : ValidationBase
     {
         [AmosRequired]
+        [AmosOutputLength(20)]
         [Column("CHECK-TYPE")]
-        public string CHECK_TYPE { get; set; }
+        public string CheckType { get; set; }
         [AmosRequired]
+        [AmosOutputLength(70)]
         [Column("EFF-TITLE")]
-        public string EFF_TITLE { get; set; }
+        public string EffTitle { get; set; }
         [AmosRequired]
+        [AmosOutputLength(6)]
         [Column("AIRCRAFT")]
         public string Aircraft { get; set; }
         [Column("AIRCRAFT TAIL NUMBER")]
-        public string AIRCRAFT_TAIL_NUMBER { get; set; }
+        [AmosOutputLength(20)]
+        public string AircraftTailNumber { get; set; }
         [AmosRequired]
+        [AmosOutputLength(20)]
         [Column("PERF-TAH")]
-        public string PERF_TAH { get; set; }
+        public string PerfTah { get; set; }
         [AmosRequired]
+        [AmosOutputLength(20)]
         [Column("PERF-TAC")]
-        public string PERF_TAC { get; set; }
+        public string PerfTac { get; set; }
         [AmosRequired]
+        [AmosOutputLength(20)]
         [Column("PERF-DATE")]
-        public string PERF_DATE { get; set; }
+        public string PerfDate { get; set; }
         [AmosRequired]
+        [AmosOutputLength(20)]
         [Column("NEVER-PERFORMED")]
-        public string NEVER_PERFORMED { get; set; }
+        public string NeverPerformed { get; set; }
     
         public override bool Equals(object obj)
         {
@@ -37,13 +45,13 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
                 return false;
             ChecksTemplate other = (ChecksTemplate)obj;
             
-            var equals = CHECK_TYPE == other.CHECK_TYPE &&
-                         EFF_TITLE == other.EFF_TITLE &&
-                         AIRCRAFT_TAIL_NUMBER == other.AIRCRAFT_TAIL_NUMBER &&
-                         PERF_TAH == other.PERF_TAH &&
-                         PERF_TAC == other.PERF_TAC &&
-                         PERF_DATE == other.PERF_DATE &&
-                         NEVER_PERFORMED == other.NEVER_PERFORMED;
+            var equals = CheckType == other.CheckType &&
+                         EffTitle == other.EffTitle &&
+                         AircraftTailNumber == other.AircraftTailNumber &&
+                         PerfTah == other.PerfTah &&
+                         PerfTac == other.PerfTac &&
+                         PerfDate == other.PerfDate &&
+                         NeverPerformed == other.NeverPerformed;
             return equals;
         }
         
@@ -51,7 +59,7 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
         {
             List<object> props = new List<object>()
             {
-                CHECK_TYPE, EFF_TITLE, AIRCRAFT_TAIL_NUMBER, PERF_TAH, PERF_TAC, PERF_DATE, NEVER_PERFORMED
+                CheckType, EffTitle, AircraftTailNumber, PerfTah, PerfTac, PerfDate, NeverPerformed
             };
             return String.Join("|", props).GetHashCode();
         }

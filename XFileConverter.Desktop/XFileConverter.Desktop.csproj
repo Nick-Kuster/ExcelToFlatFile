@@ -38,6 +38,7 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationFramework.Classic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -90,7 +91,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\Thexfiles.jpg" />
+    <Resource Include="images\logo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -101,12 +102,25 @@
       <Project>{5b07a014-ff74-43f1-8511-08e191a9aa70}</Project>
       <Name>ExcelToFlatFile.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExcelToFlatFileFramework.Domain\ExcelToFlatFileFramework.Domain.csproj">
+      <Project>{62F51E8E-C79B-447C-A215-93F0C4C19E5A}</Project>
+      <Name>ExcelToFlatFileFramework.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\The-X-Files1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\the-x-files-slice.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\avelo-airlines-logo-white-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="avelo-airlines-logo-white-text.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

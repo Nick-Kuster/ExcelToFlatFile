@@ -50,9 +50,9 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _118_XEFF
             {
-                EffTitle = row.EFF_TITLE,
+                EffTitle = row.EffTitle,
                 EffTitlePar = "",
-                EffTitleHigh = "", // ?
+                EffTitleHigh = "",
                 AcType = "", // ?
                 AcModel = "", // ?
                 AcSub = null, // ?
@@ -69,7 +69,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _119_XEFFSER
             {
-                EffTitle = row.EFF_TITLE,
+                EffTitle = row.EffTitle,
                 RangeType = "", // ?
                 SerialNoFrom = "", // ?
                 SerialNoTo = "", // ?
@@ -83,7 +83,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _281_XCHECKTY
             {
-                CheckType = row.CHECK_TYPE,
+                CheckType = row.CheckType,
                 Description = "", // ?
                 DefaultStation = "",
                 NbrOfInternalChecks = "", // ?
@@ -98,8 +98,8 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _282_XCHECKEFFLINK
             {
-                CheckType = row.CHECK_TYPE,
-                EffTitle = row.EFF_TITLE
+                CheckType = row.CheckType,
+                EffTitle = row.EffTitle
             };
 
             return output;
@@ -108,9 +108,9 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _284_XCHECKEFFTREQ
             {
-                CheckType = row.CHECK_TYPE,
+                CheckType = row.CheckType,
                 InternalCheck = "", // ?
-                EffTitle = row.EFF_TITLE,
+                EffTitle = row.EffTitle,
                 DimType = "", // ?
                 Fl = "", // ?
                 Dim = "", // ?
@@ -130,9 +130,9 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _285_XCHECKEFFWT
             {
-                CheckType = row.CHECK_TYPE,
-                InternalCheck = row.CHECK_TYPE,
-                EffTitle = row.EFF_TITLE,
+                CheckType = row.CheckType,
+                InternalCheck = row.CheckType,
+                EffTitle = row.EffTitle,
                 Revision = "", // ?
                 AtaChapter = "", // ?
                 EventClass = "",
@@ -147,9 +147,9 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _287_XCHECKEFFWS
             {
-                CheckType = row.CHECK_TYPE,
-                InternalCheck = row.CHECK_TYPE,
-                EffTitle = row.EFF_TITLE,
+                CheckType = row.CheckType,
+                InternalCheck = row.CheckType,
+                EffTitle = row.EffTitle,
                 SeqNo = "", // ?
                 WsType = "",
                 Header = "",
@@ -185,13 +185,13 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _294_XCHECKHI()
             {
-                CheckType = row.CHECK_TYPE,
-                InternalCheck = row.CHECK_TYPE,
-                EffTitle = row.EFF_TITLE,
+                CheckType = row.CheckType,
+                InternalCheck = row.CheckType,
+                EffTitle = row.EffTitle,
                 Aircraft = row.Aircraft,
-                PerfTah = row.PERF_TAH,
-                PerfTac = row.PERF_TAC,
-                PerfDate = row.PERF_DATE,
+                PerfTah = row.PerfTah,
+                PerfTac = row.PerfTac,
+                PerfDate = row.PerfDate,
                 ControlDim1 = "",
                 DueAmount1 = "",
                 PerfAmount1 = "",
@@ -211,11 +211,11 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _295_XCHECKPE
             {
-                CheckType = row.CHECK_TYPE,
+                CheckType = row.CheckType,
                 InternalCheck = "", // ?
-                EffTitle = row.EFF_TITLE,
+                EffTitle = row.EffTitle,
                 Aircraft = row.Aircraft,
-                NeverPerformed = row.NEVER_PERFORMED,
+                NeverPerformed = row.NeverPerformed,
                 ControlDim1 = "",  // ?
                 DueAmount1 = "",  // ?
                 ControlDim2 = "",  // ?

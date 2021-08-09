@@ -24,7 +24,7 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates.PartReq
         public string SerType { get; set; }
         [AmosOutputLength(1)]        
         public string Changeable { get; set; }
-        [AmosOutputLength(0)]        
+        [AmosOutputLength(70)]        
         public string Description { get; set; }
     }
 }

@@ -31,10 +31,10 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 // _119_XEFFSER.Add(GetXEFFSER(row));
                 // _240_XDHE.Add(GetXDHE(row));
                 // // ONLY documents with "AC-OR-COMP" =  "C" gets an entry in this file (241)
-                // if (row.AC_OR_COMP == "C")
-                // {
-                //     _241_XDCOMPACTYPE.Add(GetXDCOMPACTYPE(row));
-                // }
+                //if (row.AC_OR_COMP == "C")
+                //{
+                //    _241_XDCOMPACTYPE.Add(GetXDCOMPACTYPE(row));
+                //}
                 // _243_XDHETX.Add(GetXDHETX(row));
                 // _245_XDWS.Add(GetXDWS(row));
                 // _247_XDHECT.Add(GetXDHECT(row));
@@ -209,7 +209,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 Phase = "",
                 WsRev = "",
                 RevStatus = "", // ?
-                Text = row.TEXT, // This says "Columns" (plural)... does it want all 3 text fields from template?
+                Text = $"{row.TEXT} {row.TEXT1} {row.TEXT2}",
                 Comment = ""
             };
             return output;
@@ -317,7 +317,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 Phase = "",
                 WsRev = "",
                 RevStatus = "", // ?
-                Text = row.TEXT, // This says "Columns" (plural)... does it want all 3 text fields from template?
+                Text = $"{row.TEXT} {row.TEXT1} {row.TEXT2}",
                 Comment = ""
             }; return output;
         }

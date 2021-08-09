@@ -1,14 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using ExcelToFlatFile.Application.Extensions;
 using ExcelToFlatFileFramework.Domain.InTemplates;
 using ExcelToFlatFileFramework.Domain.OutTemplates.Taskcard;
-using NPOI.SS.Formula.Functions;
+using Newtonsoft.Json;
+using NPOI.HPSF;
+using XFileConverter.Desktop;
 
 namespace ExcelToFlatFile.Application.AmosMappers
 {
     public class TaskcardMapper : BaseMapper<TaskcardTemplate, _TASKCARD_OUT_TEMPLATE>
     {
+        private VariableSettings _varSettings { get; set; }
         public override _TASKCARD_OUT_TEMPLATE Map(List<TaskcardTemplate> input)
         {
+
+            if (File.Exists("VariableSettings.json"))
+            {
+                string variableSettingsjson = File.ReadAllText("VariableSettings.json");
+                _varSettings = JsonConvert.DeserializeObject<VariableSettings>(variableSettingsjson);
+            }
+
             // List<_118_XEFF> _118_XEFF = new List<_118_XEFF>();
             // List<_119_XEFFSER> _119_XEFFSER = new List<_119_XEFFSER>();
             // List<_308_XMSTASK> _308_XMSTASK = new List<_308_XMSTASK>();
@@ -20,6 +33,8 @@ namespace ExcelToFlatFile.Application.AmosMappers
             // List<_339_XMSTASKITEF> _339_XMSTASKITEF = new List<_339_XMSTASKITEF>();
             List<_350_XMSTASKHIST> xmstaskhist = new List<_350_XMSTASKHIST>();
             List<_351_XMSTASKPEND> xmstaskpends = new List<_351_XMSTASKPEND>();
+
+
             List<_352_XMSTASKPENDINT> xmstaskpendints = new List<_352_XMSTASKPENDINT>();
             List<_354_XMSTASKPRESET> xmstaskpresets = new List<_354_XMSTASKPRESET>();
 
@@ -36,8 +51,24 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 // _339_XMSTASKITEF.Add(Get339_XMSTASKITEF(row));
                 xmstaskhist.Add(GetXMsTaskHist(row));
                 xmstaskpends.Add(GetXMsTaskPends(row));
-                xmstaskpendints.Add(GetXMsTaskPendInts(row));
-                xmstaskpresets.Add(GetXMsTaskPresets(row));
+
+                if (!string.IsNullOrEmpty(row.DUE_DATE.SetToEmptyIfMatch("UNK")))
+                {
+                    xmstaskpendints.Add(GetXMsTaskPendInts(row, "D"));
+                    xmstaskpresets.Add(GetXMsTaskPresets(row, "D"));
+                }
+
+                if (!string.IsNullOrEmpty(row.DUE_HOURS.SetToEmptyIfMatch("UNK")))
+                {
+                    xmstaskpendints.Add(GetXMsTaskPendInts(row, "H"));
+                    xmstaskpresets.Add(GetXMsTaskPresets(row, "H"));
+                }
+
+                if (!string.IsNullOrEmpty(row.DUE_CYCLES.SetToEmptyIfMatch("UNK")))
+                {
+                    xmstaskpendints.Add(GetXMsTaskPendInts(row, "C"));
+                    xmstaskpresets.Add(GetXMsTaskPresets(row, "C"));
+                }
             }
 
             _TASKCARD_OUT_TEMPLATE outTemplate = new _TASKCARD_OUT_TEMPLATE
@@ -146,9 +177,9 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _321_XMSTASKIV
             {
-                MsName = "", // ?
-                MsIssue = "", // ?
-                MsRevision = "",// ?
+                MsName = _varSettings.MsName,
+                MsIssue = _varSettings.MsIssue, 
+                MsRevision = _varSettings.MsRevision,
                 TaskNumber = row.TASKNUMBER,
                 OpTask = "Y",
                 TaskRevision = "ORG",
@@ -173,9 +204,9 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _325_XMSTASKWT
             {
-                MsName = "", // ?
-                MsIssue = "", // ?
-                MsRevision = "", // ?
+                MsName = _varSettings.MsName,
+                MsIssue = _varSettings.MsIssue,
+                MsRevision = _varSettings.MsRevision,
                 TaskNumber = row.TASKNUMBER,
                 OpTask = "",// ?
                 TaskRevision = "",// ?
@@ -192,9 +223,9 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _330_XMSTSAKITWS
             {
-                MsName = "", // ?
-                MsIssue = "", // ?
-                MsRevision = "", // ?
+                MsName = _varSettings.MsName,
+                MsIssue = _varSettings.MsIssue,
+                MsRevision = _varSettings.MsRevision,
                 TaskNumber = "",
                 OpTask = "", // ?
                 TaskRevision = "", // ?
@@ -232,9 +263,9 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _339_XMSTASKITEF
             {
-                MsName = "", // ?
-                MsIssue = "", // ?
-                MsRevision = "", // ?
+                MsName = _varSettings.MsName,
+                MsIssue = _varSettings.MsIssue,
+                MsRevision = _varSettings.MsRevision,
                 TaskNumber = row.TASKNUMBER,
                 OpTask = "", // ?
                 TaskRevision = "", // ?
@@ -246,27 +277,27 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             _350_XMSTASKHIST output = new _350_XMSTASKHIST
             {
-                MsName = null, // ?
-                MsIssue = null, // ?
-                MsRevision = null, // ?
+                MsName = _varSettings.MsName,
+                MsIssue = _varSettings.MsIssue,
+                MsRevision = _varSettings.MsRevision,
                 TaskNumber = row.TASKNUMBER,
-                OpTask = null, // ?
-                TaskRevision = null, // ?
-                TaskcardNo = "", // ?
-                TaskcardId = null, // ?
-                AcRegistr = row.AC_REGISTR,
-                MechSign = "", // ?
-                ReleaseStation = "", // ?
-                ReleaseTime = "", // ?
-                DueTah = "", // ?
-                PerfTah = "", // ?
-                DueTac = "", // ?
-                PerfTac = "", // ?
-                DueDate = row.DUE_DATE,
-                PerfDate = row.PERFORMED_DATE,
-                UniqueId = "", // ?
-                EventIdentifier = "", // ?
-                Remarks = "" // ?
+                OpTask = "N", 
+                TaskRevision = "ORG",
+                TaskcardNo = "", 
+                TaskcardId = "",
+                AcRegistr = _varSettings.AcRegistr,
+                MechSign = "MECH", 
+                ReleaseStation = "MIA",
+                ReleaseTime = "", 
+                DueTah = row.DUE_HOURS,
+                PerfTah = row.PERFORMED_HOURS, 
+                DueTac = row.DUE_CYCLES,
+                PerfTac = row.PERFORMED_CYCLES, 
+                DueDate = row.DUE_DATE.ConvertToFormattedDateString("dd.MM.yy"),
+                PerfDate = row.PERFORMED_DATE.ConvertToFormattedDateString("dd.MM.yy"),
+                UniqueId = Guid.NewGuid().ToString(), 
+                EventIdentifier = "", 
+                Remarks = ""
             };
 
             return output;
@@ -276,35 +307,35 @@ namespace ExcelToFlatFile.Application.AmosMappers
             _351_XMSTASKPEND output = new _351_XMSTASKPEND()
             {
                 TaskNumber = input.TASKNUMBER,
-                AcRegistr = input.TASKNUMBER,
+                AcRegistr = _varSettings.AcRegistr,
                 TaskcardNo = "",
                 TaskcardId = "",
                 EventIdentifier = ""
             };
             return output;
         }
-        private _352_XMSTASKPENDINT GetXMsTaskPendInts(TaskcardTemplate input)
+        private _352_XMSTASKPENDINT GetXMsTaskPendInts(TaskcardTemplate input, string controlDim)
         {
             _352_XMSTASKPENDINT output = new _352_XMSTASKPENDINT()
             {
                 TaskNumber = input.TASKNUMBER,
                 AcRegistr = input.TASKNUMBER,
-                Dimension = "", // Do not have this in template
-                AmountDue = "",
+                Dimension = controlDim,
+                AmountDue = GetDueAmount(input, controlDim),
                 TaskcardNo = "",
                 TaskcardId = ""
             };
 
             return output;
         }
-        private _354_XMSTASKPRESET GetXMsTaskPresets(TaskcardTemplate input)
+        private _354_XMSTASKPRESET GetXMsTaskPresets(TaskcardTemplate input, string controlDim)
         {
             _354_XMSTASKPRESET output = new _354_XMSTASKPRESET()
             {
                 TaskNumber = input.TASKNUMBER,
                 AcRegistr = input.TASKNUMBER,
-                Dimension = "", // Not in Template
-                AmountDue = "", // Dimension not in template
+                Dimension = controlDim, 
+                AmountDue = GetDueAmount(input, controlDim),
                 DueDayTime = "",
                 ChangedDate = "",
                 ChangedTime = "",
@@ -315,10 +346,19 @@ namespace ExcelToFlatFile.Application.AmosMappers
             return output;
         }
 
-        
-
-        
-
-        
+        private string GetDueAmount(TaskcardTemplate input, string controlDim)
+        {
+            switch (controlDim)
+            {
+                case "H":
+                    return input.DUE_HOURS.MultiplyStringByInt(60);
+                case "C":
+                    return input.DUE_CYCLES;
+                case "D":
+                    return input.DUE_DATE.ConvertToFormattedDateString("dd.MM.yy");
+                default:
+                    return "";
+            }
+        }
     }
 }

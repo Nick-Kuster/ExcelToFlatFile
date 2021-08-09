@@ -118,8 +118,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _135_XPARTREQEFFLINK
             {
-                PartReqTitle = "", // Part Req Type?
-                PartReqType = row.REQUIREMENT,
+                PartReqTitle = row.Part_Req_Title,                PartReqType = row.REQUIREMENT,
                 EffTitle = row.Eff_Title
             };
             return output;
@@ -128,7 +127,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _136_XPARTREQTREQ
             {
-                PartReqTitle = "", // Part Req Type?
+                PartReqTitle = row.Part_Req_Title, 
                 PartReqType = row.REQUIREMENT,
                 EffTitle = row.Eff_Title,
                 DimType = row.DIM_TYPE,
@@ -150,7 +149,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _137_XPARTREQWT
             {
-                PartReqTitle = "", // Part Req Type?
+                PartReqTitle = row.Part_Req_Title,
                 PartReqType = row.REQUIREMENT,
                 EffTitle = row.Eff_Title,
                 Revision = "",
@@ -166,7 +165,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _139_XPARTREQWS
             {
-                PartReqTitle = "",  // Part Req Type?
+                PartReqTitle = row.Part_Req_Title,
                 PartReqType = row.REQUIREMENT,
                 EffTitle = row.Eff_Title,
                 SeqNo = "1",
@@ -235,7 +234,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
         {
             var output = new _147_XPARTREQTC
             {
-                PartReqTitle = "", // Part Req Type?
+                PartReqTitle = row.Part_Req_Title,
                 PartReqType = row.REQUIREMENT,
                 EffTitle = row.Eff_Title,
                 MsName = "MTLM",
@@ -245,19 +244,6 @@ namespace ExcelToFlatFile.Application.AmosMappers
             };
             return output;
         }
-
-        
-
-        
-
-        
-
-       
-
-      
-
-       
-
 
         private _148_XPARTREQHI GetPartReqHI(PartTemplate input, string controlDim)
         {
