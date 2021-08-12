@@ -11,29 +11,41 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
     {
         [Column("TASKNUMBER")]
         [AmosRequired]
+        [AmosOutputLength(38)]
         public string TASKNUMBER { get; set; }
         [Column("EFF-TITLE")]
         [AmosRequired]
+        [AmosOutputLength(70)]
         public string EFF_TITLE { get; set; }
         [Column("AC-TYPE")]
+        [AmosOutputLength(6)]
         public string AC_TYPE { get; set; }
         [Column("AC-MODEL")]
+        [AmosOutputLength(6)]
         public string AC_MODEL { get; set; }
         [Column("AC-SUB")]
+        [AmosOutputLength(6)]
         public string AC_SUB { get; set; }
         [Column("AC-REGISTR")] // This Column is required, but the value always defaults to the user-defined value.
+        [AmosOutputLength(6)]
         public string AC_REGISTR { get; set; }
         [Column("PERFORMED DATE")]
+        [AmosOutputLength(10)]
         public string PERFORMED_DATE { get; set; }
         [Column("PERFORMED HOURS")]
+        [AmosOutputLength(10)]
         public string PERFORMED_HOURS { get; set; }
         [Column("PERFORMED CYCLES")]
+        [AmosOutputLength(6)]
         public string PERFORMED_CYCLES { get; set; }
         [Column("DUE DATE")]
+        [AmosOutputLength(10)]
         public string DUE_DATE { get; set; }
         [Column("DUE HOURS")]
+        [AmosOutputLength(10)]
         public string DUE_HOURS { get; set; }
         [Column("DUE CYCLES")]
+        [AmosOutputLength(10)]
         public string DUE_CYCLES { get; set; }
 
         public override bool Equals(object obj)

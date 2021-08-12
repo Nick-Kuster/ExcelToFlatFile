@@ -132,5 +132,8 @@
   <ItemGroup>
     <Resource Include="avelo-airlines-logo-white-text.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="The-X-Files1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

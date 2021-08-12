@@ -37,17 +37,24 @@ namespace ExcelToFlatFile.Application.AmosMappers
                 {
                     xPartReqHiList.Add(GetPartReqHI(row, "D"));
                     xPartReqPEList.Add(GetPartReqPE(row, "D"));
-                    
-                    if (!string.IsNullOrEmpty(row.LAST_REQ_TSN.SetToEmptyIfMatch("UNK")))
+                }
+                if (!string.IsNullOrEmpty(row.LAST_REQ_TSN.SetToEmptyIfMatch("UNK")))
+                {
+                    if (!string.IsNullOrEmpty(row.LAST_REQ_DATE.SetToEmptyIfMatch("UNK")))
                     {
                         xPartReqHiList.Add(GetPartReqHI(row, "H"));
-                        xPartReqPEList.Add(GetPartReqPE(row, "H"));
                     }
-                    if (!string.IsNullOrEmpty(row.LAST_REQ_CYCLES.SetToEmptyIfMatch("UNK")))
+
+                    xPartReqPEList.Add(GetPartReqPE(row, "H"));
+                }
+                if (!string.IsNullOrEmpty(row.LAST_REQ_CYCLES.SetToEmptyIfMatch("UNK")))
+                {
+                    if (!string.IsNullOrEmpty(row.LAST_REQ_DATE.SetToEmptyIfMatch("UNK")))
                     {
                         xPartReqHiList.Add(GetPartReqHI(row, "C"));
-                        xPartReqPEList.Add(GetPartReqPE(row, "C"));
                     }
+
+                    xPartReqPEList.Add(GetPartReqPE(row, "C"));
                 }
             }
             

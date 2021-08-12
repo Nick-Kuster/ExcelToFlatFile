@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using ExcelToFlatFileFramework.Domain.Attributes;
+using NPOI.SS.Formula.Functions;
 
 namespace ExcelToFlatFileFramework.Domain
 {
@@ -28,6 +29,27 @@ namespace ExcelToFlatFileFramework.Domain
             }
 
             return requiredPropsMissing;
+        }
+        
+        public List<string> ValidateLengthRequirement()
+        {
+            List<string> propsOverLength = new List<string>();
+            foreach (PropertyInfo propertyInfo in GetType().GetProperties())
+            {
+                Attribute length = propertyInfo.GetCustomAttribute(typeof(AmosOutputLength), true);
+                string propertyValue = propertyInfo.GetValue(this)?.ToString();
+                if (length is AmosOutputLength outLengthTypedAtt)
+                {
+                    if (propertyValue?.Length > outLengthTypedAtt.Length)
+                    {
+                        propsOverLength.Add(propertyInfo.Name);
+                        propertyValue = propertyValue.Substring(0, outLengthTypedAtt.Length);
+                        propertyInfo.SetValue(this, propertyValue);
+                    }
+                }
+            }
+
+            return propsOverLength;
         }
 
         public List<List<string>> ValidateAtLeastOnePropRequired()

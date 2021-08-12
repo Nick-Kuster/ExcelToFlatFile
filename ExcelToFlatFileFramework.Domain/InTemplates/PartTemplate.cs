@@ -15,92 +15,132 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
     public class PartTemplate : ValidationBase
     {
         [AmosRequired]
+        [AmosOutputLength(6)]
         [Column("Aircraft")]
         public string Aircraft { get; set; }
+        [AmosOutputLength(12)]
         [Column("ATA")]
         public string ATA { get; set; }
         [AmosRequired]
+        [AmosOutputLength(32)]
         [Column("PART NUMBER")]
         public string PART_NUMBER { get; set; }
         [AmosRequired]
+        [AmosOutputLength(36)]
         [Column("SERIAL NUMBER")]
         public string SERIAL_NUMBER { get; set; }
         [AmosRequired]
+        [AmosOutputLength(36)]
         [Column("DESCRIPTION")]
         public string DESCRIPTION { get; set; }
         [AmosRequired]
+        [AmosOutputLength(14)]
         [Column("Position")]
         public string Position { get; set; }
+        [AmosOutputLength(38)]
         [Column("TASKCARD REFERENCE")]
         public string TaskcardReference { get; set; }
         [AmosRequired]
+        [AmosOutputLength(38)]
         [Column("Part Req Title")]
         public string Part_Req_Title { get; set; }
         [AmosRequired]
+        [AmosOutputLength(70)]
         [Column("Eff Title")]
         public string Eff_Title { get; set; }
+        [AmosOutputLength(36)]
         [Column("Part Req Description")]
         public string Part_Req_Description { get; set; }
         [AmosRequired]
+        [AmosOutputLength(2)]
         [Column("REQUIREMENT")]
         public string REQUIREMENT { get; set; }
+        [AmosOutputLength(1)]
         [Column("Removal Req")]
         public string Removal_Req { get; set; }
+        [AmosOutputLength(1)]
         [Column("RANGE-TYPE")]
         public string RANGE_TYPE { get; set; }
+        [AmosOutputLength(20)]
         [Column("SERIALNO-FROM")]
         public string SERIALNO_FROM { get; set; }
+        [AmosOutputLength(20)]
         [Column("SERIALNO-TO")]
         public string SERIALNO_TO { get; set; }
+        [AmosOutputLength(1)]
         [Column("INCL-EXCL")]
         public string INCL_EXCL { get; set; }
+        [AmosOutputLength(1)]
         [Column("MATERIAL-CLASS")]
         public string MATERIAL_CLASS { get; set; }
+        [AmosOutputLength(6)]
         [Column("FA-AC-TYPE")]
         public string FA_AC_TYPE { get; set; }
+        [AmosOutputLength(4)]
         [Column("MEASURE-UNIT")]
         public string MEASURE_UNIT { get; set; }
+        [AmosOutputLength(1)]
         [Column("REPAIRABLE")]
         public string REPAIRABLE { get; set; }
+        [AmosOutputLength(4)]
         [Column("MAT-TYPE")]
         public string MAT_TYPE { get; set; }
+        [AmosOutputLength(2)]
         [Column("DIM-TYPE")]
         public string DIM_TYPE { get; set; }
+        [AmosOutputLength(2)]
         [Column("INTERVAL DIMENSION")]
         public string IntervalDimension { get; set; }
+        [AmosOutputLength(10)]
         [Column("INTERVAL AMOUNT")]
         public string IntervalAmount { get; set; }
+        [AmosOutputLength(1)]
         [Column("UNLIMITED")]
         public string UNLIMITED { get; set; }
+        [AmosOutputLength(1)]
         [Column("TERMINATING")]
         public string TERMINATING { get; set; }
+        [AmosOutputLength(10)]
         [Column("LAST-REQ-TSN")]
         public string LAST_REQ_TSN { get; set; }
+        [AmosOutputLength(10)]
         [Column("LAST-REQ-CYCLES")]
         public string LAST_REQ_CYCLES { get; set; }
+        [AmosOutputLength(10)]
         [Column("LAST-REQ-DATE")]
         public string LAST_REQ_DATE { get; set; }
+        [AmosOutputLength(10)]
         [Column("NEXT DUE FH")]
         public string NEXT_DUE_FH { get; set; }
+        [AmosOutputLength(10)]
         [Column("NEXT DUE FC")]
         public string NEXT_DUE_FC { get; set; }
+        [AmosOutputLength(10)]
         [Column("NEXT DUE DATE ")]
         public string NEXT_DUE_DATE { get; set; }
         [AmosRequired]
+        [AmosOutputLength(2)]
         [Column("CONDITION")]
         public string CONDITION { get; set; }
+        [AmosOutputLength(10)]
         [Column("DELIVERY DATE")]
         public string DELIVERY_DATE { get; set; }
+        [AmosOutputLength(10)]
         [Column("MFG-DATE")]
         public string MFG_DATE { get; set; }
+        [AmosOutputLength(10)]
         [Column("INSTALLATION-DATE")]
         public string INSTALLATION_DATE { get; set; }
+        [AmosOutputLength(10)]
         [Column("TAH-INST")]
         public string TAH_INST { get; set; }
+        [AmosOutputLength(6)]
         [Column("TAC-INST")]
         public string TAC_INST { get; set; }
+        [AmosOutputLength(10)]
         [Column("TSN")]
         public string TSN { get; set; }
+        [AmosOutputLength(6)]
         [Column("CSN")]
         public string CSN { get; set; }
         [Column("TAH-CURRENT")]
@@ -111,6 +151,7 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
         public string TSN_CURRENT { get; set; }
         [Column("CSN CURRENT")]
         public string CSN_CURRENT { get; set; }
+        [AmosOutputLength(40)]
         [Column("OLD-LABELNO")]
         public string OLD_LABELNO { get; set; }
 

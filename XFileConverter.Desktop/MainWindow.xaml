@@ -57,8 +57,9 @@
         <Button Content="..." Click="btnDocumentTemplateLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,311,0,0" Grid.Column="1" Height="23"/>
         <Button Content="..." Click="btnCheckTemplateLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,248,0,0" Grid.Column="1" Height="23"/>
         <Button Content="Revert Unsaved Settings" Click="btnRevertSettings_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="170,705,0,0"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="10,71,0,0" VerticalAlignment="Top" Width="194" Source="avelo-airlines-logo-white-text.png"/>
-        <Rectangle Fill="#FF4C12A1" HorizontalAlignment="Left" Height="119" Margin="0,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="1191" Panel.ZIndex="-1" Grid.ColumnSpan="2"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="119" Margin="0,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="1191" Panel.ZIndex="-1" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="115" Margin="10,52,0,0" VerticalAlignment="Top" Width="284" RenderTransformOrigin="1.09,-0.135" Source="The-X-Files1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="115" Margin="341,56,-61,0" VerticalAlignment="Top" Width="284" RenderTransformOrigin="1.09,-0.135" Source="logo.jpg" Grid.Column="1"/>
 
     </Grid>
 </Window>
