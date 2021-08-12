@@ -131,7 +131,7 @@ namespace XFileConverter.Desktop
         private void btnTemplateGenerationLocation_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = GeneratedTemplatesDirectory.Text;
+            dialog.InitialDirectory = GeneratedTemplatesDirectory.Text ?? "";
             dialog.IsFolderPicker = true;
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
@@ -148,7 +148,11 @@ namespace XFileConverter.Desktop
         private void btnErrorFileLocation_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = ErrorFileDir.Text;
+            if (!string.IsNullOrWhiteSpace(ErrorFileDir.Text))
+            {
+                dialog.InitialDirectory = ErrorFileDir.Text;
+            }
+
             dialog.IsFolderPicker = true;
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
@@ -159,7 +163,12 @@ namespace XFileConverter.Desktop
         private void btnXfileOutputLocation_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = XfileOutputDir.Text;
+
+            if (!string.IsNullOrWhiteSpace(XfileOutputDir.Text))
+            {
+                dialog.InitialDirectory = XfileOutputDir.Text;
+            }
+
             dialog.IsFolderPicker = true;
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
@@ -170,7 +179,11 @@ namespace XFileConverter.Desktop
         private void btnTaskcardTemplateLocation_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = Path.GetDirectoryName(TaskcardTemplate.Text);
+            if (!string.IsNullOrWhiteSpace(TaskcardTemplate.Text))
+            {
+                dialog.InitialDirectory = Path.GetDirectoryName(TaskcardTemplate.Text);
+            }
+
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 TaskcardTemplate.Text = dialog.FileName;
@@ -180,7 +193,11 @@ namespace XFileConverter.Desktop
         private void btnPartsTemplateLocation_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = Path.GetDirectoryName(PartsTemplate.Text);
+            if (!string.IsNullOrWhiteSpace(PartsTemplate.Text))
+            {
+                dialog.InitialDirectory = Path.GetDirectoryName(PartsTemplate.Text);
+            }
+
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 PartsTemplate.Text = dialog.FileName;
@@ -190,7 +207,11 @@ namespace XFileConverter.Desktop
         private void btnDocumentTemplateLocation_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = Path.GetDirectoryName(DocumentTemplate.Text);
+            if (!string.IsNullOrWhiteSpace(DocumentTemplate.Text))
+            {
+                dialog.InitialDirectory = Path.GetDirectoryName(DocumentTemplate.Text);
+            }
+
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 DocumentTemplate.Text = dialog.FileName;
@@ -200,7 +221,10 @@ namespace XFileConverter.Desktop
         private void btnCheckTemplateLocation_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = Path.GetDirectoryName(CheckTemplate.Text);
+            if (!string.IsNullOrWhiteSpace(CheckTemplate.Text))
+            {
+                dialog.InitialDirectory = Path.GetDirectoryName(CheckTemplate.Text);
+            }
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 CheckTemplate.Text = dialog.FileName;
