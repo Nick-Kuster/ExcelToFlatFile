@@ -138,6 +138,8 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates
     [XmlRoot(ElementName = "resourceRequirement")]
     public class ResourceRequirement
     {
+        [XmlAttribute(AttributeName = "uuid")]
+        public string Uuid { get; set; }
         [XmlElement(ElementName = "resourceType")]
         public string ResourceType { get; set; }
         [XmlElement(ElementName = "totalHours")]

@@ -79,6 +79,7 @@ namespace ExcelToFlatFile.Application.AmosMappers
                             {
                                 ResourceRequirement = new ResourceRequirement
                                 {
+                                    Uuid = Guid.NewGuid().ToString(),
                                     ResourceType = "Staff",
                                     TotalHours = wpRow.Quantity * wpRow.Duration * 60,
                                     Quantity = wpRow.Quantity,
