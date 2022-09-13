@@ -34,7 +34,8 @@ namespace ExcelToFlatFileFramework.Domain.InTemplates
         public int Quantity { get; set; }
         protected bool Equals(WPImportInput other)
         {
-            return WorkOrderNumber == other.WorkOrderNumber && AtaCode == other.AtaCode && DueDate == other.DueDate && Headline == other.Headline && ProblemDescription == other.ProblemDescription && Duration == other.Duration && Quantity == other.Quantity;
+            return WorkOrderNumber == other.WorkOrderNumber && AtaCode == other.AtaCode && DueDate == other.DueDate && Headline == other.Headline
+                   && ProblemDescription == other.ProblemDescription && Duration == other.Duration && Quantity == other.Quantity;
         }
 
         public override bool Equals(object obj)

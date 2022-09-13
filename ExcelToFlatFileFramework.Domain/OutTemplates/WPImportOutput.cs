@@ -148,8 +148,28 @@ namespace ExcelToFlatFileFramework.Domain.OutTemplates
         public int Quantity { get; set; }
         [XmlElement(ElementName = "duration")]
         public int Duration { get; set; }
-
+        [XmlElement(ElementName = "constraints")]
+        public Constraints Constraints { get; set; }
     }
+
+    [XmlRoot(ElementName = "constraints")]
+    public class Constraints
+    {
+        [XmlElement(ElementName = "constraint")]
+        public Constraint Constraint { get; set; }
+    }
+
+    [XmlRoot(ElementName = "constraint")]
+    public class Constraint
+    {
+        [XmlAttribute(AttributeName = "uuid")]
+        public string Uuid { get; set; }
+        [XmlElement(ElementName = "propertyType")]
+        public string PropertyType { get; set; }
+        [XmlElement(ElementName = "valueString")]
+        public string ValueString { get; set; }
+    }
+    
 
     [XmlRoot(ElementName = "workStep")]
     public class WorkStep/* : IXmlSerializable*/

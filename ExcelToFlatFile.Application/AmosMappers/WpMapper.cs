@@ -26,18 +26,6 @@ namespace ExcelToFlatFile.Application.AmosMappers
             var workPackageId = Guid.NewGuid().ToString();
             foreach (WPImportInput wpRow in input)
             {
-                //var partRequests = new List<PartRequest>();
-                //AddPartRequestIfNeeded(wpRow.Part1, wpRow.PartDescription1, wpRow.RequiredQuantity1, partRequests);
-                //AddPartRequestIfNeeded(wpRow.Part2, wpRow.PartDescription2, wpRow.RequiredQuantity2, partRequests);
-                //AddPartRequestIfNeeded(wpRow.Part3, wpRow.PartDescription3, wpRow.RequiredQuantity3, partRequests);
-                //AddPartRequestIfNeeded(wpRow.Part4, wpRow.PartDescription4, wpRow.RequiredQuantity4, partRequests);
-                //AddPartRequestIfNeeded(wpRow.Part5, wpRow.PartDescription5, wpRow.RequiredQuantity5, partRequests);
-                //AddPartRequestIfNeeded(wpRow.Part6, wpRow.PartDescription6, wpRow.RequiredQuantity6, partRequests);
-                //AddPartRequestIfNeeded(wpRow.Part7, wpRow.PartDescription7, wpRow.RequiredQuantity7, partRequests);
-                //AddPartRequestIfNeeded(wpRow.Part8, wpRow.PartDescription8, wpRow.RequiredQuantity8, partRequests);
-                //AddPartRequestIfNeeded(wpRow.Part9, wpRow.PartDescription9, wpRow.RequiredQuantity9, partRequests);
-                //AddPartRequestIfNeeded(wpRow.Part10, wpRow.PartDescription10, wpRow.RequiredQuantity10, partRequests);
-
                 var workOrder = new Workorder()
                 {
                     Uuid = Guid.NewGuid().ToString(),
@@ -53,10 +41,6 @@ namespace ExcelToFlatFile.Application.AmosMappers
                             Uuid = Guid.NewGuid().ToString(),
                             Description = wpRow.ProblemDescription,
                             Headline = wpRow.Headline,
-                            //RequiredParts = partRequests.Any() ? new RequiredParts()
-                            //{
-                            //    PartRequest = partRequests
-                            //} : null,
                             References = !string.IsNullOrEmpty(wpRow.FileUrl) ? new References()
                             {
                                 Reference = new Reference()
@@ -83,7 +67,16 @@ namespace ExcelToFlatFile.Application.AmosMappers
                                     ResourceType = "Staff",
                                     TotalHours = wpRow.Quantity * wpRow.Duration * 60,
                                     Quantity = wpRow.Quantity,
-                                    Duration = wpRow.Duration * 60
+                                    Duration = wpRow.Duration * 60,
+                                    Constraints = new Constraints
+                                    {
+                                        Constraint = new Constraint
+                                        {
+                                            Uuid = Guid.NewGuid().ToString(),
+                                            PropertyType = "Qualification Type",
+                                            ValueString = "A&P"
+                                        }
+                                    }
                                 }
                             }
                         }
