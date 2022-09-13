@@ -1,12 +1,9 @@
 ﻿using System.IO;
 using System.Windows;
-using System.Windows.Forms;
+using ExcelToFlatFile.Application.Converters;
 using ExcelToFlatFile.Application.TemplateGenerators;
-using ExcelToFlatFile.Application.XFileConverters;
 using ExcelToFlatFileFramework.Domain.InTemplates;
 using Newtonsoft.Json;
-using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
-using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace XFileConverter.Desktop
@@ -28,11 +25,8 @@ namespace XFileConverter.Desktop
             {
                 string settingsjson = File.ReadAllText("Settings.json");
                 Settings settings = JsonConvert.DeserializeObject<Settings>(settingsjson);
-                CheckTemplate.Text = settings?.CheckTemplate ?? "";
-                DocumentTemplate.Text = settings?.DocumentTemplate ?? "";
-                PartsTemplate.Text = settings?.PartsTemplate ?? "";
-                TaskcardTemplate.Text = settings?.TaskcardTemplate ?? "";
-                XfileOutputDir.Text = settings?.XfileOutputDir ?? "";
+                InputFile.Text = settings?.InputFile ?? "";
+                OutputDirectory.Text = settings?.OutputDirectory ?? "";
                 ErrorFileDir.Text = settings?.ErrorFileDir ?? "";
                 GeneratedTemplatesDirectory.Text = settings?.GeneratedTemplatesDir ?? "";
             }
@@ -41,11 +35,14 @@ namespace XFileConverter.Desktop
             {
                 string variableSettingsjson = File.ReadAllText("VariableSettings.json");
                 VariableSettings variable = JsonConvert.DeserializeObject<VariableSettings>(variableSettingsjson);
-                AcRegistr.Text = variable.AcRegistr;
-                AircraftNumber.Text = variable.AircraftNumber;
-                MsIssue.Text = variable.MsIssue;
-                MsName.Text = variable.MsName;
-                MsRevision.Text = variable.MsRevision;
+                Aircraft.Text = variable.Aircraft;
+                Station.Text = variable.Station;
+                WorkPackageName.Text = variable.WorkPackageName;
+                ShortDescription.Text = variable.ShortDescription;
+                StartDate.Text = variable.StartDate;
+                StartTime.Text = variable.StartTime;
+                EndDate.Text = variable.EndDate;
+                EndTime.Text = variable.EndTime;
             }
         }
 
@@ -53,11 +50,8 @@ namespace XFileConverter.Desktop
         {
             var settings = new Settings
             {
-                CheckTemplate = CheckTemplate.Text,
-                DocumentTemplate = DocumentTemplate.Text,
-                PartsTemplate = PartsTemplate.Text,
-                TaskcardTemplate = TaskcardTemplate.Text,
-                XfileOutputDir = XfileOutputDir.Text,
+                InputFile = InputFile.Text,
+                OutputDirectory = OutputDirectory.Text,
                 ErrorFileDir = ErrorFileDir.Text,
                 GeneratedTemplatesDir = GeneratedTemplatesDirectory.Text
             };
@@ -69,13 +63,16 @@ namespace XFileConverter.Desktop
         }
         private void btnSaveVariables_Click(object sender, RoutedEventArgs e)
         {
-            var settings = new VariableSettings()
+            var settings = new VariableSettings
             {
-                AcRegistr = AcRegistr.Text,
-                AircraftNumber = AircraftNumber.Text,
-                MsIssue = MsIssue.Text,
-                MsName = MsName.Text,
-                MsRevision = MsRevision.Text
+                Aircraft = Aircraft.Text,
+                Station = Station.Text,
+                WorkPackageName = WorkPackageName.Text,
+                ShortDescription = ShortDescription.Text,
+                StartDate = StartDate.Text,
+                StartTime = StartTime.Text,
+                EndDate = EndDate.Text,
+                EndTime = EndTime.Text
             };
             string json = JsonConvert.SerializeObject(settings);
             
@@ -85,69 +82,39 @@ namespace XFileConverter.Desktop
         }
         private void btnConverToXFiles_Click(object sender, RoutedEventArgs e)
         {
-            CheckTemplateConverter checkTemplateConverter = new CheckTemplateConverter()
+            WpTemplateConverter wpTemplateConverter = new WpTemplateConverter()
             {
-                TemplateLocation = CheckTemplate.Text,
+                OutputDirectory = OutputDirectory.Text,
                 ErrorOutputDirectory = ErrorFileDir.Text,
-                XFileOutputDirectory = XfileOutputDir.Text
+                InputLocation = InputFile.Text
             };
-            DocumentTemplateConverter documentTemplateConverter = new DocumentTemplateConverter()
-            {
-                TemplateLocation = DocumentTemplate.Text,
-                ErrorOutputDirectory = ErrorFileDir.Text,
-                XFileOutputDirectory = XfileOutputDir.Text
-            };
-            PartTemplateConverter partTemplateConverter = new PartTemplateConverter()
-            {
-                TemplateLocation = PartsTemplate.Text,
-                ErrorOutputDirectory = ErrorFileDir.Text,
-                XFileOutputDirectory = XfileOutputDir.Text
-            };
-            TaskcardTemplateConverter taskcardTemplateConverter = new TaskcardTemplateConverter()
-            {
-                TemplateLocation = TaskcardTemplate.Text,
-                ErrorOutputDirectory = ErrorFileDir.Text,
-                XFileOutputDirectory = XfileOutputDir.Text
-            };
-            
-            checkTemplateConverter.Convert();
-            documentTemplateConverter.Convert();
-            partTemplateConverter.Convert();
-            taskcardTemplateConverter.Convert();
+            wpTemplateConverter.Convert();
             LoadingText.Text = "Templates Converted";
         }
 
         private void btnGenerateTemplates_Click(object sender, RoutedEventArgs e)
         {
             string templateDirectory = GeneratedTemplatesDirectory.Text;
-            TemplateGenerator.Generate<ChecksTemplate>("Checks Template", templateDirectory);
-            TemplateGenerator.Generate<DocumentTemplate>("Document Template", templateDirectory);
-            TemplateGenerator.Generate<PartTemplate>("Part Template", templateDirectory);
-            TemplateGenerator.Generate<TaskcardTemplate>("Taskcard Template", templateDirectory);
+            TemplateGenerator.Generate<WPImportInput>("WP Template", templateDirectory);
 
             GenerateTemplatesText.Text = "Templates have been generated!";
         }
 
         private void btnTemplateGenerationLocation_Click(object sender, RoutedEventArgs e)
         {
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = GeneratedTemplatesDirectory.Text ?? "";
-            dialog.IsFolderPicker = true;
+            var dialog = new CommonOpenFileDialog
+            {
+                InitialDirectory = GeneratedTemplatesDirectory.Text ?? "", IsFolderPicker = true
+            };
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 GeneratedTemplatesDirectory.Text = dialog.FileName;
             }
-            //var dialog = new FolderBrowserDialog();
-            //DialogResult result = dialog.ShowDialog();
-            //if (result == System.Windows.Forms.DialogResult.OK && !string.IsNullOrWhiteSpace(dialog.SelectedPath))
-            //{
-            //    GeneratedTemplatesDirectory.Text = dialog.SelectedPath;
-            //}
         }
 
         private void btnErrorFileLocation_Click(object sender, RoutedEventArgs e)
         {
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            var dialog = new CommonOpenFileDialog();
             if (!string.IsNullOrWhiteSpace(ErrorFileDir.Text))
             {
                 dialog.InitialDirectory = ErrorFileDir.Text;
@@ -160,74 +127,32 @@ namespace XFileConverter.Desktop
             }
         }
 
-        private void btnXfileOutputLocation_Click(object sender, RoutedEventArgs e)
+        private void btnOutput_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
 
-            if (!string.IsNullOrWhiteSpace(XfileOutputDir.Text))
+            if (!string.IsNullOrWhiteSpace(OutputDirectory.Text))
             {
-                dialog.InitialDirectory = XfileOutputDir.Text;
+                dialog.InitialDirectory = OutputDirectory.Text;
             }
 
             dialog.IsFolderPicker = true;
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                XfileOutputDir.Text = dialog.FileName;
+                OutputDirectory.Text = dialog.FileName;
             }
         }
 
-        private void btnTaskcardTemplateLocation_Click(object sender, RoutedEventArgs e)
+        private void btnInput_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            if (!string.IsNullOrWhiteSpace(TaskcardTemplate.Text))
+            if (!string.IsNullOrWhiteSpace(InputFile.Text))
             {
-                dialog.InitialDirectory = Path.GetDirectoryName(TaskcardTemplate.Text);
-            }
-
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
-            {
-                TaskcardTemplate.Text = dialog.FileName;
-            }
-        }
-
-        private void btnPartsTemplateLocation_Click(object sender, RoutedEventArgs e)
-        {
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            if (!string.IsNullOrWhiteSpace(PartsTemplate.Text))
-            {
-                dialog.InitialDirectory = Path.GetDirectoryName(PartsTemplate.Text);
-            }
-
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
-            {
-                PartsTemplate.Text = dialog.FileName;
-            }
-        }
-
-        private void btnDocumentTemplateLocation_Click(object sender, RoutedEventArgs e)
-        {
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            if (!string.IsNullOrWhiteSpace(DocumentTemplate.Text))
-            {
-                dialog.InitialDirectory = Path.GetDirectoryName(DocumentTemplate.Text);
-            }
-
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
-            {
-                DocumentTemplate.Text = dialog.FileName;
-            }
-        }
-
-        private void btnCheckTemplateLocation_Click(object sender, RoutedEventArgs e)
-        {
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            if (!string.IsNullOrWhiteSpace(CheckTemplate.Text))
-            {
-                dialog.InitialDirectory = Path.GetDirectoryName(CheckTemplate.Text);
+                dialog.InitialDirectory = Path.GetDirectoryName(InputFile.Text);
             }
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                CheckTemplate.Text = dialog.FileName;
+                InputFile.Text = dialog.FileName;
             }
         }
 
@@ -237,11 +162,8 @@ namespace XFileConverter.Desktop
             {
                 string settingsjson = File.ReadAllText("Settings.json");
                 Settings settings = JsonConvert.DeserializeObject<Settings>(settingsjson);
-                CheckTemplate.Text = settings?.CheckTemplate ?? "";
-                DocumentTemplate.Text = settings?.DocumentTemplate ?? "";
-                PartsTemplate.Text = settings?.PartsTemplate ?? "";
-                TaskcardTemplate.Text = settings?.TaskcardTemplate ?? "";
-                XfileOutputDir.Text = settings?.XfileOutputDir ?? "";
+                InputFile.Text = settings?.InputFile ?? "";
+                OutputDirectory.Text = settings?.OutputDirectory ?? "";
                 ErrorFileDir.Text = settings?.ErrorFileDir ?? "";
                 GeneratedTemplatesDirectory.Text = settings?.GeneratedTemplatesDir ?? "";
             }
@@ -250,11 +172,14 @@ namespace XFileConverter.Desktop
             {
                 string variableSettingsjson = File.ReadAllText("VariableSettings.json");
                 VariableSettings variable = JsonConvert.DeserializeObject<VariableSettings>(variableSettingsjson);
-                AcRegistr.Text = variable.AcRegistr;
-                AircraftNumber.Text = variable.AircraftNumber;
-                MsIssue.Text = variable.MsIssue;
-                MsName.Text = variable.MsName;
-                MsRevision.Text = variable.MsRevision;
+                Aircraft.Text = variable.Aircraft;
+                Station.Text = variable.Station;
+                WorkPackageName.Text = variable.WorkPackageName;
+                ShortDescription.Text = variable.ShortDescription;
+                StartDate.Text = variable.StartDate;
+                StartTime.Text = variable.StartTime;
+                EndDate.Text = variable.EndDate;
+                EndTime.Text = variable.EndTime;
             }
         }
     }

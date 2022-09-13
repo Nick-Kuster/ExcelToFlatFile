@@ -6,60 +6,69 @@
         xmlns:local="clr-namespace:XFileConverter.Desktop"
         ResizeMode="NoResize"
         mc:Ignorable="d" 
-        Title="XFile Conversion Utility" Height="757" Width="1199">
+        Title="WP Import Tool" Height="757" Width="1199">
     <Grid Margin="0,-50,-8,3" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="428*"/>
             <ColumnDefinition Width="379*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="CheckTemplate" HorizontalAlignment="Left" Height="23" Margin="10,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="DocumentTemplate" HorizontalAlignment="Left" Height="23" Margin="10,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="PartsTemplate" HorizontalAlignment="Left" Height="23" Margin="10,373,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="TaskcardTemplate" HorizontalAlignment="Left" Height="23" Margin="10,440,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="XfileOutputDir" HorizontalAlignment="Left" Height="23" Margin="10,512,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="ErrorFileDir" HorizontalAlignment="Left" Height="23" Margin="10,580,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,216,0,0" TextWrapping="Wrap" Text="Check Template" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,289,0,0" TextWrapping="Wrap" Text="Document Template" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,351,0,0" TextWrapping="Wrap" Text="Parts Template" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,410,0,0" TextWrapping="Wrap" Text="Taskcard Template" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,477,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"><Run Text="XFile Output Directory"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,545,0,0" TextWrapping="Wrap" Text="Error File Directory" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"/>
-        <Button Content="Save Settings" Click="btnSaveSettings_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,705,0,0"/>
-        <Button Content="Convert To XFiles" Click="btnConverToXFiles_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="488,705,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Margin="465,140,0,0" TextWrapping="Wrap" Text="Compatible with AMOS v.20.6" VerticalAlignment="Top" Width="162" Foreground="#FFFBFBFB"/>
-        <TextBlock x:Name="LoadingText" HorizontalAlignment="Left" Margin="488,730,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
-        <TextBlock x:Name="SaveSettingsText" HorizontalAlignment="Left" Margin="10,730,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
-        <TextBlock HorizontalAlignment="Left" Margin="201,213,0,0" TextWrapping="Wrap" Text="MS-NAME" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="201,286,0,0" TextWrapping="Wrap" Text="MS-ISSUE" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="201,348,0,0" TextWrapping="Wrap" Text="MS-REVISION" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="201,407,0,0" TextWrapping="Wrap" Text="AC-REGISTR" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="201,478,0,0" TextWrapping="Wrap" Text="Aircraft Number" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF" Grid.Column="1"/>
-        <TextBox x:Name="MsName" MaxLength="25" HorizontalAlignment="Left" Height="23" Margin="201,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Grid.Column="1"/>
-        <TextBox x:Name="MsIssue" MaxLength="8" HorizontalAlignment="Left" Height="23" Margin="201,308,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Grid.Column="1"/>
-        <TextBox x:Name="MsRevision" MaxLength="8" HorizontalAlignment="Left" Height="23" Margin="201,370,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Grid.Column="1"/>
-        <TextBox x:Name="AcRegistr" MaxLength="6" HorizontalAlignment="Left" Height="23" Margin="201,437,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Grid.Column="1"/>
-        <TextBox x:Name="AircraftNumber" HorizontalAlignment="Left" Height="23" Margin="201,509,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Grid.Column="1"/>
+        <TextBox x:Name="InputFile" HorizontalAlignment="Left" Height="23" Margin="10,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="OutputDirectory" HorizontalAlignment="Left" Height="23" Margin="10,314,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="ErrorFileDir" HorizontalAlignment="Left" Height="23" Margin="10,382,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,216,0,0" TextWrapping="Wrap" Text="Input File" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"><Run Text="Output Directory"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,347,0,0" TextWrapping="Wrap" Text="Error File Directory" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"/>
+        <Button Content="Save Settings" Click="btnSaveSettings_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,494,0,0"/>
+        <Button Content="Run Conversion" Click="btnConverToXFiles_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="632,494,0,0" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="510,136,0,0" TextWrapping="Wrap" Text="Compatible with AMOS v.20.6" VerticalAlignment="Top" Width="162" Foreground="#FFFBFBFB" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="LoadingText" HorizontalAlignment="Left" Margin="0,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Grid.Column="1"/>
+        <TextBlock x:Name="SaveSettingsText" HorizontalAlignment="Left" Margin="10,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,569,0,0" TextWrapping="Wrap" Text="Aircraft" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="258,562,0,0" TextWrapping="Wrap" Text="WorkPackageName" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="331,632,0,0" TextWrapping="Wrap" Text="Station" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="99,556,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF" Grid.Column="1" Text="Short Description"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,632,0,0" TextWrapping="Wrap" Text="Expected Start Date" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF"/>
+        <TextBox x:Name="Aircraft" MaxLength="6" HorizontalAlignment="Left" Height="23" Margin="10,591,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" />
+        <TextBox x:Name="Station" MaxLength="4" HorizontalAlignment="Left" Height="23" Margin="331,667,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Grid.Column="1"/>
+        <TextBox x:Name="ShortDescription" MaxLength="36" HorizontalAlignment="Left" Height="23" Margin="99,591,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="455" Grid.Column="1"/>
+        <TextBox x:Name="StartDate" MaxLength="10"  HorizontalAlignment="Left" Height="23" Margin="10,667,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,179,0,0" TextWrapping="Wrap" Text="Template File Locations" VerticalAlignment="Top" Width="322" Height="32" FontSize="20" FontWeight="Bold" TextDecorations="Underline"/>
-        <TextBlock HorizontalAlignment="Left" Margin="201,176,0,0" TextWrapping="Wrap" Text="Template Variable Values" VerticalAlignment="Top" Width="322" Height="32" FontSize="20" FontWeight="Bold" TextDecorations="Underline" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="331,70,0,0" TextWrapping="Wrap" Text="XFile Conversion Utility" VerticalAlignment="Top" Width="455" Height="44" FontSize="36" FontWeight="Bold" TextDecorations="Underline" Grid.ColumnSpan="2" TextAlignment="Center" Foreground="#FFFBFBFB"/>
-        <TextBlock HorizontalAlignment="Left" Margin="465,119,0,0" TextWrapping="Wrap" Text="Version 1.0.0" VerticalAlignment="Top" Width="162" TextAlignment="Center" Foreground="#FFFBFBFB"/>
-        <Button Content="Save Template Variables" Click="btnSaveVariables_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="201,562,0,0" Grid.Column="1"/>
-        <TextBlock x:Name="SaveVariableSettingsText" HorizontalAlignment="Left" Margin="201,587,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Grid.Column="1"/>
-        <TextBox x:Name="GeneratedTemplatesDirectory" HorizontalAlignment="Left" Height="23" Margin="10,652,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,617,0,0" TextWrapping="Wrap" Text="Template Generation Directory" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"/>
-        <Button Content="Generate Templates" Click="btnGenerateTemplates_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="327,705,0,0"/>
-        <TextBlock x:Name="GenerateTemplatesText" HorizontalAlignment="Left" Margin="327,730,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
-        <Button Content="..." Click="btnTemplateGenerationLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,652,0,0" Grid.Column="1" Height="23"/>
-        <Button Content="..." Click="btnErrorFileLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,580,0,0" Grid.Column="1" Height="23"/>
-        <Button Content="..." Click="btnXfileOutputLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,512,0,0" Grid.Column="1" Height="23"/>
-        <Button Content="..." Click="btnTaskcardTemplateLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,440,0,0" Grid.Column="1" Height="23"/>
-        <Button Content="..." Click="btnPartsTemplateLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,373,0,0" Grid.Column="1" Height="23"/>
-        <Button Content="..." Click="btnDocumentTemplateLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,311,0,0" Grid.Column="1" Height="23"/>
-        <Button Content="..." Click="btnCheckTemplateLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,248,0,0" Grid.Column="1" Height="23"/>
-        <Button Content="Revert Unsaved Settings" Click="btnRevertSettings_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="170,705,0,0"/>
-        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="119" Margin="0,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="1191" Panel.ZIndex="-1" Grid.ColumnSpan="2"/>
-        <Image HorizontalAlignment="Left" Height="115" Margin="10,52,0,0" VerticalAlignment="Top" Width="284" RenderTransformOrigin="1.09,-0.135" Source="The-X-Files1.jpg"/>
-        <Image HorizontalAlignment="Left" Height="115" Margin="341,56,-61,0" VerticalAlignment="Top" Width="284" RenderTransformOrigin="1.09,-0.135" Source="logo.jpg" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,530,0,0" TextWrapping="Wrap" Text="Template Variable Values" VerticalAlignment="Top" Width="322" Height="32" FontSize="20" FontWeight="Bold" TextDecorations="Underline"/>
+        <TextBlock HorizontalAlignment="Left" Margin="376,66,0,0" TextWrapping="Wrap" Text="WP Import Tool" VerticalAlignment="Top" Width="455" Height="44" FontSize="36" FontWeight="Bold" TextDecorations="Underline" Grid.ColumnSpan="2" TextAlignment="Center" Foreground="#FFFBFBFB"/>
+        <TextBlock HorizontalAlignment="Left" Margin="510,115,0,0" TextWrapping="Wrap" Text="Version 1.0.0" VerticalAlignment="Top" Width="162" TextAlignment="Center" Foreground="#FFFBFBFB" Grid.ColumnSpan="2"/>
+        <Button Content="Save Template Variables" Click="btnSaveVariables_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,705,0,0"/>
+        <TextBox x:Name="GeneratedTemplatesDirectory" HorizontalAlignment="Left" Height="23" Margin="10,454,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="721" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,419,0,0" TextWrapping="Wrap" Text="Template Generation Directory" VerticalAlignment="Top" Height="17" Width="322" Background="#FFE8DFDF"/>
+        <Button Content="Generate Template" Click="btnGenerateTemplates_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="308,494,0,0"/>
+        <TextBlock x:Name="GenerateTemplatesText" HorizontalAlignment="Left" Margin="308,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
+        <Button Content="..." Click="btnTemplateGenerationLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,454,0,0" Grid.Column="1" Height="23"/>
+        <Button Content="..." Click="btnErrorFileLocation_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,382,0,0" Grid.Column="1" Height="23"/>
+        <Button Content="..." Click="btnOutput_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,314,0,0" Grid.Column="1" Height="23"/>
+        <Button x:Name="InputFilePicker" Content="..." Click="btnInput_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="99,248,0,0" Grid.Column="1" Height="23"/>
+        <Button Content="Revert Unsaved Settings" Click="btnRevertSettings_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="164,494,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="119" Margin="0,52,0,0" VerticalAlignment="Top" Width="1191" Panel.ZIndex="-1" Grid.ColumnSpan="2">
+            <Rectangle.Stroke>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF1EC7BF" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Margin="258,632,0,0" TextWrapping="Wrap" Text="Expected Start Time" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF"/>
+        <TextBox x:Name="StartTime" MaxLength="5" HorizontalAlignment="Left" Height="23" Margin="258,667,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214"/>
+        <TextBlock HorizontalAlignment="Left" Margin="499,632,0,0" TextWrapping="Wrap" Text="Expected End Date" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="EndDate" MaxLength="10" HorizontalAlignment="Left" Height="23" Margin="499,667,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="99,632,0,0" TextWrapping="Wrap" Text="Expected End Time" VerticalAlignment="Top" Height="17" Width="149" Background="#FFE8DFDF" Grid.Column="1"/>
+        <TextBox x:Name="EndTime" MaxLength="5" HorizontalAlignment="Left" Height="23" Margin="99,667,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Grid.Column="1"/>
+        <TextBlock x:Name="SaveVariableSettingsText" HorizontalAlignment="Left" Margin="10,730,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
+        <TextBox x:Name="WorkPackageName" MaxLength="30" HorizontalAlignment="Left" Height="23" Margin="258,591,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="455" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="296" Margin="187,216,-95,0" VerticalAlignment="Top" Width="472" Source="images/AirMost-logos__transparent_(1).png" Grid.Column="1"/>
 
     </Grid>
 </Window>
